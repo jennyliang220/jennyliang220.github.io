@@ -85,8 +85,17 @@
         background-color: blue;
     }
     
+    body[amp-x-font-color="black"] .button-color-experiment {
+        color: black;
+    }
+    
+    body[amp-x-font-color="white"] .button-color-experiment {
+        color: white;
+    }
+
     button {
-        background-color: grey;
+        background-color: gray;
+        font-color: #3388ff;
         margin: 20px;
         padding: 20px;
     }
@@ -102,6 +111,12 @@
                     "yellow": 30,
                     "red": 30,
                     "blue": 30
+                }
+            },
+            "font-color": {
+                "variants": {
+                    "black": 30,
+                    "white": 30,
                 }
             }
         }
