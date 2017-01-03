@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title><!-- 标题 --></title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    /* 自定义样式 */
+    </style>
+</head>
+<body>
+<!-- 正文 -->
+<div>http跳转 - 无clear</div>
+<mip-form method="get" url="http://www.mipengine.org?we=123">
+    <input type="input" name="username" validatetarget="username" validatetype="must" placeholder="姓名">
+    <div target="username">姓名不能为空</div>
+    <input type="submit" value="提交">
+</mip-form>
+<br><br>
+<hr><br><br>
+<div>https跳转 - 有clear</div>
+<mip-form method="get" url="https://www.mipengine.org" clear>
+    <input type="input" name="username" validatetarget="username" validatetype="must" placeholder="姓名">
+    <div target="username">姓名不能为空</div>
+    <input type="submit" value="提交">
+</mip-form>
+<script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+<script src="mip-form.js"></script>
+</body>
+</html>
