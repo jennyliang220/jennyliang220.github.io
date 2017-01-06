@@ -15,21 +15,27 @@ mip-experiment是一个用于页面实验的组件。站长通过配置实验变
 4. 统计：支持百度统计。
 
 ## 技术细节
-抽样分组：
+#### 抽样分组：
     已存在分组的用户，直接标记。未存在分组的用户，使用math.random进行分组。
-cookie:
-    储存用户的实验分组，支持多组实验同时进行。
+
+#### cookie:
+    储存用户的实验分组，支持多组实验同时进行。  
+
     - 名称：mip-experiment
     - 值：base64加密后的实验抽样标记
     - 示例：bWlwLWV4cC1BPWdyb3VwQSZtaXAtZXhwLUI9Z3JvdXBFJm1pcC1leHAtMTIxMi0xMj15ZWxsb3c=
     - 明文示例：mip-exp-A=groupA&mip-exp-B=groupE&mip-exp-1212-12=yellow
-url:
-    强制抽样，支持配置多组实验
+
+#### url:
+    强制抽样，支持配置多组实验  
+
     - 名称：实验名
     - 值：分组名
     - 示例：www.mip.com/a.html#mip-exp-A=groupA&mip-exp-12=yellow
-统计：
-    使用百度统计的自定义变量api，将实验名和实验分组作为参数加入到统计请求中。具体需要和百度统计对一下技术方案。
+
+#### 统计：
+    使用百度统计的自定义变量api，将实验名和实验分组作为参数加入到统计请求中。具体需要和百度统计对一下技术方案。  
+
     - _hmt.push(['_setCustomVar', 1, 'mip-exp-A', 'groupA', 2]);
     - 自定义变量参考：http://tongji.baidu.com/open/api/more?p=guide_setCustomVar
 
