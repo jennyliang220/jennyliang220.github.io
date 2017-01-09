@@ -1,5 +1,13 @@
 # Mip-experiment 设计文档
-<a href="#example">站长使用</a>
+<ul>
+    <li><a href="#intro">简介</a></li>
+    <li><a href="#tech">技术方案</a></li>
+    <li><a href="#tech-detail">技术细节</a></li>
+    <li><a href="#example">站长使用</a></li>
+    <li><a href="#future">站长使用</a></li>
+</ul>
+
+<div id="intro"></div>
 ## 简介
 mip-experiment是一个用于页面实验的组件。站长通过配置实验变量，达到展示不同页面内容样式的目的。支持通过url配置，强制显示某个实验效果。
 
@@ -8,6 +16,7 @@ mip-experiment是一个用于页面实验的组件。站长通过配置实验变
 2. 支持配置多个抽样，且配置抽样间是否互相影响（实验一的A组和实验B的A组同时展现）
 3. 支持url强制抽样
 
+<div id="tech"></div>
 ## 技术方案
 ![img](./mip-experiment-1.png)
 
@@ -16,6 +25,7 @@ mip-experiment是一个用于页面实验的组件。站长通过配置实验变
 3. 强制抽样：根据url中的hash获取强制抽样分组，跳过步骤1，直接标记分组。
 4. 统计：支持百度统计或mip-pixel统计。
 
+<div id="tech-detail"></div>
 ## 技术细节
 #### 抽样分组：
 从Cookie中读取实验分组。已存在分组的用户，直接标记分组。未存在分组的用户，使用math.random进行分组。
@@ -65,7 +75,8 @@ https://yourselfdomain/mipurl/tj.gif?
 ```
 
 ### 广告统计计费（重要！）
-<font color="red">现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。</font>
+<span style="color:red">现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。</span>
+
 
 <div id="example"></div>
 ## 站长使用
@@ -110,7 +121,7 @@ body .wrapper-A .N {
     display: none;
 }
 ```
-
+<div id="future"></div>
 ## 未来计划
 1. 修改mip-pix代码，支持统计
 2. 与百度统计合作，支持统计
