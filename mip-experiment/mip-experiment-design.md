@@ -3,8 +3,9 @@
     <li><a href="#intro">简介</a></li>
     <li><a href="#tech">技术方案</a></li>
     <li><a href="#tech-detail">技术细节</a></li>
+    <li><a href="#analy">统计方案</a></li>
     <li><a href="#example">站长使用</a></li>
-    <li><a href="#future">站长使用</a></li>
+    <li><a href="#future">未来计划</a></li>
 </ul>
 
 <div id="intro"></div>
@@ -45,7 +46,8 @@ mip-experiment是一个用于页面实验的组件。站长通过配置实验变
 - 值：分组名
 - 示例：www.mip.com/a.html#mip-x-A=groupA&mip-x-12=yellow
 
-#### 统计：
+<div id="analy"></div>
+## 统计方案：
 
 ##### 一. 百度统计
 使用百度统计的自定义变量api，将实验名和实验分组作为参数加入到统计请求中。具体需要和百度统计对一下技术方案。  
