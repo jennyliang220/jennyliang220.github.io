@@ -4,7 +4,7 @@
     <li><a href="#tech">技术方案</a></li>
     <li><a href="#tech-detail">技术细节</a></li>
     <li><a href="#analy">统计方案</a></li>
-    <li><a href="#example">站长使用</a></li>
+    <li><a href="#examples">站长使用</a></li>
     <li><a href="#future">未来计划</a></li>
 </ul>
 
@@ -80,7 +80,7 @@ https://yourselfdomain/mipurl/tj.gif?
 <span style="color:red">现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。</span>
 
 
-<div id="example"></div>
+<div id="examples"></div>
 ## 站长使用
 例如，站长需要针对广告位A进行抽样，40%显示广告M，40%显示广告N,20%不显示广告。
 
