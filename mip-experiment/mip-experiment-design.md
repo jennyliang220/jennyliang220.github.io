@@ -77,7 +77,9 @@ https://yourselfdomain/mipurl/tj.gif?
 ```
 
 ### 广告统计计费（重要！）
-<span style="color:red">现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。</span>
+<p style="color:red">现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。</p>
+
+在实验中，如果广告外层元素为display:none，则应该不计费。
 
 
 <div id="examples"></div>
