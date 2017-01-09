@@ -3,6 +3,11 @@
 ## 简介
 mip-experiment是一个用于页面实验的组件。站长通过配置实验变量，达到展示不同页面内容样式的目的。支持通过url配置，强制显示某个实验效果。
 
+## 功能
+1. 支持单个抽样的分组，支持配置单用户在实验期间体验是否统一（用户刷新是否会进不同的实验分组）
+2. 支持配置多个抽样，且配置抽样间是否互相影响（实验一的A组和实验B的A组同时展现）
+3. 支持url强制抽样
+
 ## 技术方案
 ![img](./mip-experiment-1.png)
 
@@ -42,12 +47,26 @@ mip-experiment是一个用于页面实验的组件。站长通过配置实验变
 站长在使用mip-pix组件时加入mip-x-A={mip-x-A-group}参数，在组件中会将mip-x-A-group替换成mip-x-A的分组，拼出最终请求。
 
 ```
+// mip-pix 用法
 <mip-pix src="https://yourselfdomain/mipurl/tj.gif?
     t={TIME}&title={TITLE}&host={HOST}
-    &mip-x-A={mip-x-A-group}&mip-x-B-group={mip-x-B-group}
+    &mip-x-A={MIP-X-A}&mip-x-B={MIP-X-B}
     &from=baidu">
 </mip-pix>
+
+// 产生的mip-pix请求
+https://yourselfdomain/mipurl/tj.gif?
+    TIME=1483961727115&
+    title=%E…%97%E6%AC%A2%E8%BF%8E&
+    host=http%3A%2F%2F172.20.130.52%3A8014%2Ffixed1.html&
+    from=baidu&
+    mip-x-A=groupRed&
+    mip-x-B=groupYellow
 ```
+
+### 广告统计计费（重要！）
+现有广告计费方式为：页面加载后算一次广告展示。页面广告在隐藏元素中或用户未看到广告也算一次展示。
+
 
 ## 站长使用
 例如，站长需要针对广告位A进行抽样，40%显示广告M，40%显示广告N,20%不显示广告。
@@ -91,3 +110,11 @@ body .wrapper-A .N {
     display: none;
 }
 ```
+
+## 未来计划
+1. 修改mip-pix代码，支持统计
+2. 与百度统计合作，支持统计
+3. 广告统计计费方案确认
+3. cookie中确认是否可以增加`mip-experiment=bWlwLWV4cC1BPWdyb3VwQSZtaXAtZXhwLUI9`
+4. 编写用户分组，url抽样，cookie抽样逻辑
+5. 支持实验分组，AB两个实验分组具有相关性
