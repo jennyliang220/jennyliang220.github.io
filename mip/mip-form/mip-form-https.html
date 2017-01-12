@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title><!-- 标题 --></title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    /* 自定义样式 */
+    body {
+        margin: 10px;
+    }
+    input,textarea,select {
+        margin: 5px 0 15px;
+    }
+    </style>
+</head>
+<body>
+    <h2>https 跳转</h2>
+<mip-form method="get" url="https://www.mipengine.org" clear>
+    username=12:
+    <input type="text" name="username1" validatetarget="username" placeholder="姓名">
+    myBrowser=Opera:
+    <input list="datalist1" name="datalist1" />
+    <datalist id="datalist1">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Internet Explorer">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    select1=option21:
+    <select name="select1">
+        <optgroup label="Group 1">
+            <option value="option11">Option 1.1</option>
+        </optgroup> 
+        <optgroup label="Group 2">
+            <option value="option21">Option 2.1</option>
+            <option value="option22">Option 2.2</option>
+        </optgroup>
+        <optgroup label="Group 3" disabled>
+            <option>Option 3.1</option>
+        </optgroup>
+    </select>
+    textarea1=1222:
+    <textarea name="textarea1"></textarea>
+    check1=on：
+    <input type="checkbox" name="check1">
+    check2=123：
+    <input type="checkbox" value="123" name="check2">
+    color1=%23c95a13：
+    <input type="color" name="color1">
+    date1=2017-01-09：
+    <input type="date" name="date1">
+    datetime
+    <input type="datetime" name="datetime1" clear>
+    email：121%40qq.com
+    <input type="email" name="email1" clear>
+    hidden1=haha：
+    <input type="hidden" name="hidden1" value="haha"> <br>
+    month1=2017-01：
+    <input type="month" name="month1">
+    number
+    <input type="number" name="number1" clear>
+    radio1=11：
+    <label>radio1=11<input type="radio" name="radio1" value="11"></label>
+    <label>radio1=12<input type="radio" name="radio1" value="12"></label>
+    range1=48：
+    <input type="range" name="range1">
+    search1=123：
+    <input type="search" name="search1" clear>
+    tel1=123：
+    <input type="tel" name="tel1" clear>
+    time1=12%3A11：
+    <input type="time" name="time1">
+    url1=qqw.com：
+    <input type="url" name="url1" clear>
+    week1=1211-W19：
+    <input type="week" name="week1">
+    <input type="submit" value="提交">
+</mip-form>
+<script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+<script src="mip-form.js"></script>
+</body>
+</html>
