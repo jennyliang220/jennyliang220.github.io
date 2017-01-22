@@ -80,6 +80,7 @@
       }
       .path-input {
         padding: 10px;
+        height: 150px;
       }
     }
     </style>
@@ -146,7 +147,7 @@
             var value = input.value.replace(/\s/g, '') || input.placeholder;
             input.value = value;
 
-            if (!value.match('^http(s)?')) {
+            if (!value.match('^http(s)?://')) {
                 // url没有协议头
                 $('.path-result-error').css('display', 'block');
                 $('.path-result-input').css('display', 'none');
