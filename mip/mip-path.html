@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MIP PATH 转换工具</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="https://www.mipengine.org/validator/static/css/index_5ee6355.css">
+    <style type="text/css">
+    .editor-wrap, textarea {
+      font-size: 16px;
+    }
+    .path-input {
+        width: 100%;
+        padding: 10px 20px;
+        height: 60px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+    
+    .module-validate {
+        padding-bottom: 40px;
+    }
+    
+    .module-validate .editor-wrap {
+        min-height: 400px;
+        background-color: white;
+        padding: 30px 70px;
+        box-sizing: border-box;
+    }
+    
+    .path-submit {
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: #4877ba;
+        border: none;
+        color: white;
+        display: block;
+    }
+    
+    .path-result {
+        font-size: 14px;
+        border-top: 1px solid #ccc;
+        margin-top: 30px;
+        padding-top: 10px;
+        word-break: break-all;
+        line-height: 1.6;
+    }
+    
+    .path-result-label {
+        display: inline-block;
+        width: 85px;
+    }
+    
+    .path-result-error {
+        color: red;
+    }
+    
+    .path-result-error,
+    .path-result-details,
+    .path-result-input {
+        display: none;
+    }
+    @media (max-width:700px) {
+      .top-nav {
+        height: 70px;
+      }
+      .banner .banner-title {
+        font-size: 30px;
+      }
+      .banner .banner-content {
+        font-size: 20px;
+      }
+      .module-validate .editor-wrap {
+        padding: 20px 20px;
+        min-height: 300px;
+      }
+      .path-input {
+        padding: 10px;
+      }
+    }
+    </style>
+</head>
+
+<body class="module-layout">
+    <div class="page-content">
+        <div class="top-nav">
+            <a class="brand" href="./mip-path.html">
+                <img src="/validator/static/img/logo-inverse_fac2cf0.png" alt="logo">
+                <!--  <span> PATH 转换工具 </span> -->
+            </a>
+            <ul>
+                <li><a target="_blank" href="https://www.mipengine.org/">MIP官网</a></li>
+                <li><a target="_blank" href="https://www.mipengine.org/">Path说明</a></li>
+                <li><a href="mailto:mip-support@baidu.com">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="module-validate">
+            <div class="banner">
+                <p class="banner-title">MIP PATH 转换工具</p>
+                <p class="banner-content">MIP页URL &lt;==&gt; 百度结果页URL</p>
+            </div>
+            <div class="editor-wrap">
+                <p>请输入页面地址。当输入为空时，直接转换默认网址</p>
+                <textarea class="path-input" id="path-input" type="url" placeholder="https://m.baidu.com/mip/c/www.mipengine.org/index.html"></textarea>
+                <div class="path-result">
+                    <p class="path-result-error">您输入的url没有http/https协议头，请重新输入。</p>
+                    <p class="path-result-input">您输入的链接类型为：<span id="path-result-type">MIP URL</span></p>
+                    <p class="path-result-details"><span class="path-result-label">MIP页:</span><span id="path-result-mip">https://m.meishij.net/html5/mip/zuofa/huangmenji_9.html</span></p>
+                    <p class="path-result-details"><span class="path-result-label">Cache页:</span><span id="path-result-cache">https://mipcache.bdstatic.com/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html</span></p>
+                    <p class="path-result-details"><span class="path-result-label">百度结果页:</span><span id="path-result-baidu">https://m.baidu.com/mip/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"> Copyright © 2016 </div>
+    <script src="https://www.mipengine.org/validator/static/js/index_11ea975.js"></script>
+    <script>
+    (function() {
+        var form = $('#path-form');
+        // 输入回车时不换行，触发URL转换
+        $('#path-input').on('keydown', function(e) {
+            var keynum = window.event ? e.keyCode : e.which;
+            if (keynum === 13) {
+                $('#path-input').trigger('input');
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+
+        $('#path-input').on('paste', function(e) {
+            $('#path-input')[0].value = '';
+        });
+
+        $('#path-input').on('input', showResult);
+
+        /**
+         * 处理URL, 将转换结果打印在页面上
+         * @param  {Event} e
+         */
+        function showResult(e) {
+            var input = e.target;
+            var value = input.value.replace(/\s/g, '') || input.placeholder;
+            input.value = value;
+
+            if (!value.match('^http(s)?')) {
+                // url没有协议头
+                $('.path-result-error').css('display', 'block');
+                $('.path-result-input').css('display', 'none');
+                $('.path-result-details').css('display', 'none');
+            } else {
+                var result = processUrl(value);
+                $('.path-result-error').css('display', 'none');
+
+                $('#path-result-type').html(result.type);
+                $('#path-result-mip').html(result.mipUrl);
+                $('#path-result-cache').html(result.cacheUrl);
+                $('#path-result-baidu').html(result.baiduUrl);
+
+                $('.path-result-input').css('display', 'block');
+                $('.path-result-details').css('display', 'block');
+            }
+
+            e.preventDefault();
+        };
+
+        /**
+         * 分割Url
+         * @param  {String} url 用户输入的Url
+         * @return {Object}     包含cache-url, baidu-url, mip-url, isHttps信息的对象
+         */
+        function processUrl(url) {
+            var obj = {
+                type: '',
+                mipUrl: '',
+                cacheUrl: '',
+                baiduUrl: '',
+                mainUrl: '',
+                isHttps: false,
+                hasQuery: false
+            };
+            var Cache_prefix = 'https://mipcache.bdstatic.com/c/';
+            var Baidu_prefix = 'https://m.baidu.com/mip/c/';
+            var reg;
+            var regResult;
+
+            if (url.match(Cache_prefix)) {
+                // eg. https://mipcache.bdstatic.com/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html
+                obj.type = 'MIP-Cache Url';
+                reg = new RegExp(Cache_prefix + '(s/)?(\\S+)');
+            } else if (url.match(Baidu_prefix)) {
+                // eg. https://m.baidu.com/mip/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html
+                obj.type = 'Baidu Url';
+                reg = new RegExp(Baidu_prefix + '(s/)?(\\S+)');
+            } else {
+                // eg. https://m.meishij.net/html5/mip/zuofa/huangmenji_9.html
+                obj.type = 'MIP Url';
+                reg = new RegExp('http(s)?://(\\S+)');
+            }
+            regResult = reg.exec(url);
+            if (regResult[1]) {
+                obj.isHttps = true;
+            }
+            obj.mainUrl = decodeRestfulUrl(regResult[2]);
+            obj.mipUrl = 'http' + (obj.isHttps ? 's' : '') + '://' + obj.mainUrl;
+            obj.cacheUrl = Cache_prefix + (obj.isHttps ? 's/' : '') + obj.mainUrl;
+            obj.baiduUrl = Baidu_prefix + (obj.isHttps ? 's/' : '') + encodeRestfulUrl(obj.mainUrl);
+            return obj;
+        }
+
+        function encodeRestfulUrl(url) {
+            var restful = encodeURIComponent(url);
+            restful = restful.replace(/%2F/g, '/');
+            for (var i = 0; i < restful.length; i++) {
+                var char = restful.charAt(i);
+                var nextChar = restful.charAt(i + 1);
+                if (char === '/' && nextChar !== '/') {
+                    continue;
+                }
+                while (restful.charAt(i) === '/' && i < restful.length) {
+                    restful = restful.slice(0, i) + '%2F' + restful.slice(i + 1);
+                    i += 3;
+                }
+            }
+            return restful;
+        }
+
+        function decodeRestfulUrl(url) {
+            var u = url.replace(new RegExp('/', 'g'), '%2F');
+            return decodeURIComponent(u);
+        }
+    }());
+    </script>
+</body>
+
+</html>
