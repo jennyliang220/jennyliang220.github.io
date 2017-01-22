@@ -154,6 +154,7 @@
                 $('.path-result-details').css('display', 'none');
             } else {
                 var result = processUrl(value);
+                if (!result) return;
                 $('.path-result-error').css('display', 'none');
 
                 $('#path-result-type').html(result.type);
@@ -202,6 +203,7 @@
                 reg = new RegExp('http(s)?://(\\S+)');
             }
             regResult = reg.exec(url);
+            if (!regResult) return false;
             if (regResult[1]) {
                 obj.isHttps = true;
             }
