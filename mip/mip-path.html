@@ -56,7 +56,9 @@
     .path-result-error {
         color: red;
     }
-    
+    .path-result-url {
+        color: purple;
+    }
     .path-result-error,
     .path-result-details,
     .path-result-input {
@@ -203,9 +205,9 @@
                 obj.isHttps = true;
             }
             obj.mainUrl = decodeRestfulUrl(regResult[2]);
-            obj.mipUrl = 'http' + (obj.isHttps ? 's' : '') + '://' + obj.mainUrl;
-            obj.cacheUrl = Cache_prefix + (obj.isHttps ? 's/' : '') + obj.mainUrl;
-            obj.baiduUrl = Baidu_prefix + (obj.isHttps ? 's/' : '') + encodeRestfulUrl(obj.mainUrl);
+            obj.mipUrl = 'http' + (obj.isHttps ? 's' : '') + '://' + '<span class="path-result-url">' + obj.mainUrl + '</span>';
+            obj.cacheUrl = Cache_prefix + (obj.isHttps ? 's/' : '') + '<span class="path-result-url">'+ obj.mainUrl+ '</span>';
+            obj.baiduUrl = Baidu_prefix + (obj.isHttps ? 's/' : '') + '<span class="path-result-url">'+ encodeRestfulUrl(obj.mainUrl)+ '</span>';
             return obj;
         }
 
