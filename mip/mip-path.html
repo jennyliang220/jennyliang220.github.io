@@ -144,10 +144,11 @@
          */
         function showResult(e) {
             var input = e.target;
-            var value = input.value.replace(/\s/g, '') || input.placeholder;
+            var value = input.value.replace(/\s/g, '');
             input.value = value;
+            value = value || input.placeholder
 
-            if (!value.match('^http(s)?://')) {
+            if (!value.indexOf('^http(s)?://') == 0) {
                 // url没有协议头
                 $('.path-result-error').css('display', 'block');
                 $('.path-result-input').css('display', 'none');
@@ -189,11 +190,11 @@
             var reg;
             var regResult;
 
-            if (url.match(Cache_prefix)) {
+            if (url.indexOf(Cache_prefix) == 0) {
                 // eg. https://mipcache.bdstatic.com/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html
                 obj.type = 'MIP-Cache Url';
                 reg = new RegExp(Cache_prefix + '(s/)?(\\S+)');
-            } else if (url.match(Baidu_prefix)) {
+            } else if (url.indexOf(Baidu_prefix) == 0) {
                 // eg. https://m.baidu.com/mip/c/s/m.meishij.net/html5/mip/zuofa/huangmenji_9.html
                 obj.type = 'Baidu Url';
                 reg = new RegExp(Baidu_prefix + '(s/)?(\\S+)');
