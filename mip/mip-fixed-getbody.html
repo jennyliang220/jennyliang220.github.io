@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="always">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>get body of fixed</title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    /* 自定义样式 */
+    mip-fixed {
+        padding:30px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+<!-- 正文 -->
+在superframe下获取本页面body。页面使用了mip-fixed元素，会存在双body情况
+<br><br>
+<mip-fixed type='bottom'>11111111</mip-fixed>
+
+<script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-fixed/mip-fixed.js"></script>
+<script>
+    (function() {
+        window.setTimeout(function() {
+            console.log(document.body);
+            console.log(document.getElementsByTagName('body')[0]);
+        },100)
+    })();
+</script>
+</body>
+</html>
