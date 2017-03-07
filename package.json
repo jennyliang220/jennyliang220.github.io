@@ -1,0 +1,22 @@
+{
+  "name": "jennyliang.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "git add -A && git commit -m 'update'&& git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennyliang220/jennyliang.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennyliang220/jennyliang.github.io/issues"
+  },
+  "homepage": "https://github.com/jennyliang220/jennyliang.github.io#readme"
+}
