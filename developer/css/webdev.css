@@ -73,12 +73,22 @@ h4 {
 
 .section-header .btn.btn-link {
     color: rgba(255, 255, 255, 0.8);
+    flex-grow: 0;
+    line-height: 1rem;
 }
 
 .section-header .btn.btn-link:hover {
     color: rgb(255, 255, 255);
 }
 
+.section-header .navbar-title {
+	flex: 0 0;
+	background:rgba(0,0,0,0.3);
+}
+.section-header .navbar-links {
+	flex: 1 0;
+	background: rgba(255,255,255,0.3);
+}
 .section-header .navbar .navbar-brand {
     font-size: 2rem;
     position: relative;
@@ -112,6 +122,9 @@ h4 {
 .section-header .nav-icon:after {
     transform: rotate(-60deg);
 }
+.section-header .nav-more {
+	flex: 1 0;
+}
 
 .section-header .input-group-btn {
     background: #f8f8f8;
@@ -124,7 +137,8 @@ h4 {
     border-color: #c4c9d3;
 }
 .section-header .input-wrap {
-	text-align: right;
+	flex: 0 0;
+	min-width: 20rem;
 }
 .section-header .input-group-btn:hover,
 .section-header .input-group-btn:active,
@@ -202,7 +216,7 @@ h4 {
     }
     .section-header .navbar {
     	transition: height 0.2s;
-    }
+    }s
     .section-header .navbar .navbar-brand {
     	top: 2px;
     }
@@ -210,9 +224,10 @@ h4 {
     	text-align: left;
 	}
 	.section-header .input-wrap {
-		text-align: left;
+		
 	}
 	.section-header .nav-more {
 		width: 100%;
+		flex: none;
 	}
 }
