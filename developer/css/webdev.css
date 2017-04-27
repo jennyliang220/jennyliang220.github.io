@@ -74,7 +74,6 @@ h4 {
 .section-header .btn.btn-link {
     color: rgba(255, 255, 255, 0.8);
     flex-grow: 0;
-    line-height: 1rem;
 }
 
 .section-header .btn.btn-link:hover {
@@ -83,16 +82,14 @@ h4 {
 
 .section-header .navbar-title {
 	flex: 0 0;
-	background:rgba(0,0,0,0.3);
 }
 .section-header .navbar-links {
 	flex: 1 0;
-	background: rgba(255,255,255,0.3);
 }
 .section-header .navbar .navbar-brand {
     font-size: 2rem;
     position: relative;
-    top: 7px;
+    top: 2px;
 }
 
 .section-header .nav-icon,
@@ -104,7 +101,7 @@ h4 {
     border-radius: 50%;
     position: relative;
     display: inline-block;
-    top: 5px;
+    top: 1px;
 }
 
 .section-header .nav-icon:before,
@@ -125,6 +122,11 @@ h4 {
 .section-header .nav-more {
 	flex: 1 0;
 }
+.section-header .nav-pc {
+	display: flex;
+	flex: 1 0;
+	padding: 0.5rem 0;
+}
 
 .section-header .input-group-btn {
     background: #f8f8f8;
@@ -132,18 +134,27 @@ h4 {
     color: #0972a0;
     font-weight: 500;
 }
-
+.section-header .form-input {
+	background-color: rgba(255,255,255,0);
+	color: white;
+}
+.section-header .input-group-btn {
+	background-color: rgba(255,255,255,0.7);
+}
 .section-header .form-input:focus {
     border-color: #c4c9d3;
+    background-color: white; 
+    color: #666;
+    box-shadow: none;
 }
 .section-header .input-wrap {
 	flex: 0 0;
-	min-width: 20rem;
+	min-width: 18.9rem;
 }
 .section-header .input-group-btn:hover,
 .section-header .input-group-btn:active,
 .section-header .input-group-btn:focus {
-    background: #ddd;
+    background: white;
 }
 
 .section-header .right {
@@ -222,6 +233,7 @@ h4 {
     }
     .section-header .btn.btn-link {
     	text-align: left;
+    	line-height: 1;
 	}
 	.section-header .input-wrap {
 		

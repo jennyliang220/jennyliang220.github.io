@@ -13,8 +13,8 @@
      * 菜单的展开收起
      */
     function toggleNav() {
-    	var nav = document.querySelector('.nav-more');
-        util.toggleClass(nav, 'hide-md');
+    	var nav = document.querySelector('.nav-wise');
+        util.toggleClass(nav, 'hide');
     }
 
     /**
