@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title><!-- 标题 --></title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    #logo, .mip-button {
+    	    background: red;
+    display: inline-block;
+    padding: 1rem;
+    }
+
+    </style>
+</head>
+<body>
+<!-- 正文 -->
+<header>
+    <div id="hamburger" class="mip-button" on="tap:sidebar.open">
+        <div id="logo" href="/">Open mip-sidebar</div>
+    </div>
+</header>
+<mip-sidebar 
+    id='sidebar'
+    layout="nodisplay"
+    class="mip-hidden">
+    <ul>
+      <li>
+        <mip-link href="#">Home</mip-link>
+        <button class="mip-button" on="tap:sidebar.close"> X </button>
+      </li>
+      <li> Nav item 1</li>
+      <li>
+        <mip-fit-text width="220"
+            height="20"
+            layout="responsive"
+            max-font-size="24">
+          Nav item 2 - &lt;mip-fit-text&gt;
+        </mip-fit-text>
+      </li>
+      <li>
+        <mip-fit-text width="220"
+            height="20"
+            layout="responsive"
+            max-font-size="24">
+          Nav item 3 - &lt;mip-fit-text&gt; longer text
+        </mip-fit-text>
+      </li>
+      <li> Nav item 4 - Image
+        <mip-img class='mip-sidebar-image'
+            src="http://placeholder.qiniudn.com/100x50"
+            width="20"
+            height="20"
+            alt="an image"></mip-img>
+      </li>
+      <li> Nav item 5</li>
+      <li> Nav item 6</li>
+      </ul>
+</mip-sidebar>
+
+<script src="mip.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-sidebar/mip-sidebar.js"></script>
+
+</body>
+</html>

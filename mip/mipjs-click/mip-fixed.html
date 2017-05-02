@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title><!-- 标题 --></title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    mip-fixed {
+    	background-color: rgba(0,0,0,0.3)
+    }
+   .mip-button {
+    	    background: red;
+    display: inline-block;
+    padding: 1rem;
+    }
+    .holder {
+    	height: 300px;
+    	border-bottom: 1px solid #eee;
+    }
+    </style>
+</head>
+<body>
+<!-- 正文 -->
+<mip-fixed type="top" id="customid">
+  <div>我是顶部的fixed</div>
+  <div class="mip-button" on="tap:customid.close">我是关闭按钮</div>
+</mip-fixed>
+<div class='holder'>占位div</div>
+<div class='holder'>占位div</div>
+<div class='holder'>占位div</div>
+<div class='holder'>占位div</div>
+<div class='holder'>占位div</div>
+<div class='holder'>占位div</div>
+
+
+<script src="mip.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-fixed/mip-fixed.js"></script>
+
+</body>
+</html>
