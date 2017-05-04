@@ -1,5 +1,7 @@
 /*全局*/
-
+body {
+    color: rgba(0,0,0,0.8);
+}
 img {
     width: 100%;
 }
@@ -33,7 +35,7 @@ h3 {
 h4 {
     font-size: 1.8rem;
     font-weight: 500;
-    color: #0972a0;
+    color: #a0781f;;
 }
 
 .pt-40 {
@@ -63,7 +65,7 @@ h4 {
     top: 0;
     z-index: 200;
     width: 100%;
-    background: #0972a0;
+    background: #67521c;
     white-space: nowrap;
 }
 
@@ -181,21 +183,61 @@ h4 {
 
 
 /*正文部分 container*/
-
-.container-main {
-    margin-top: 7rem;
+.container-fundamentals {
+    padding: 7rem 0 5rem;
+    background-color: #fbe7bc;
 }
 
-.container-main .img-7 {
+.container-fundamentals .main-btn {
+    color: #ffffff;
+    font-weight: 500;
+    background: #ad8623;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.container-fundamentals  .main-btn:hover {
+    cursor: pointer;
+    background-color: #cda643;
+}
+
+.img-7 {
     width: 7rem;
     position: absolute;
 }
 
-.container-main .img-right {
+.img-right {
     margin-left: 8.5rem;
     display: inline-block;
 }
+#news .news-time {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+#news .news-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+}
+#news .news-title:hover {
+    color: black;
+}
 
+#solutions {
+    background: #eee;
+}
+#solutions video {
+    background: #333;
+    background-clip: content-box;
+}
+.content-16-9 {
+    height: 0;
+    padding-bottom: 56%;
+}
 
 /*正文补充部分 .more-wrapper*/
 
@@ -219,6 +261,7 @@ h4 {
 .footer-wrapper a:hover {
     text-decoration: underline;
 }
+
 
 @media screen and (max-width: 840px) {
     .section-header .nav-icon{
