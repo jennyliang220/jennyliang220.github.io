@@ -35,7 +35,8 @@ h3 {
 h4 {
     font-size: 1.8rem;
     font-weight: 500;
-    color: #a0781f;;
+    color: #a0781f;
+    margin-bottom: 0.5rem;
 }
 
 .pt-40 {
@@ -131,22 +132,22 @@ h4 {
 }
 
 .section-header .input-group-btn {
-    background: #f8f8f8;
+    background: transparent;
     border-color: #c4c9d3;
-    color: #0972a0;
+    color: rgba(255,255,255,0.5);
     font-weight: 500;
+    left: -4rem;
+    position: relative;
+    z-index: 2;
 }
 .section-header .form-input {
 	background-color: rgba(255,255,255,0);
 	color: white;
-}
-.section-header .input-group-btn {
-	background-color: rgba(255,255,255,0.7);
+    padding-right: 4rem;
 }
 .section-header .form-input:focus {
     border-color: #c4c9d3;
-    background-color: white; 
-    color: #666;
+    color: white;
     box-shadow: none;
 }
 .section-header .input-wrap {
@@ -156,7 +157,7 @@ h4 {
 .section-header .input-group-btn:hover,
 .section-header .input-group-btn:active,
 .section-header .input-group-btn:focus {
-    background: white;
+    color: rgba(255,255,255,1);
 }
 
 .section-header .right {
