@@ -39,10 +39,6 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
-.pt-40 {
-    padding-top: 4rem;
-}
-
 .column.col-45,
 .column.col-35 {
     -webkit-flex: none;
@@ -133,7 +129,7 @@ h4 {
 
 .section-header .input-group-btn {
     background: transparent;
-    border-color: #c4c9d3;
+    border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255,255,255,0.5);
     font-weight: 500;
     left: -4rem;
@@ -144,6 +140,7 @@ h4 {
 	background-color: rgba(255,255,255,0);
 	color: white;
     padding-right: 4rem;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 .section-header .form-input:focus {
     border-color: #c4c9d3;
@@ -213,8 +210,16 @@ h4 {
     margin-left: 8.5rem;
     display: inline-block;
 }
+.container-news {
+    background: #222;
+    color: #ccc;
+    padding: 4rem 0;
+}
+.container-news h4{
+    color: #cda643;
+}
 #news .news-time {
-    color: #666;
+    color: #999;
     font-size: 1.2rem;
     line-height: 1rem;
 }
@@ -225,19 +230,19 @@ h4 {
     margin-bottom: 0.5rem;
 }
 #news .news-title:hover {
-    color: black;
+    color: white;
 }
 
-#solutions {
-    background: #eee;
-}
-#solutions video {
-    background: #333;
-    background-clip: content-box;
+#container-solutions{
+    padding: 3rem 0;
 }
 .content-16-9 {
     height: 0;
     padding-bottom: 56%;
+}
+#container-tools{
+    padding: 3rem 0;
+    background: #f3f3f3;
 }
 
 /*正文补充部分 .more-wrapper*/
