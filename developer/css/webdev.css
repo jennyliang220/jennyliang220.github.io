@@ -35,7 +35,7 @@ h3 {
 h4 {
     font-size: 1.8rem;
     font-weight: 500;
-    color: #a0781f;
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
@@ -62,7 +62,7 @@ h4 {
     top: 0;
     z-index: 200;
     width: 100%;
-    background: #67521c;
+    background: rgba(0,0,0,0.8);
     white-space: nowrap;
 }
 
@@ -183,13 +183,13 @@ h4 {
 /*正文部分 container*/
 .container-fundamentals {
     padding: 7rem 0 5rem;
-    background-color: #fbe7bc;
+    background-color: #f9f9f9;
 }
 
 .container-fundamentals .main-btn {
     color: #ffffff;
-    font-weight: 500;
-    background: #ad8623;
+    font-weight: 300;
+    background: #a7437b;
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -198,7 +198,7 @@ h4 {
 }
 .container-fundamentals  .main-btn:hover {
     cursor: pointer;
-    background-color: #cda643;
+    background-color: #73415e;
 }
 
 .img-7 {
@@ -211,15 +211,15 @@ h4 {
     display: inline-block;
 }
 .container-news {
-    background: #222;
-    color: #ccc;
+    background: #5e6c7b;
+    color: white;
     padding: 4rem 0;
 }
 .container-news h4{
-    color: #cda643;
+    color: #fff;
 }
 #news .news-time {
-    color: #999;
+    color: #aaa;
     font-size: 1.2rem;
     line-height: 1rem;
 }
@@ -228,9 +228,11 @@ h4 {
     font-weight: 300;
     line-height: 2rem;
     margin-bottom: 0.5rem;
+    transition: color 0.2s;
+    -webkit-transition: color 0.2s;
 }
 #news .news-title:hover {
-    color: white;
+    color: #ddd;
 }
 
 #container-solutions{
