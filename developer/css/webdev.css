@@ -132,14 +132,12 @@ h4 {
     border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255,255,255,0.5);
     font-weight: 500;
-    left: -4rem;
     position: relative;
     z-index: 2;
 }
 .section-header .form-input {
 	background-color: rgba(255,255,255,0);
 	color: white;
-    padding-right: 4rem;
     border-color: rgba(255, 255, 255, 0.3);
 }
 .section-header .form-input:focus {
