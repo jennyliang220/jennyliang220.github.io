@@ -80,6 +80,7 @@ h4 {
 
 .section-header .navbar-title {
 	flex: 0 0;
+    min-width: 200px;
 }
 .section-header .navbar-links {
 	flex: 1 0;
