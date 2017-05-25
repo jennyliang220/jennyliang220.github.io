@@ -3462,6 +3462,14 @@ define('utils/fn', ['require'], function (require) {
             obj[key] = undefined;
         }
     }
+    /**
+     * if window has Touch event(is mobile) or not (is PC)
+     *
+     * @return {boolean} if window has Touch event(is mobile) or not (is PC)
+     */
+    function hasTouch() {
+        return 'ontouchstart' in window || window.navigator.maxTouchPoints !== undefined && window.navigator.maxTouchPoints > 0 || window.DocumentTouch !== undefined;
+    }
     return {
         throttle: throttle,
         values: values,
@@ -3469,7 +3477,8 @@ define('utils/fn', ['require'], function (require) {
         pick: pick,
         isPlainObject: isPlainObject,
         isString: isString,
-        del: del
+        del: del,
+        hasTouch: hasTouch
     };
 });
 
@@ -3660,7 +3669,6 @@ define('utils/platform', ['require'], function (require) {
         // system
         this.isIos = false;
         this.isAndroid = false;
-        this.isPc = false;
         // browser
         this.isWechatApp = false;
         this.isBaiduApp = false;
@@ -3687,8 +3695,6 @@ define('utils/platform', ['require'], function (require) {
             this.isIos = true;
         } else if (/Android/i.test(this._ua())) {
             this.isAndroid = true;
-        } else if (!/Mobile/i.test(this._ua())) {
-            this.isPc = true;
         }
     };
     /**
@@ -4665,7 +4671,7 @@ define('utils/gesture/gesture-recognizer', [
             if (data.eventState === 'start') {
                 clearTimeout(this.holdTimer);
             }
-            if (data.eventState !== 'end' && data.eventState !== 'click') {
+            if (data.eventState !== 'end') {
                 return STATE_WAIT;
             }
             var holdTime = this.preTime && data.timeStamp - this.preTime;
@@ -4842,23 +4848,11 @@ define('utils/gesture/data-processor', [], function () {
          */
         process: function (event, preventX, preventY) {
             var data = {};
-            if (event.type == 'click') {
-                event.touches = [];
-                event.touches[0] = {
-                    clientX: event.clientX,
-                    clientY: event.clientY
-                };
-            }
             var now = Date.now();
             var touches = event.touches.length ? event.touches : event.changedTouches;
             if (event.type === 'touchstart') {
                 this.startCenter = this.getCenter(touches);
                 this.startTime = now;
-                this.startData = data;
-                this.preData = null;
-            } else if (event.type === 'click') {
-                this.startCenter = this.getCenter(touches);
-                this.startTime = now - 1;
                 this.startData = data;
                 this.preData = null;
             }
@@ -4962,15 +4956,13 @@ define('utils/gesture', [
     './event-emitter',
     './gesture/gesture-recognizer',
     './gesture/data-processor',
-    './fn',
-    'utils/platform'
+    './fn'
 ], function (require) {
     'use strict';
     var EventEmitter = require('./event-emitter');
     var Recognizer = require('./gesture/gesture-recognizer');
     var dataProcessor = require('./gesture/data-processor');
     var fn = require('./fn');
-    var platform = require('utils/platform');
     /**
      * Handle touch event.
      * @inner
@@ -5023,7 +5015,6 @@ define('utils/gesture', [
          */
         this._boundTouchEvent = touchHandler.bind(this);
         listenersHelp(element, 'touchstart touchmove touchend touchcancel', this._boundTouchEvent);
-        platform.isPc() ? listenersHelp(element, 'click', this._boundTouchEvent) : '';
         /**
          * For storing the recoginzers.
          * @private
@@ -5049,7 +5040,6 @@ define('utils/gesture', [
     proto.cleanup = function () {
         var element = this._element;
         listenersHelp(element, 'touchstart touchmove touchend touchcancel', this._boundTouchEvent, false);
-        platform.isPc() ? listenersHelp(element, 'click', this._boundTouchEvent, false) : '';
         this.off();
     };
     /**
@@ -6229,6 +6219,140 @@ define('utils/event-action', [
 });
 
 // ======================
+// src/sleepWakeModule.js
+// ======================
+
+
+define('sleepWakeModule', ['require'], function (require) {
+    'use strict';
+    /**
+     * The mip viewer.Complement native viewer, and solve the page-level problems.
+     */
+    function SleepWakeModule() {
+        this._domObj = {};
+        this._isAlreadyWake = {};
+    }
+    /**
+     * The initialise method of sleepWakeModule
+     */
+    SleepWakeModule.prototype.init = function () {
+        var confCon = '';
+        try {
+            var moduleConf = document.querySelector('#mip-sleep-wake-module');
+            confCon = JSON.parse(moduleConf.textContent);
+        } catch (e) {
+            return;
+        }
+        if (!confCon) {
+            return;
+        }
+        this._initConf('||', confCon);
+        // init
+        for (var key in confCon) {
+            this._stateChange(key, true);
+        }
+    };
+    /**
+     * init page conf.
+     * @param {string} split
+     * @param {Object} confContent
+     */
+    SleepWakeModule.prototype._initConf = function (split, confContent) {
+        // default value
+        split = split || '||';
+        for (var key in confContent) {
+            var val = confContent[key];
+            var valList = val.split(split);
+            var len = valList.length;
+            this._domObj[key] = [];
+            for (var i = 0; i < len; i++) {
+                try {
+                    var idx = i;
+                    var sleepDom = document.querySelector(valList[i]);
+                    var domInfo = {
+                        par: sleepDom.parentNode,
+                        cln: 'mip-sleep-wake-textarea-' + key + '-' + idx
+                    };
+                    sleepDom.setAttribute('data-cln', domInfo.cln);
+                    this._domObj[key].push(domInfo);
+                } catch (e) {
+                    continue;
+                }
+            }
+        }
+    };
+    /**
+     * wake the doms which are sleeped in conf by key
+     * @param {string} key
+     */
+    SleepWakeModule.prototype.wake = function (key) {
+        this._stateChange(key);
+        this._close(key);
+    };
+    /**
+     * reset the stutas of doms by the key
+     * @param {string} key
+     */
+    SleepWakeModule.prototype.reset = function (key) {
+        this._isAlreadyWake[key] = 0;
+    };
+    /**
+     * close the operation of doms by the key
+     * @param {string} key
+     */
+    SleepWakeModule.prototype._close = function (key) {
+        this._isAlreadyWake[key] = 1;
+    };
+    /**
+     * change the status of doms by paras[key, isSleep]
+     * @param {string} key
+     * @param {Boolean} isSleep
+     */
+    SleepWakeModule.prototype._stateChange = function (key, isSleep) {
+        if (!key) {
+            return;
+        }
+        var domList = this._domObj[key];
+        if (!domList) {
+            return;
+        }
+        var len = domList.length;
+        if (len < 1) {
+            return;
+        }
+        for (var i = 0; i < len; i++) {
+            var sleepDom = domList[i];
+            if (isSleep && !this._isAlreadyWake[key]) {
+                var self = sleepDom.par && sleepDom.cln ? sleepDom.par.querySelector('[data-cln=' + sleepDom.cln + ']') : null;
+                var parent = sleepDom.par;
+                var tmpTextArea = document.createElement('textarea');
+                var idx = i;
+                if (self && self.tagName.toLowerCase() === 'textarea') {
+                    continue;
+                }
+                if (!self) {
+                    continue;
+                }
+                tmpTextArea.textContent = self.outerHTML;
+                tmpTextArea.style.display = 'none';
+                tmpTextArea.setAttribute('data-cln', sleepDom.cln);
+                self.outerHTML = tmpTextArea.outerHTML;
+            }
+            if (!isSleep && !this._isAlreadyWake[key]) {
+                var par = sleepDom.par;
+                if (par) {
+                    var tmpdom = par.querySelector('[data-cln=' + sleepDom.cln + ']');
+                    if (tmpdom && tmpdom.tagName.toLowerCase() === 'textarea') {
+                        tmpdom.outerHTML = tmpdom.textContent;
+                    }
+                }
+            }
+        }
+    };
+    return new SleepWakeModule();
+});
+
+// ======================
 // src/dom/css-loader.js
 // ======================
 
@@ -6585,7 +6709,7 @@ define('fixed-element', [
      * Initializition of current fixed element processor.
      */
     FixedElement.prototype.init = function () {
-        var mipFixedElements = document.querySelectorAll('mip-fixed');
+        var mipFixedElements = document.querySelectorAll('mip-fixed, mip-semi-fixed');
         this.setFixedElement(mipFixedElements);
         var fixedLen = this._fixedElements.length;
         var hasParentPage = window.parent !== window;
@@ -6613,9 +6737,17 @@ define('fixed-element', [
             // check invalid element and delete from document
             var bottom = layout.parseLength(ele.getAttribute('bottom'));
             var top = layout.parseLength(ele.getAttribute('top'));
-            if (fType === 'left' && !top && !bottom || this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop') {
+            if (fType === 'left' && !top && !bottom || this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop' || ele.tagName.toLowerCase() !== 'mip-semi-fixed' && ele.tagName.toLowerCase() !== 'mip-fixed') {
                 ele.parentElement.removeChild(ele);
                 continue;
+            }
+            // mip-semi-fixed 特殊处理，复制不移动
+            if (ele.tagName.toLowerCase() === 'mip-semi-fixed') {
+                if (!ele.id) {
+                    ele.id = 'mip-semi-fixed' + i;
+                }
+                var node = ele.cloneNode(true);
+                ele.parentNode.insertBefore(node, ele);
             }
             // Calculate z-index based on the declared z-index and DOM position.
             css(ele, { 'z-index': 10000 - i });
@@ -7137,16 +7269,20 @@ define('customElement', [
 define('viewer', [
     'require',
     './util',
+    './viewport',
     './utils/event-action',
-    './utils/event-emitter'
+    './utils/event-emitter',
+    './utils/fn'
 ], function (require) {
     'use strict';
     var util = require('./util');
+    var viewport = require('./viewport');
     var Gesture = util.Gesture;
     var css = util.css;
     var platform = util.platform;
     var EventAction = require('./utils/event-action');
     var EventEmitter = require('./utils/event-emitter');
+    var fn = require('./utils/fn');
     /**
      * Save window.
      * @inner
@@ -7172,6 +7308,7 @@ define('viewer', [
                 this.patchForIframe();
                 // proxy links
                 this._proxyLink();
+                this._viewportScroll();
                 // Tell parent page the current page is loaded.
                 this.sendMessage('mippageload', {
                     time: Date.now(),
@@ -7245,10 +7382,19 @@ define('viewer', [
          * Setup event-action of viewer. To handle `on="tap:xxx"`.
          */
         setupEventAction: function () {
+            var hasTouch = fn.hasTouch();
             var eventAction = this.eventAction = new EventAction();
-            this._gesture.on('tap', function (event) {
-                eventAction.execute('tap', event.target, event);
-            });
+            if (hasTouch) {
+                // In mobile phone, bind Gesture-tap which listen to touchstart/touchend event
+                this._gesture.on('tap', function (event) {
+                    eventAction.execute('tap', event.target, event);
+                });
+            } else {
+                // In personal computer, bind click event, then trigger event. eg. `on=tap:sidebar.open`, when click, trigger open() function of #sidebar
+                document.addEventListener('click', function (e) {
+                    eventAction.execute('tap', event.target, event);
+                }, false);
+            }
         },
         /**
          * Event binding callback.
@@ -7264,13 +7410,60 @@ define('viewer', [
             }
         },
         /**
+         * Listerning viewport scroll
+         * @private
+         */
+        _viewportScroll: function () {
+            var self = this;
+            var dist = 0;
+            var direct = 0;
+            var scrollTop = viewport.getScrollTop();
+            var lastDirect = 0;
+            var scrollHeight = viewport.getScrollHeight();
+            var lastScrollTop = 0;
+            var wrapper = util.platform.needSpecialScroll ? document.body : win;
+            wrapper.addEventListener('touchstart', function (event) {
+                scrollTop = viewport.getScrollTop();
+                scrollHeight = viewport.getScrollHeight();
+            });
+            function pagemove() {
+                scrollTop = viewport.getScrollTop();
+                scrollHeight = viewport.getScrollHeight();
+                if (scrollTop > 0 && scrollTop < scrollHeight) {
+                    if (lastScrollTop < scrollTop) {
+                        // down
+                        direct = 1;
+                    } else if (lastScrollTop > scrollTop) {
+                        // up
+                        direct = -1;
+                    }
+                    dist = lastScrollTop - scrollTop;
+                    lastScrollTop = scrollTop;
+                    if (dist > 10 || dist < -10) {
+                        // 转向判断，暂时没用到，后续升级需要
+                        lastDirect = dist / Math.abs(dist);
+                        self.sendMessage('mipscroll', {
+                            'direct': direct,
+                            'dist': dist
+                        });
+                    }
+                }
+            }
+            wrapper.addEventListener('touchmove', function (event) {
+                pagemove();
+            });
+            wrapper.addEventListener('touchend', function (event) {
+                pagemove();
+            });
+        },
+        /**
          * Agent all the links in iframe.
          * @private
          */
         _proxyLink: function () {
             var self = this;
             var regexp = /^http/;
-            util.event.delegate(document.body, 'a', 'click', function (e) {
+            util.event.delegate(document, 'a', 'click', function (e) {
                 if (!this.href) {
                     return;
                 }
@@ -7853,18 +8046,20 @@ define('templates', [], function () {
             }
             return Template.prototype.isPrototypeOf(obj.prototype);
         },
-        render: function (element, data) {
-            var template = this.find(element);
+        render: function (element, data, obj) {
+            var self = this;
+            var template = self.find(element);
             if (!template) {
                 return;
             }
             var type = template.getAttribute('type');
             var templateHTML = template.innerHTML;
-            return this._getTemplate(type).then(function (impl) {
+            return self._getTemplate(type).then(function (impl) {
                 if (!template[CACHED_ATTR]) {
                     template[CACHED_ATTR] = true;
                     impl.cache(templateHTML);
                 }
+                data = self.extendFun(data);
                 // array
                 if (Array.isArray(data)) {
                     if (data.length === 0) {
@@ -7873,6 +8068,13 @@ define('templates', [], function () {
                     return data.map(function (item) {
                         return impl.render(templateHTML, item);
                     });
+                }
+                // cb
+                if (obj) {
+                    return {
+                        element: element,
+                        html: impl.render(templateHTML, data)
+                    };
                 }
                 // html
                 return impl.render(templateHTML, data);
@@ -7895,6 +8097,20 @@ define('templates', [], function () {
                 return null;
             }
             return template;
+        },
+        extendFun: function (data) {
+            try {
+                data.escape2Html = function () {
+                    return function (text, render) {
+                        return render(text).replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&#x2F;/gi, '/');
+                    };
+                };
+                data.isSF = function () {
+                    return this.urltype === 'sf';
+                };
+            } catch (e) {
+            }
+            return data;
         },
         inheritTemplate: function () {
             function inheritor() {
@@ -7925,13 +8141,30 @@ define('hash', ['require'], function (require) {
      * @class
      */
     function Hash() {
+        // init sessionStorage status
+        this.ssEnabled = ssEnabled();
+        this.pageId = window.location.href.split('#').shift();
+        var hash = window.location.hash;
+        if (this.ssEnabled) {
+            var ssHash = window.sessionStorage.getItem(this.pageId) || '';
+            // add the window.location.hash
+            hash = ssHash + hash;
+        }
+        this.hashTree = this._getHashObj(hash);
+        // if hash is exist, try storage the value into sessionStroage
+        if (hash) {
+            var curHash = this._getHashValue();
+            if (this.ssEnabled) {
+                window.sessionStorage.setItem(this.pageId, curHash);
+            }
+            window.location.hash = curHash;
+        }
         /**
          * get hash value of specific key
          *
          * @param  {string} key key
          * @return {value}     [description]
          */
-        this.hashTree = this._getHashObj(window.location.hash);
         this.get = function (key) {
             return this.hashTree[key] || '';
         };
@@ -7952,8 +8185,12 @@ define('hash', ['require'], function (require) {
     Hash.prototype._getHashObj = function (originalHash) {
         var hashObj = {};
         if (originalHash) {
-            var hashArr = originalHash.slice(1).split('&');
-            for (var i = 0; i < hashArr.length; i++) {
+            var hashVal;
+            var tmpList = originalHash.split('#');
+            hashVal = tmpList.join('&');
+            var hashArr = hashVal.split('&');
+            var haLen = hashArr.length;
+            for (var i = 0; i < haLen; i++) {
                 var curOne = hashArr[i];
                 var eqIdx = curOne.indexOf('=');
                 var key;
@@ -7966,12 +8203,39 @@ define('hash', ['require'], function (require) {
                     val = '';
                 }
                 if (key) {
+                    // rewrite the Repeat Key
                     hashObj[key] = val;
                 }
             }
         }
         return hashObj;
     };
+    /**
+     * get hash value from hash tree
+     *
+     * @return {string} hash
+     */
+    Hash.prototype._getHashValue = function () {
+        var hashTree = this.hashTree;
+        var hash = '';
+        for (var key in hashTree) {
+            var val = hashTree[key];
+            hash += '&' + key + '=' + encodeURIComponent(val);
+        }
+        return hash.slice(1);
+    };
+    /**
+     * test ss is available
+     */
+    function ssEnabled() {
+        try {
+            window.sessionStorage.setItem('_t', 1);
+            window.sessionStorage.removeItem('_t');
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
     return new Hash();
 });
 
@@ -8084,6 +8348,10 @@ define('components/mip-img', [
         });
     };
     function firstInviewCallback() {
+        var ele = this.element.querySelector('img');
+        if (ele && ele.length > 0) {
+            return;
+        }
         var _img = new Image();
         this.applyFillContent(_img, true);
         var ele = this.element;
@@ -8393,10 +8661,6 @@ define('components/mip-carousel', [
             slideLock.stop = 0;
         }, false);
         wrapBox.addEventListener('touchend', function (event) {
-            // 如果不是图片的时候应该阻止事件
-            if (event.target.tagName.toLocaleLowerCase() !== 'img') {
-                event.preventDefault();
-            }
             //  只有滑动之后才会触发
             if (!slideLock.stop) {
                 var startIdx = imgIndex;
@@ -8469,7 +8733,7 @@ define('components/mip-carousel', [
         }
         // 绑定按钮切换事件
         function bindBtn() {
-            ele.querySelector('.mip-carousel-preBtn').addEventListener('touchend', function (event) {
+            ele.querySelector('.mip-carousel-preBtn').addEventListener('click', function (event) {
                 if (!btnLock.stop) {
                     return;
                 }
@@ -8481,7 +8745,7 @@ define('components/mip-carousel', [
                     autoPlay();
                 }
             }, false);
-            ele.querySelector('.mip-carousel-nextBtn').addEventListener('touchend', function (event) {
+            ele.querySelector('.mip-carousel-nextBtn').addEventListener('click', function (event) {
                 if (!btnLock.stop) {
                     return;
                 }
@@ -8785,6 +9049,7 @@ define('mip', [
     './utils/event-emitter',
     './utils/event-action',
     './utils/customStorage',
+    './sleepWakeModule',
     './dom/css-loader',
     './dom/rect',
     './dom/event',
@@ -8819,6 +9084,9 @@ define('mip', [
     require('./utils/event-emitter');
     require('./utils/event-action');
     var CustomStorage = require('./utils/customStorage');
+    var sleepWakeModule = require('./sleepWakeModule');
+    // Initialize sleepWakeModule
+    sleepWakeModule.init();
     /* dom */
     require('./dom/css-loader');
     require('./dom/rect');
@@ -8836,7 +9104,6 @@ define('mip', [
     var viewer = require('./viewer');
     var performance = require('./performance');
     var templates = require('./templates');
-    var hash = require('./hash');
     /* mip hash */
     var hash = require('./hash');
     /* builtin components */

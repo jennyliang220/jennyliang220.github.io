@@ -7,21 +7,40 @@
     <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
     <link rel="canonical" href="对应的原页面地址">
     <style mip-custom>
-    #logo, .mip-button {
-    	    background: red;
-    display: inline-block;
-    padding: 1rem;
-    }
-
+      .mip-button {
+        margin: 10px;
+        padding: 10px;
+        background: #eee;
+      }
+      .placeholder {
+        height: 300px;
+        border-bottom: 1px solid #aaa;
+      }
+      #customid {
+        background: #3388ff;
+      }
     </style>
 </head>
 <body>
 <!-- 正文 -->
 <header>
-    <div id="hamburger" class="mip-button" on="tap:sidebar.open">
-        <div id="logo" href="/">Open mip-sidebar</div>
-    </div>
+    <div class="mip-button" on="tap:sidebar.open">Open mip-sidebar</div>
+    <div class="mip-button">不做任何事情</div>
+    <div class="mip-button" on="tap:my-lightbox.open">Open lightbox</button>
 </header>
+
+<mip-fixed type="bottom" id="customid">
+  <div>我是底部的fixed</div>
+  <div class="mip-button" on="tap:customid.close">我是关闭按钮</div>
+</mip-fixed>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+
 <mip-sidebar 
     id='sidebar'
     layout="nodisplay"
@@ -60,8 +79,21 @@
       </ul>
 </mip-sidebar>
 
+
+<mip-lightbox
+    id="my-lightbox"
+    layout="nodisplay"
+    class="mip-hidden">
+    <div class="lightbox">
+        <h1>Hello, World!</h1>
+        <p> this is the lightbox</p>
+    </div>
+</mip-lightbox>
+
 <script src="mip.js"></script>
 <script src="https://mipcache.bdstatic.com/static/v1/mip-sidebar/mip-sidebar.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-fixed/mip-fixed.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-lightbox/mip-lightbox.js"></script>
 
 </body>
 </html>
