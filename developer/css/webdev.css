@@ -38,8 +38,9 @@ h4 {
     color: #333;
     margin-bottom: 0.5rem;
 }
-ol li, ul li {
+ol li, ul li, p {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .column.col-45,
@@ -67,29 +68,46 @@ ol li, ul li {
 
 /*正文部分 container*/
 .container-fundamentals {
-    padding: 4rem 0 5rem;
+    padding: 7rem 0 5rem;
     background-color: #f9f9f9;
 }
 
 .container-fundamentals .main-btn {
     color: #666;
     font-weight: 300;
-    background: transparent;
+    background: #ccc;
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    transition: background-color 0.2s;
+    transition: opacity 0.2s;
     cursor: pointer;
-    border: 1px solid #666;
+    border: 1px solid #999;
+    display: inline-block;
+    width: 179px;
+    text-align: center;
+
 }
 .container-fundamentals  .main-btn:hover {
-    cursor: pointer;
-    background-color: white;
-    color: black;
+    /*cursor: pointer;*/
+    cursor: default;
+    /*background-color: #ddd;*/
+    /*color: black;*/
+
+}
+.main-btn.absolute {
+    position: absolute;
+    text-decoration: line-through;
+}
+.main-btn.absolute:hover {
+    opacity: 0
 }
 .fundamentals-subtitle {
     font-size: 16px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+.fundamentals-subtitle li {
+    list-style-type: disc;
+    margin-left: 2.5rem;
 }
 
 .img-7 {
@@ -109,6 +127,130 @@ ol li, ul li {
 .container-news h4{
     color: #fff;
 }
+/*头部导航*/
+
+.section-header {
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    white-space: nowrap;
+}
+
+.section-header a, .section-header mip-link {
+    color: white;
+}
+
+.section-header .btn.btn-link {
+    color: rgba(255, 255, 255, 0.8);
+    flex-grow: 0;
+}
+
+.section-header .btn.btn-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.section-header .navbar-title {
+    flex: 0 0;
+    min-width: 200px;
+}
+.section-header .navbar-links {
+    flex: 1 0;
+}
+.section-header .navbar .navbar-brand {
+    font-size: 2rem;
+    position: relative;
+    top: 2px;
+}
+
+.section-header .nav-icon,
+.section-header .nav-icon::before,
+.section-header .nav-icon::after {
+    width: 24px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    top: 1px;
+}
+
+.section-header .nav-icon:before,
+.section-header .nav-icon::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.section-header .nav-icon:before {
+    transform: rotate(60deg);
+}
+
+.section-header .nav-icon:after {
+    transform: rotate(-60deg);
+}
+.section-header .nav-more {
+    flex: 1 0;
+}
+.section-header .nav-pc {
+    display: flex;
+    flex: 1 0;
+    padding: 0.5rem 0;
+}
+
+.section-header .input-group-btn {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+.section-header .form-input {
+    background-color: rgba(255,255,255,0);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.section-header .form-input:focus {
+    border-color: #c4c9d3;
+    color: white;
+    box-shadow: none;
+}
+.section-header .input-wrap {
+    flex: 0 0;
+    min-width: 18.9rem;
+}
+.section-header .input-group-btn:hover,
+.section-header .input-group-btn:active,
+.section-header .input-group-btn:focus {
+    color: rgba(255,255,255,1);
+}
+
+.section-header .right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.section-header #header-btn {
+    border: none;
+    background: none;
+    padding: 0.3rem 0.2rem;
+}
+
+.section-header #header-btn .icon-bar {
+    display: block;
+    background: white;
+    width: 1.8rem;
+    height: 1px;
+}
+
+.section-header #header-btn .icon-bar+.icon-bar {
+    margin-top: 0.6rem;
+}
+
+
 #news .news-time {
     color: #aaa;
     font-size: 1.2rem;
