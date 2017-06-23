@@ -15,7 +15,7 @@ li {
 }
 
 a {
-    color: inherit
+    color: inherit;
 }
 
 a:hover,
@@ -51,8 +51,8 @@ p {
 .column.col-45,
 .column.col-35 {
     -webkit-flex: none;
-    -ms-flex: none;
-    flex: none;
+        -ms-flex: none;
+            flex: none;
 }
 
 .col-45 {
@@ -110,7 +110,7 @@ p {
 }
 
 .main-btn.absolute:hover {
-    opacity: 0
+    opacity: 0;
 }
 
 .fundamentals-subtitle {
@@ -166,7 +166,7 @@ p {
 }
 
 .section-header .btn.btn-link:hover {
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 
 .section-header .navbar-title {
@@ -198,7 +198,7 @@ p {
 
 .section-header .nav-icon:before,
 .section-header .nav-icon::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -2px;
     left: -2px;
@@ -288,7 +288,7 @@ p {
     line-height: 2rem;
     margin-bottom: .5rem;
     -webkit-transition: color .2s;
-    transition: color .2s;
+            transition: color .2s;
 }
 
 #news .news-title:hover {
