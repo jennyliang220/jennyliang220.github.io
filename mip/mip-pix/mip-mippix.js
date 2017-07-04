@@ -8536,8 +8536,8 @@ define('components/mip-pix', [
         if (src.search(paraNameQ) > -1) {
             return src.replace(paraNameQ, paraVal);
         }
-        src += src.indexOf('?') > -1 ? '' : '?';
-        return src + paraName.toLowerCase + '=' + paraVal;
+        src += src.indexOf('?') > -1 ? '&' : '?';
+        return src + paraName + '=' + paraVal;
     }
     /**
      * 从body获取mip-expeirment实验分组
