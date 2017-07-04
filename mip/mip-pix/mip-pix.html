@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html mip>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="description" content="MIP（Mobile Instant Pages - 移动网页加速器）是一套应用于移动网页的开放性技术标准，使用 MIP无需等待加载，页面内容将以更友好的方式瞬时到达用户。">
+    <meta name="keywords" content="MIP,AMP,百度MIP,Mobile Instant Pages,移动页面加速,H5页面加速,SEO,移动页面">
+    <meta name="baidu-site-verification" content="P4Uj0PXQrc" />
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="shortcut icon" href="//www.mipengine.org/favicon.ico" type="image/x-icon" />
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+<body mip-x-button-color="yellow">
+<!--默认使用-->
+<h2>1. 默认使用</h2>
+t=__&title=__&host=__
+<mip-pix src="https://www.mipengine.org/static/img/___01.gif?t=${TIME}&title=${TITLE}&host=${HOST}"></mip-pix>
+
+<!--省略dollor-->
+<h2>2. 省略dollor</h2>
+t=__&title=__&host=__
+<mip-pix src="https://www.mipengine.org/static/img/___02.gif?t={TIME}&title={TITLE}&host={HOST}"></mip-pix>
+
+<!--简洁使用-->
+<h2>3. 简洁使用</h2>
+t=__&title=__&host=__
+<mip-pix src="https://www.mipengine.org/static/img/___03.gif"></mip-pix>
+
+<!--自定义key-->
+<h2>4. 自定义key</h2>
+time=__&title=__&host=__ 
+<br>
+(time, 而不是t)
+<mip-pix src="https://www.mipengine.org/static/img/___04.gif?time={TIME}&title={TITLE}&host={HOST}"></mip-pix>
+
+<!--自定义可用key-->
+<h2>5. 自定义可用key</h2>
+time=__&title=__&host=__&area=A
+<br>
+(多了一个area=A)
+<mip-pix src="https://www.mipengine.org/static/img/___05.gif?time={TIME}&title={TITLE}&host={HOST}&area=A"></mip-pix>
+
+<!--自定义多余key-->
+<h2>6. 自定义多余key</h2>
+time=__&title=__&host=__&area=
+<br>
+(多了一个area=)
+<mip-pix src="https://www.mipengine.org/static/img/___06.gif?time={TIME}&title={TITLE}&host={HOST}&area={A}"></mip-pix>
+
+<!--多余等号-->
+<h2>7. 多余等号</h2>
+time=__&title=__&host=__&area==
+<br>
+(多了一个area==)
+<mip-pix src="https://www.mipengine.org/static/img/___07.gif?time={TIME}&title={TITLE}&host={HOST}&area=={A}"></mip-pix>
+
+<!--添加<mip-experiment>实验分组-->
+<h2>8. 添加 mip-experiment 实验分组</h2>
+mip-x-button-color=yellow&mip-x-font-color=default&time=__&title=__&host=__
+<br>
+(多了 &mip-x-button-color=yellow&mip-x-font-color=default)
+<mip-pix src="https://www.mipengine.org/static/img/___08.gif?mip-x-button-color={MIP-X-BUTTON-COLOR}&mip-x-font-color={MIP-X-FONT-COLOR}"></mip-pix>
+
+<script src="mip-mippix.js"></script>
+</body>
+
+</html>
