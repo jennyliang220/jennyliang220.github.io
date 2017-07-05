@@ -8578,7 +8578,8 @@ define('components/mip-pix', [
         var tip = document.createElement('div');
         tip.innerHTML = src;
         tip.style = 'background: white; font-size:20px; padding: 10px; margin: 10px; word-break: break-all';
-        ele.after(tip);
+        ele.parentElement.insertBefore(tip, ele);
+        console.log('insert');
         image.setAttribute('width', 0);
         image.setAttribute('height', 0);
         ele.setAttribute('width', '');
