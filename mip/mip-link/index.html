@@ -14,7 +14,7 @@
 	<script async src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
 	<script async src="https://mipcache.bdstatic.com/static/v1/mip-nav-slidedown/mip-nav-slidedown.js"></script>
 	<script async src="https://mipcache.bdstatic.com/static/v1/mip-stats-baidu/mip-stats-baidu.js"></script>
-	<script async src="https://mipcache.bdstatic.com/static/v1/mip-link/mip-link.js"></script>
+
     <style mip-custom="mip-custom">/* pc-mip官网 通用css */
 html.noscroll,
 body.noscroll {
@@ -49,16 +49,6 @@ footer {
   background-color: #828e9e;
   line-height: 20px;
   padding: 15px 0;
-}
-mip-link:hover {
-  cursor: pointer;
-}
-mip-link {
-  -webkit-tap-hilight-color: rgba(0, 0, 0, 0.3);
-  tap-hilight-color: rgba(0, 0, 0, 0.3);
-}
-mip-link.mip-layout-container {
-  display: inline;
 }
 .hr-xs {
   display: none;
@@ -125,7 +115,7 @@ mip-link.mip-layout-container {
   }
   .content-container {
     margin-top: 0;
-    padding: 0 10px;
+    padding: 0 10px 10px;
   }
   footer {
     padding: 10px 0;
@@ -137,8 +127,6 @@ mip-link.mip-layout-container {
   background-image: url(/static/img/mip_logo_3b722d7.png);
 }
 /* 内容页pc深色导航背景，文字为浅色*/
-.doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link,
-.timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span,
@@ -146,30 +134,22 @@ mip-link.mip-layout-container {
   color: rgba(255, 255, 255, 0.8) !important;
   display: inline;
 }
-.doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:hover,
-.timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:hover,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:hover,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:hover,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:hover,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:hover,
-.doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:focus,
-.timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:focus,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:focus,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:focus,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:focus,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:focus {
   color: white!important;
 }
-.doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link mip-link,
-.timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link mip-link,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link a,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link a,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link span,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li > .navbar-more-link span {
   color: #666!important;
 }
-.doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active mip-link,
-.timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active mip-link,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active a,
 .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active a,
 .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active span,
@@ -178,8 +158,6 @@ mip-link.mip-layout-container {
 }
 /* 内容页wise浅色导航背景，文字为深色*/
 @media screen and (max-width: 767px) {
-  .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link,
-  .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span,
@@ -187,22 +165,16 @@ mip-link.mip-layout-container {
     color: #666!important;
     display: block;
   }
-  .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:hover,
-  .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:hover,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:hover,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:hover,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:hover,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:hover,
-  .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:focus,
-  .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li mip-link:focus,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:focus,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li a:focus,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:focus,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li span:focus {
     color: black;
   }
-  .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active mip-link,
-  .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active mip-link,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active a,
   .timeline-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active a,
   .doc-body .mip-nav-wrapper .navbar-collapse .navbar-nav li.active span,
@@ -235,12 +207,10 @@ mip-link.mip-layout-container {
   list-style: none;
   line-height: 50px;
 }
-.mip-nav-wrapper .navbar-collapse .navbar-nav li.active a,
-.mip-nav-wrapper .navbar-collapse .navbar-nav li.active mip-link {
+.mip-nav-wrapper .navbar-collapse .navbar-nav li.active a {
   color: black;
   font-weight: bold;
 }
-.mip-nav-wrapper .navbar-collapse .navbar-nav mip-link,
 .mip-nav-wrapper .navbar-collapse .navbar-nav a,
 .mip-nav-wrapper .navbar-collapse .navbar-nav span {
   color: #666;
@@ -248,10 +218,8 @@ mip-link.mip-layout-container {
   padding: 10px;
   display: inline;
 }
-.mip-nav-wrapper .navbar-collapse .navbar-nav mip-link:hover,
 .mip-nav-wrapper .navbar-collapse .navbar-nav a:hover,
 .mip-nav-wrapper .navbar-collapse .navbar-nav span:hover,
-.mip-nav-wrapper .navbar-collapse .navbar-nav mip-link:focus,
 .mip-nav-wrapper .navbar-collapse .navbar-nav a:focus,
 .mip-nav-wrapper .navbar-collapse .navbar-nav span:focus {
   text-decoration: none;
@@ -307,7 +275,6 @@ mip-link.mip-layout-container {
     padding: 5px 0;
   }
   .mip-nav-wrapper .navbar-collapse .navbar-nav a,
-  .mip-nav-wrapper .navbar-collapse .navbar-nav mip-link,
   .mip-nav-wrapper .navbar-collapse .navbar-nav span {
     text-align: center;
     color: #333;
@@ -529,12 +496,10 @@ mip-link.mip-layout-container {
   font-weight: normal;
   position: relative;
 }
-.index-intro-wrap mip-link,
 .index-intro-wrap a {
   color: white;
   position: relative;
 }
-.index-intro-wrap mip-link:hover,
 .index-intro-wrap a:hover {
   text-decoration: none;
 }
@@ -877,36 +842,22 @@ mip-link.mip-layout-container {
 .doc-body .mip-nav-wrapper .navbar-brand {
   background-image: url(/static/img/mip_logo_white_8c902ec.png);
 }
-.timeline-body .mip-nav-wrapper .nav > li > mip-link,
-.doc-body .mip-nav-wrapper .nav > li > mip-link,
-.timeline-body .mip-nav-wrapper .nav > li > mip-link,
-.doc-body .mip-nav-wrapper .nav > li > mip-link,
 .timeline-body .mip-nav-wrapper .nav > li > a,
 .doc-body .mip-nav-wrapper .nav > li > a,
 .timeline-body .mip-nav-wrapper .nav > li > a,
 .doc-body .mip-nav-wrapper .nav > li > a {
   color: rgba(255, 255, 255, 0.8);
 }
-.timeline-body .mip-nav-wrapper .nav > li > mip-link:hover,
-.doc-body .mip-nav-wrapper .nav > li > mip-link:hover,
-.timeline-body .mip-nav-wrapper .nav > li > mip-link:hover,
-.doc-body .mip-nav-wrapper .nav > li > mip-link:hover,
 .timeline-body .mip-nav-wrapper .nav > li > a:hover,
 .doc-body .mip-nav-wrapper .nav > li > a:hover,
 .timeline-body .mip-nav-wrapper .nav > li > a:hover,
 .doc-body .mip-nav-wrapper .nav > li > a:hover,
-.timeline-body .mip-nav-wrapper .nav > li > mip-link:focus,
-.doc-body .mip-nav-wrapper .nav > li > mip-link:focus,
-.timeline-body .mip-nav-wrapper .nav > li > mip-link:focus,
-.doc-body .mip-nav-wrapper .nav > li > mip-link:focus,
 .timeline-body .mip-nav-wrapper .nav > li > a:focus,
 .doc-body .mip-nav-wrapper .nav > li > a:focus,
 .timeline-body .mip-nav-wrapper .nav > li > a:focus,
 .doc-body .mip-nav-wrapper .nav > li > a:focus {
   color: white;
 }
-.timeline-body .mip-nav-wrapper .navbar-collapse li.active mip-link,
-.doc-body .mip-nav-wrapper .navbar-collapse li.active mip-link,
 .timeline-body .mip-nav-wrapper .navbar-collapse li.active a,
 .doc-body .mip-nav-wrapper .navbar-collapse li.active a {
   color: white;
@@ -917,36 +868,22 @@ mip-link.mip-layout-container {
   color: #999;
 }
 @media screen and (max-width: 767px) {
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link,
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link,
   .timeline-body .mip-nav-wrapper .nav > li > a,
   .doc-body .mip-nav-wrapper .nav > li > a,
   .timeline-body .mip-nav-wrapper .nav > li > a,
   .doc-body .mip-nav-wrapper .nav > li > a {
     color: #666;
   }
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link:hover,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link:hover,
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link:hover,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link:hover,
   .timeline-body .mip-nav-wrapper .nav > li > a:hover,
   .doc-body .mip-nav-wrapper .nav > li > a:hover,
   .timeline-body .mip-nav-wrapper .nav > li > a:hover,
   .doc-body .mip-nav-wrapper .nav > li > a:hover,
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link:focus,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link:focus,
-  .timeline-body .mip-nav-wrapper .nav > li > mip-link:focus,
-  .doc-body .mip-nav-wrapper .nav > li > mip-link:focus,
   .timeline-body .mip-nav-wrapper .nav > li > a:focus,
   .doc-body .mip-nav-wrapper .nav > li > a:focus,
   .timeline-body .mip-nav-wrapper .nav > li > a:focus,
   .doc-body .mip-nav-wrapper .nav > li > a:focus {
     color: black;
   }
-  .timeline-body .mip-nav-wrapper .navbar-collapse li.active mip-link,
-  .doc-body .mip-nav-wrapper .navbar-collapse li.active mip-link,
   .timeline-body .mip-nav-wrapper .navbar-collapse li.active a,
   .doc-body .mip-nav-wrapper .navbar-collapse li.active a {
     color: black;
@@ -1103,28 +1040,28 @@ mip-link.mip-layout-container {
 .timeline-body mip-accordion li {
   list-style: none;
 }
-.doc-body mip-accordion mip-link,
-.timeline-body mip-accordion mip-link,
+.doc-body mip-accordion a,
+.timeline-body mip-accordion a,
 .doc-body mip-accordion span,
 .timeline-body mip-accordion span {
   line-height: 2.1;
 }
-.doc-body mip-accordion mip-link,
-.timeline-body mip-accordion mip-link {
+.doc-body mip-accordion a,
+.timeline-body mip-accordion a {
   color: #666;
   cursor: pointer;
   display: inline;
 }
-.doc-body mip-accordion mip-link:hover,
-.timeline-body mip-accordion mip-link:hover {
+.doc-body mip-accordion a:hover,
+.timeline-body mip-accordion a:hover {
   color: #009aed;
 }
-.doc-body mip-accordion mip-link.active,
-.timeline-body mip-accordion mip-link.active {
+.doc-body mip-accordion a.active,
+.timeline-body mip-accordion a.active {
   color: #009aed;
 }
-.doc-body mip-accordion mip-link.active:before,
-.timeline-body mip-accordion mip-link.active:before {
+.doc-body mip-accordion a.active:before,
+.timeline-body mip-accordion a.active:before {
   content: '';
   width: 5px;
   height: 1px;
@@ -1211,9 +1148,14 @@ mip-link.mip-layout-container {
   .timeline-body mip-accordion li {
     display: inline;
   }
-  .doc-body mip-accordion mip-link,
-  .timeline-body mip-accordion mip-link {
-    padding: 3px 20px 3px 0;
+  .doc-body mip-accordion a,
+  .timeline-body mip-accordion a {
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: #f3f3f3;
+    margin: 1px;
+    display: inline-block;
+    line-height: 18px;
   }
 }
 @media screen and (min-width: 767px) {
@@ -1249,7 +1191,6 @@ mip-link.mip-layout-container {
 </style>
     <title>MIP官网_移动网页加速器_MIP(Mobile Instant Pages)</title>
     <link rel="canonical" href="https://www.mipengine.org/">
-    <script async src="https://mipcache.bdstatic.com/static/v1/mip-experiment/mip-experiment.js"></script>
 </head>
 
 <body class="index-body">
@@ -1289,7 +1230,6 @@ mip-link.mip-layout-container {
                         <li>
                             <a title="github issues" href="https://github.com/mipengine/mip-extensions/issues" target="_blank">github issues</a>
                         </li>
-
                     </ul>
                 </li>
                 <hr class="hr-xs">
@@ -1322,18 +1262,18 @@ mip-link.mip-layout-container {
                         MIP是什么
                     </div>
                     <div class="row index-whats-row">
-                        <mip-link title="MIP HTML 规范" class="col-xs-4 index-whats-border-left" href="//www.mipengine.org/doc/2-tech/1-mip-html.html">
+                        <a data-type="mip" title="MIP HTML 规范" class="col-xs-4 index-whats-border-left" href="//www.mipengine.org/doc/2-tech/1-mip-html.html">
                             <span class="index-whats-img sprite-html"></span>
                             <h3 class="index-subheader">MIP-HTML</h2>
-                        </mip-link>
-                        <mip-link title="MIP 加速原理" class="col-xs-4 index-whats-border-left" href="//www.mipengine.org/doc/03-principle-of-mip.html">
+                        </a>
+                        <a data-type="mip" title="MIP 加速原理" class="col-xs-4 index-whats-border-left" href="//www.mipengine.org/doc/03-principle-of-mip.html">
                             <span class="index-whats-img sprite-js"></span>
                             <h3 class="index-subheader">MIP-JS</h2>
-                        </mip-link>
-                        <mip-link title="MIP Cache 规范" class="col-xs-4 index-whats-border-left index-whats-border-right" href="//www.mipengine.org/doc/2-tech/3-mip-cache.html">
+                        </a>
+                        <a data-type="mip" title="MIP Cache 规范" class="col-xs-4 index-whats-border-left index-whats-border-right" href="//www.mipengine.org/doc/2-tech/3-mip-cache.html">
                             <span class="index-whats-img sprite-cache"></span>
                             <h3 class="index-subheader">MIP-CACHE</h2>
-                        </mip-link>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1346,9 +1286,9 @@ mip-link.mip-layout-container {
                 <p class="section-intro-subtext">
                     MIP提供实用 强大的基础组件<br>开发者可根据需求任意选择
                 </p>
-                <mip-link title="MIP 组件概述" class="section-intro-btn" href="//www.mipengine.org/doc/3-widget/10-overview.html">查看更多
+                <a data-type="mip" title="MIP 组件概述" class="section-intro-btn" href="//www.mipengine.org/doc/3-widget/10-widgets.html">查看更多
                     <svg class="section-intro-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 2 14 22" version="1.1"><polygon class="section-intro-btn-arrow" points="3,24 0,21 8,13 0,4.9 3,2 14,13.1 "/></svg>
-                </mip-link>
+                </a>
             </div>
             <span class="section-img"></span>
         </div>
@@ -1360,9 +1300,9 @@ mip-link.mip-layout-container {
                 <p class="section-intro-subtext">
                     MIP是一项永久的开源计划<br>提供持续优化的解决方案
                 </p>
-                <mip-link title="MIP扩展组件开发规范" class="section-intro-btn" href="//www.mipengine.org/doc/2-tech/4-mip-widget.html">查看更多
+                <a data-type="mip" title="MIP扩展组件开发规范" class="section-intro-btn" href="//www.mipengine.org/doc/2-tech/4-mip-widget.html">查看更多
                     <svg class="section-intro-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 2 14 22" version="1.1"><polygon class="section-intro-btn-arrow" points="3,24 0,21 8,13 0,4.9 3,2 14,13.1 "/></svg>
-                </mip-link>
+                </a>
             </div>
             <span class="section-img"></span>
         </div>
@@ -1374,41 +1314,14 @@ mip-link.mip-layout-container {
                 <p class="section-intro-subtext">
                     MIP语法基于HTML并提供详细的示例<br>开发者仅需做简单开发
                 </p>
-                <mip-link title="MIP HTML 规范" class="section-intro-btn" href="//www.mipengine.org/doc/2-tech/1-mip-html.html">查看更多
+                <a data-type="mip" title="MIP HTML 规范" class="section-intro-btn" href="//www.mipengine.org/doc/2-tech/1-mip-html.html">查看更多
                     <svg class="section-intro-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 2 14 22" version="1.1"><polygon class="section-intro-btn-arrow" points="3,24 0,21 8,13 0,4.9 3,2 14,13.1 "/></svg>
-                </mip-link>
+                </a>
             </div>
             <span class="section-img"></span>
 
         </div>
     </section>
-    <mip-experiment layout="nodisplay" class="mip-hidden">
-        <script type="application/json" for="mip-experiment">
-            {
-                "newBnr": {
-                    "descri": "修改页面banner",
-                    "variants": {
-                        "g1": 20,
-                        "g2": 20,
-                        "g3": 20,
-                        "g4": 20,
-                        "g5": 20
-                    },
-                    "baidu-stats": [
-                        ["window",          "load",     "window_文档"],
-                        [".navbar-toggle",  "click",    "导航_按钮"],
-                        [".doc-body",       "click",    "导航_文档"],
-                        [".timeline-body",  "click",    "导航_动态"],
-                        ["a[title='MIP博客']", "click",  "导航_博客"],
-                        [".help",           "click",    "导航_帮助"],
-                        [".index-widget mip-link",  "click",    "首页_组件"],
-                        [".index-tech mip-link",    "click",    "首页_技术"],
-                        [".index-rule mip-link",    "click",    "首页_规范"]                    
-                    ]
-                }
-            }
-        </script>
-    </mip-experiment>
         <footer> Copyright &copy; 2017</footer>
     <mip-stats-baidu token="4e397f684261b9e4ff9d8ad4714f5b2b"></mip-stats-baidu>
 
