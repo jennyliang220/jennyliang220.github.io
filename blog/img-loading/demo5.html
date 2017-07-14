@@ -21,6 +21,10 @@
         max-width: 100%;
         background: #ddd;
     }
+    #img-container {
+    	display: block;
+    	position: relative;
+    }
     #jpg-placeholder {
 		width: 100%;
 		padding-bottom:50%;
@@ -28,8 +32,10 @@
 		background: #f1f1cf;
     }
     .lazy-img {
-		margin-top:-50%;
+		position: absolute;
+		top: 0;
 		opacity: 0.5;
+		display: block;
     }
     </style>
 </head>
