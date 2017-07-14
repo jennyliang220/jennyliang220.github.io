@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片处理demo</title>
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    h2,
+    p {
+        margin: 10px;
+    }
+    
+    img {
+        max-width: 100%;
+        background: #ddd;
+    }
+    #jpg-placeholder {
+		width: 100%;
+		padding-bottom:50%;
+		display: block;
+		background: #f1f1cf;
+    }
+    .lazy-img {
+		margin-top:-50%;
+		opacity: 0.5;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>demo-04</h2>
+	<span id="img-container">
+		<span id="jpg-placeholder"></span>
+	</span>
+    <h2>JS 插入图片 - 占位符</h2>
+
+    <script>
+    	(function() {
+    		var img = new Image();
+    		img.src = "http://imgsrc.baidu.com/image/c0%3Dshijue%2C0%2C0%2C245%2C40/sign=923fdeb4c1ef7609280691dc46b4c9b9/95eef01f3a292df57e35763cb6315c6034a87321.jpg";
+    		img.className = "lazy-img";
+
+    		document.getElementById('img-container').appendChild(img);
+    	})();
+    </script>
+</body>
+
+</html>

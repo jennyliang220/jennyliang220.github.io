@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片处理demo</title>
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    h2,
+    p {
+        margin: 10px;
+    }
+    
+    img {
+        max-width: 100%;
+        background: #ddd;
+    }
+    #jpg-placeholder {
+		width: 100%;
+		padding-bottom:50%;
+		display: block;
+		background: #f1f1cf;
+    }
+    .lazy-img {
+		margin-top:-50%;
+		opacity: 0.5;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>demo-06</h2>
+	<span id="img-container">
+		<span id="jpg-placeholder"></span>
+	</span>
+    <h2>JS 插入图片 - 占位符+删除</h2>
+
+
+    <script>
+    	(function() {
+    		var img = new Image();
+    		img.src="http://pic.58pic.com/58pic/16/95/21/22P58PIC9eV_1024.jpg";
+    		img.className = "lazy-img";
+
+    		document.getElementById('img-container').appendChild(img);
+
+    		img.onload = function() {
+    			var placeholder = document.getElementById('jpg-placeholder');
+    			document.getElementById('img-container').removeChild(placeholder);
+    			img.className = '';
+    		}
+    	})();
+    </script>
+</body>
+
+</html>
