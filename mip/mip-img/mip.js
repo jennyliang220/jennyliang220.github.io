@@ -8599,9 +8599,8 @@ define('components/mip-img', [
     customElem.prototype.createdCallback = function () {
         var element = this.element;
         var layoutAttr = element.getAttribute('layout');
-        var widthAttr = element.getAttribute('width');
         var heightAttr = element.getAttribute('height');
-        if (layoutAttr || widthAttr && heightAttr) {
+        if (layoutAttr || heightAttr) {
         } else {
             // if no layout, add default placeholder
             this.placeholder = new Placeholder(element);
