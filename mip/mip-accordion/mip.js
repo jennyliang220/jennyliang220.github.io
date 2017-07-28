@@ -3662,27 +3662,26 @@ define('utils/fn', ['require'], function (require) {
         var transitionTime = opt.transitionTime || 0.3;
         // use ?: to make sure oriHeight won't be rewrite when opt.oriHeight is set to 0
         var oriHeight = opt.oriHeight != undefined ? opt.oriHeight : getComputedStyle(element).height;
-        var tarHeight;
         var cbFun = opt.cbFun || function () {
         };
         if (type === 'unfold') {
             element.style.height = 'auto';
             // use ?: to make sure tarHeight won't be rewrite when opt.tarHeight is set to 0
-            tarHeight = opt.tarHeight != undefined ? opt.tarHeight : getComputedStyle(element).height;
+            var targetHeight = opt.tarHeight != undefined ? opt.tarHeight : getComputedStyle(element).height;
             // set height to auto after transition,
             // in case of height change of inside element later.
             setTimeout(function () {
                 element.style.height = 'auto';
             }, transitionTime * 1000);
         } else if (type === 'fold') {
-            tarHeight = opt.tarHeight || 0;
+            var targetHeight = opt.targetHeight || 0;
         }
         element.style.height = oriHeight;
         element.style.transition = 'height ' + transitionTime + 's';
         // now start the animation
         setTimeout(function () {
             // XXX: in setTimeout, or there won't be any animation
-            element.style.height = tarHeight;
+            element.style.height = targetHeight;
         }, 10);
         // after transition, exec callback functions
         setTimeout(function () {
