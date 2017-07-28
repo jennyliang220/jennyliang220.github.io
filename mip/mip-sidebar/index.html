@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html mip>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>
+        <!-- 标题 -->
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    /* 自定义样式 */
+
+
+    header {
+    text-align: center;
+    background-color: #9ca9af;
+}
+ul {
+    padding: 20px 10px;
+    color: #000;
+}
+li {
+    line-height: 40px;
+    font-size: 20px;
+    text-align: left;
+}
+li:first-child {
+    line-height: 80px;
+    font-size: 34px;
+    color: steelblue;
+}
+#logo {
+    font-size: 28px;
+    line-height: 56px;
+    color: #444;
+}
+#close {
+    background: #f5f2f2;
+    padding: 10px;
+    border: 1px solid #d8d5d5;
+    border-radius: 5px;
+}
+.placeholder{ 
+    margin: 20px;
+    padding:20px;
+    background-color: #eaeaea;
+  }.placeholder2{
+    background-color: green;
+  }  
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="hamburger" class="mip-button" on="tap:sidebar.open">
+            <div id="logo" href="/">Open mip-sidebar</div>
+        </div>
+    </header>
+    <mip-sidebar id='sidebar' layout="nodisplay" class="mip-hidden">
+        <ul>
+            <li>
+                <mip-link href="#">Home</mip-link>
+                <button class="mip-button" on="tap:sidebar.close"> X </button>
+            </li>
+            <li> Nav item 1</li>
+            <li>
+                <mip-fit-text width="220" height="20" layout="responsive" max-font-size="24">
+                    Nav item 2 - &lt;mip-fit-text&gt;
+                </mip-fit-text>
+            </li>
+            <li>
+                <mip-fit-text width="220" height="20" layout="responsive" max-font-size="24">
+                    Nav item 3 - &lt;mip-fit-text&gt; longer text
+                </mip-fit-text>
+            </li>
+            <li> Nav item 4 - Image
+                <mip-img class='mip-sidebar-image' src="http://placeholder.qiniudn.com/100x50" width="20" height="20" alt="an image"></mip-img>
+            </li>
+            <li> Nav item 5</li>
+            <li> Nav item 6</li>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder2'> no scroll</div>
+            <div class='placeholder'> 能滚 </div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> 能滚 </div>
+            <div class='placeholder2'> no scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> 能滚 </div>
+            <div class='placeholder'> scroll</div>
+            <div class='placeholder'> scroll</div>
+        </ul>
+    </mip-sidebar>
+    </style>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder2'> no scroll</div>
+    <div class='placeholder'> 这里不能滚 </div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> 这里不能滚 </div>
+    <div class='placeholder2'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> 这里不能滚 </div>
+    <div class='placeholder'> no scroll</div>
+    <div class='placeholder'> no scroll</div>
+
+    <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+    <script src="mip-sidebar.js"></script>
+</body>
+
+</html>
