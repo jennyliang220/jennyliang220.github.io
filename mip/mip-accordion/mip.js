@@ -3662,26 +3662,37 @@ define('utils/fn', ['require'], function (require) {
         var transitionTime = opt.transitionTime || 0.3;
         // use ?: to make sure oriHeight won't be rewrite when opt.oriHeight is set to 0
         var oriHeight = opt.oriHeight != undefined ? opt.oriHeight : getComputedStyle(element).height;
+        var tarHeight;
         var cbFun = opt.cbFun || function () {
         };
         if (type === 'unfold') {
-            element.style.height = 'auto';
-            // use ?: to make sure tarHeight won't be rewrite when opt.tarHeight is set to 0
-            var targetHeight = opt.tarHeight != undefined ? opt.tarHeight : getComputedStyle(element).height;
+            // make sure tarHeight won't be rewrite when opt.tarHeight is set to 0
+            if (opt.tarHeight != undefined) {
+                tarHeight = opt.tarHeight;
+            } else {
+                // before set height to auto, remove animation.
+                // or bad animation happens in iphone 4s
+                element.style.transition = 'height 0s';
+                element.style.height = 'auto';
+                tarHeight = getComputedStyle(element).height;
+            }
             // set height to auto after transition,
             // in case of height change of inside element later.
             setTimeout(function () {
+                // before set height to auto, remove animation.
+                // or bad animation happens in iphone 4s
+                element.style.transition = 'height 0s';
                 element.style.height = 'auto';
             }, transitionTime * 1000);
         } else if (type === 'fold') {
-            var targetHeight = opt.targetHeight || 0;
+            tarHeight = opt.tarHeight || 0;
         }
         element.style.height = oriHeight;
-        element.style.transition = 'height ' + transitionTime + 's';
         // now start the animation
         setTimeout(function () {
+            element.style.transition = 'height ' + transitionTime + 's';
             // XXX: in setTimeout, or there won't be any animation
-            element.style.height = targetHeight;
+            element.style.height = tarHeight;
         }, 10);
         // after transition, exec callback functions
         setTimeout(function () {
