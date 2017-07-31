@@ -1,0 +1,558 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>大型网站的HTTPS实践（二）-- HTTPS对性能的影响 · Web 开发手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="https-pratice-3.html" />
+    
+    
+    <link rel="prev" href="https-pratice-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    前端技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../web-tech/fis.html">
+            
+                <a href="../web-tech/fis.html">
+            
+                    
+                    使用 FIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../web-tech/use-mip-to-create-mobile-web-pages.html">
+            
+                <a href="../web-tech/use-mip-to-create-mobile-web-pages.html">
+            
+                    
+                    MIP-移动页面加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../web-tech/lavas-pwa.html">
+            
+                <a href="../web-tech/lavas-pwa.html">
+            
+                    
+                    Lavas PWA-渐进式应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    建站安全
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="https-pratice-1.html">
+            
+                <a href="https-pratice-1.html">
+            
+                    
+                    大型网站的HTTPS实践（一）-- HTTPS协议和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2" data-path="https-pratice-2.html">
+            
+                <a href="https-pratice-2.html">
+            
+                    
+                    大型网站的HTTPS实践（二）-- HTTPS对性能的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="https-pratice-3.html">
+            
+                <a href="https-pratice-3.html">
+            
+                    
+                    大型网站的HTTPS实践（三）-- 基于协议和配置的优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="https-pratice-4.html">
+            
+                <a href="https-pratice-4.html">
+            
+                    
+                    大型网站的HTTPS实践（四）-- 协议层以外的实践[1]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="https-faq.html">
+            
+                <a href="https-faq.html">
+            
+                    
+                    HTTPS常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    SEO
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../seo/search-engine-principle.html">
+            
+                <a href="../seo/search-engine-principle.html">
+            
+                    
+                    百度搜索引擎工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../seo/mobile-friendly-standard.html">
+            
+                <a href="../seo/mobile-friendly-standard.html">
+            
+                    
+                    百度搜索Mobile Friendly（移动友好度）标准V1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../seo/website-optimization.html">
+            
+                <a href="../seo/website-optimization.html">
+            
+                    
+                    网站优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../seo/website-development.html">
+            
+                <a href="../seo/website-development.html">
+            
+                    
+                    网站建设
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >大型网站的HTTPS实践（二）-- HTTPS对性能的影响</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5927;&#x578B;&#x7F51;&#x7AD9;&#x7684;-https-&#x5B9E;&#x8DF5;&#xFF08;&#x4E8C;&#xFF09;---https-&#x5BF9;&#x6027;&#x80FD;&#x7684;&#x5F71;&#x54CD;">&#x5927;&#x578B;&#x7F51;&#x7AD9;&#x7684; HTTPS &#x5B9E;&#x8DF5;&#xFF08;&#x4E8C;&#xFF09;-- HTTPS &#x5BF9;&#x6027;&#x80FD;&#x7684;&#x5F71;&#x54CD;</h1>
+<h2 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h2>
+<p> HTTPS &#x5728;&#x4FDD;&#x62A4;&#x7528;&#x6237;&#x9690;&#x79C1;&#xFF0C;&#x9632;&#x6B62;&#x6D41;&#x91CF;&#x52AB;&#x6301;&#x65B9;&#x9762;&#x53D1;&#x6325;&#x7740;&#x975E;&#x5E38;&#x5173;&#x952E;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;HTTPS &#x4E5F;&#x4F1A;&#x964D;&#x4F4E;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#xFF0C;&#x589E;&#x52A0;&#x7F51;&#x7AD9;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x3002;<br>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD; https &#x5BF9;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x7684;&#x5F71;&#x54CD;&#x3002;       </p>
+<h2 id="https-&#x5BF9;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x7684;&#x5F71;&#x54CD;">HTTPS &#x5BF9;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x7684;&#x5F71;&#x54CD;</h2>
+<p>&#x5728;&#x4ECB;&#x7ECD;&#x901F;&#x5EA6;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x6765;&#x770B;&#x4E0B; HTTPS &#x5BF9;&#x901F;&#x5EA6;&#x6709;&#x4EC0;&#x4E48;&#x5F71;&#x54CD;&#x3002;&#x5F71;&#x54CD;&#x4E3B;&#x8981;&#x6765;&#x81EA;&#x4E24;&#x65B9;&#x9762;&#xFF1A;      </p>
+<ol>
+<li>&#x534F;&#x8BAE;&#x4EA4;&#x4E92;&#x6240;&#x589E;&#x52A0;&#x7684;&#x7F51;&#x7EDC; RTT(round trip time)&#x3002;      </li>
+<li>&#x52A0;&#x89E3;&#x5BC6;&#x76F8;&#x5173;&#x7684;&#x8BA1;&#x7B97;&#x8017;&#x65F6;&#x3002;       </li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x3002;       </p>
+<h3 id="&#x7F51;&#x7EDC;&#x8017;&#x65F6;&#x589E;&#x52A0;">&#x7F51;&#x7EDC;&#x8017;&#x65F6;&#x589E;&#x52A0;</h3>
+<p>&#x7531;&#x4E8E; HTTP &#x548C; HTTPS &#x90FD;&#x9700;&#x8981; DNS &#x89E3;&#x6790;&#xFF0C;&#x5E76;&#x4E14;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x4E86; DNS &#x7F13;&#x5B58;&#xFF0C;&#x4E3A;&#x4E86;&#x7A81;&#x51FA;&#x5BF9;&#x6BD4;&#x6548;&#x679C;&#xFF0C;&#x5FFD;&#x7565;&#x4E3B;&#x57DF;&#x540D;&#x7684; DNS &#x89E3;&#x6790;&#x65F6;&#x95F4;&#x3002;<br>&#x7528;&#x6237;&#x4F7F;&#x7528; HTTP &#x534F;&#x8BAE;&#x8BBF;&#x95EE; <a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a>(&#x6216;&#x8005; www.baidu.com) &#x65F6;&#x4F1A;&#x6709;&#x5982;&#x4E0B;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x4EA4;&#x4E92;&#x8017;&#x65F6;&#xFF1A;        </p>
+<p> <img src="img/https2_1.png" alt=""><br>&#x56FE; 1 HTTP &#x9996;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x7F51;&#x7EDC;&#x8017;&#x65F6;<br>&#x53EF;&#x89C1;&#xFF0C;&#x7528;&#x6237;&#x53EA;&#x9700;&#x8981;&#x5B8C;&#x6210; TCP &#x4E09;&#x6B21;&#x63E1;&#x624B;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x5C31;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x53D1;&#x9001; HTTP &#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5C42;&#x6570;&#x636E;&#xFF0C;&#x6B64;&#x5916;&#x5728;&#x6574;&#x4E2A;&#x8BBF;&#x95EE;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;&#x9700;&#x8981;&#x6D88;&#x8017;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x7684;&#x5730;&#x65B9;&#x3002;<br>&#x63A5;&#x4E0B;&#x6765;&#x770B; HTTPS &#x7684;&#x8BBF;&#x95EE;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F8;&#x6BD4; HTTP &#x8981;&#x590D;&#x6742;&#x5F88;&#x591A;&#xFF0C;&#x5728;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528; HTTPS &#x8BBF;&#x95EE;&#x6709;&#x53EF;&#x80FD;&#x589E;&#x52A0; 7 &#x4E2A; RTT&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;       </p>
+<p>  <img src="img/https2_2.png" alt=""></p>
+<p>&#x56FE; 2 HTTPS &#x9996;&#x6B21;&#x8BF7;&#x6C42;&#x5BF9;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x7684;&#x5F71;&#x54CD;<br>HTTPS &#x9996;&#x6B21;&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x7684;&#x7F51;&#x7EDC;&#x8017;&#x65F6;&#x89E3;&#x91CA;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<ol>
+<li>&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x3002;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT&#x3002;        </li>
+<li>&#x4F7F;&#x7528; HTTP &#x53D1;&#x8D77; GET &#x8BF7;&#x6C42;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE; 302 &#x8DF3;&#x8F6C;&#x5230; <a href="https://www.baidu.com" target="_blank">https://www.baidu.com</a> &#x3002;&#x9700;&#x8981;&#x4E00;&#x4E2A; RTT &#x4EE5;&#x53CA; 302 &#x8DF3;&#x8F6C;&#x5EF6;&#x65F6;&#x3002;       <ul>
+<li>&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x7528;&#x6237;&#x4E0D;&#x4F1A;&#x624B;&#x52A8;&#x8F93;&#x5165; <a href="https://www.baidu.com" target="_blank">https://www.baidu.com</a> &#x6765;&#x8BBF;&#x95EE; HTTPS&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x53EA;&#x80FD;&#x8FD4;&#x56DE; 302 &#x5F3A;&#x5236;&#x6D4F;&#x89C8;&#x5668;&#x8DF3;&#x8F6C;&#x5230; https&#x3002;       </li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x5904;&#x7406; 302 &#x8DF3;&#x8F6C;&#x4E5F;&#x9700;&#x8981;&#x8017;&#x65F6;&#x3002;   </li>
+</ul>
+</li>
+<li>&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x3002;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT&#x3002;       <ul>
+<li>302 &#x8DF3;&#x8F6C;&#x5230; HTTPS &#x670D;&#x52A1;&#x5668;&#x4E4B;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x7AEF;&#x53E3;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x540C;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x5B8C;&#x6210;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#xFF0C;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x3002;</li>
+</ul>
+</li>
+<li>TLS &#x5B8C;&#x5168;&#x63E1;&#x624B;&#x9636;&#x6BB5;&#x4E00;&#x3002;&#x8017;&#x65F6;&#x81F3;&#x5C11;&#x4E00;&#x4E2A; RTT&#x3002;    <ul>
+<li>&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4E3B;&#x8981;&#x662F;&#x5B8C;&#x6210;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;&#x7684;&#x534F;&#x5546;&#x548C;&#x8BC1;&#x4E66;&#x7684;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x534F;&#x5546;&#x51FA;&#x76F8;&#x540C;&#x7684;&#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x7B97;&#x6CD5;&#x3001;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3001;&#x5185;&#x5BB9;&#x4E00;&#x81F4;&#x6027;&#x6821;&#x9A8C;&#x7B97;&#x6CD5;&#x3001;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x3001;&#x692D;&#x5706;&#x66F2;&#x7EBF;&#xFF08;&#x975E; ECC &#x7B97;&#x6CD5;&#x4E0D;&#x9700;&#x8981;&#xFF09;&#x7B49;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x83B7;&#x53D6;&#x5230;&#x8BC1;&#x4E66;&#x540E;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x662F;&#x5426;&#x8FC7;&#x671F;&#xFF0C;&#x662F;&#x5426;&#x64A4;&#x9500;&#x3002;</li>
+</ul>
+</li>
+<li>&#x89E3;&#x6790; CA &#x7AD9;&#x70B9;&#x7684; DNS&#x3002;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT&#x3002;<ul>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x83B7;&#x53D6;&#x5230;&#x8BC1;&#x4E66;&#x540E;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x53D1;&#x8D77; OCSP &#x6216;&#x8005; CRL &#x8BF7;&#x6C42;&#xFF0C;&#x67E5;&#x8BE2;&#x8BC1;&#x4E66;&#x72B6;&#x6001;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x9996;&#x5148;&#x83B7;&#x53D6;&#x8BC1;&#x4E66;&#x91CC;&#x7684; CA &#x57DF;&#x540D;&#x3002; </li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x547D;&#x4E2D;&#x7F13;&#x5B58;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x89E3;&#x6790; CA &#x57DF;&#x540D;&#x7684; DNS&#x3002;</li>
+</ul>
+</li>
+<li>&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x5EFA;&#x7ACB; CA &#x7AD9;&#x70B9;&#x7684; TCP &#x8FDE;&#x63A5;&#x3002;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT&#x3002;<ul>
+<li>DNS &#x89E3;&#x6790;&#x5230; IP &#x540E;&#xFF0C;&#x9700;&#x8981;&#x5B8C;&#x6210;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x3002;</li>
+</ul>
+</li>
+<li>&#x53D1;&#x8D77; OCSP &#x8BF7;&#x6C42;&#xFF0C;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x3002;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT&#x3002;</li>
+<li>&#x5B8C;&#x5168;&#x63E1;&#x624B;&#x9636;&#x6BB5;&#x4E8C;&#xFF0C;&#x8017;&#x65F6;&#x4E00;&#x4E2A; RTT &#x53CA;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;&#x3002;<ul>
+<li>&#x5B8C;&#x5168;&#x63E1;&#x624B;&#x9636;&#x6BB5;&#x4E8C;&#x4E3B;&#x8981;&#x662F;&#x5BC6;&#x94A5;&#x534F;&#x5546;&#x3002;</li>
+</ul>
+</li>
+<li>&#x5B8C;&#x5168;&#x63E1;&#x624B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5E94;&#x7528;&#x5C42;&#xFF08;&#x4E5F;&#x5C31;&#x662F; HTTP&#xFF09;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3002;</li>
+</ol>
+<p>&#x5F53;&#x7136;&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x90FD;&#x9700;&#x8981;&#x589E;&#x52A0; 7 &#x4E2A; RTT &#x624D;&#x80FD;&#x5B8C;&#x6210; HTTPS &#x9996;&#x6B21;&#x8BF7;&#x6C42;&#x4EA4;&#x4E92;&#x3002;&#x5927;&#x6982;&#x53EA;&#x6709;&#x4E0D;&#x5230; 0.01% &#x7684;&#x8BF7;&#x6C42;&#x624D;&#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7ECF;&#x5386;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;&#xFF0C;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x5982;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ol>
+<li>&#x5FC5;&#x987B;&#x662F;&#x9996;&#x6B21;&#x8BF7;&#x6C42;&#x3002;&#x5373;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#x540E;&#x53D1;&#x8D77;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x8BE5;&#x8FDE;&#x63A5;&#x4E0A;&#x7684;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x53D1;&#x751F;&#x4E0A;&#x8FF0;&#x884C;&#x4E3A;&#x3002;</li>
+<li>&#x5FC5;&#x987B;&#x8981;&#x53D1;&#x751F;&#x5B8C;&#x5168;&#x63E1;&#x624B;&#xFF0C;&#x800C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B; 80% &#x7684;&#x8BF7;&#x6C42;&#x80FD;&#x5B9E;&#x73B0;&#x7B80;&#x5316;&#x63E1;&#x624B;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x5F00;&#x542F; OCSP &#x6216;&#x8005; CRL &#x529F;&#x80FD;&#x3002;Chrome &#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#x4E86; ocsp &#x529F;&#x80FD;&#xFF0C;firefox &#x548C; IE &#x90FD;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x6CA1;&#x6709;&#x547D;&#x4E2D; OCSP &#x7F13;&#x5B58;&#x3002;Ocsp &#x4E00;&#x822C;&#x7684;&#x66F4;&#x65B0;&#x5468;&#x671F;&#x662F; 7 &#x5929;&#xFF0C;firefox &#x7684;&#x67E5;&#x8BE2;&#x5468;&#x671F;&#x4E5F;&#x662F; 7 &#x5929;&#xFF0C;&#x4E5F;&#x5C31;&#x8BF4;&#x662F; 7 &#x5929;&#x4E2D;&#x624D;&#x4F1A;&#x53D1;&#x751F;&#x4E00;&#x6B21; ocsp &#x7684;&#x67E5;&#x8BE2;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x6CA1;&#x6709;&#x547D;&#x4E2D; CA &#x7AD9;&#x70B9;&#x7684; DNS &#x7F13;&#x5B58;&#x3002;&#x53EA;&#x6709;&#x6CA1;&#x547D;&#x4E2D; DNS &#x7F13;&#x5B58;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x4F1A;&#x89E3;&#x6790; CA &#x7684; DNS&#x3002;</li>
+</ol>
+<h3 id="22-&#x8BA1;&#x7B97;&#x8017;&#x65F6;&#x589E;&#x52A0;">2.2 &#x8BA1;&#x7B97;&#x8017;&#x65F6;&#x589E;&#x52A0;</h3>
+<p>&#x4E0A;&#x8282;&#x8FD8;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x63CF;&#x8FF0;&#x4E86; HTTPS &#x5173;&#x952E;&#x8DEF;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x6D88;&#x8017;&#x7684;&#x7EAF;&#x7F51;&#x7EDC;&#x8017;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x5305;&#x62EC;&#x975E;&#x5E38;&#x6D88;&#x8017; CPU &#x8D44;&#x6E90;&#x7684;&#x8BA1;&#x7B97;&#x8017;&#x65F6;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x8BA1;&#x7B97;&#x8017;&#x65F6;&#x4E5F;&#x4E0D;&#x5C0F;&#xFF08;30ms &#x4EE5;&#x4E0A;&#xFF09;&#xFF0C;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x89D2;&#x5EA6;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#xFF1A;        </p>
+<ol>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x8BA1;&#x7B97;&#x8017;&#x65F6;<ul>
+<li>RSA &#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x6821;&#x9A8C;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x89E3;&#x5BC6;&#x7B7E;&#x540D;&#xFF0C;&#x8BA1;&#x7B97;&#x8BC1;&#x4E66;&#x54C8;&#x5E0C;&#x503C;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x8BC1;&#x4E66;&#x94FE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x591A;&#x4E2A;&#x8BC1;&#x4E66;&#x3002;</li>
+<li>RSA &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BC1;&#x4E66;&#x516C;&#x94A5;&#x52A0;&#x5BC6; premaster&#x3002;&#x8017;&#x65F6;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x624B;&#x673A;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#x5DEE;&#xFF0C;&#x53EF;&#x80FD;&#x4E5F;&#x9700;&#x8981; 1ms &#x7684;&#x65F6;&#x95F4;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x692D;&#x5706;&#x66F2;&#x7EBF;&#x7684;&#x516C;&#x79C1;&#x94A5;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BC1;&#x4E66;&#x516C;&#x94A5;&#x89E3;&#x5BC6;&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x8FC7;&#x6765;&#x7684; ECC &#x516C;&#x94A5;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x670D;&#x52A1;&#x7AEF;&#x516C;&#x94A5;&#x8BA1;&#x7B97; master key&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x5C42;&#x6570;&#x636E;&#x5BF9;&#x79F0;&#x52A0;&#x89E3;&#x5BC6;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x5C42;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x6821;&#x9A8C;&#x3002;</li>
+</ul>
+</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x8BA1;&#x7B97;&#x8017;&#x65F6;<ul>
+<li>RSA &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BC1;&#x4E66;&#x79C1;&#x94A5;&#x89E3;&#x5BC6; premaster&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x975E;&#x5E38;&#x6D88;&#x8017;&#x6027;&#x80FD;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x692D;&#x5706;&#x66F2;&#x7EBF;&#x7684;&#x516C;&#x79C1;&#x94A5;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BC1;&#x4E66;&#x79C1;&#x94A5;&#x52A0;&#x5BC6; ECC &#x7684;&#x516C;&#x94A5;&#x3002;</li>
+<li>ECC &#x5BC6;&#x94A5;&#x4EA4;&#x6362;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x6D4F;&#x89C8;&#x5668;&#x516C;&#x94A5;&#x8BA1;&#x7B97;&#x5171;&#x4EAB;&#x7684; master key&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x5C42;&#x6570;&#x636E;&#x5BF9;&#x79F0;&#x52A0;&#x89E3;&#x5BC6;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x5C42;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x6821;&#x9A8C;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p>&#x7531;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x7684; CPU &#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x79CD;&#x7C7B;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x8BA1;&#x7B97;&#x8017;&#x65F6;&#x4E0D;&#x80FD;&#x4E00;&#x6982;&#x800C;&#x8BBA;&#x3002;&#x624B;&#x673A;&#x7AEF;&#x7684; HTTPS &#x8BA1;&#x7B97;&#x4F1A;&#x6BD4;&#x8F83;&#x6D88;&#x8017;&#x6027;&#x80FD;&#xFF0C;&#x5355;&#x7EAF;&#x8BA1;&#x7B97;&#x589E;&#x52A0;&#x7684;&#x5EF6;&#x8FDF;&#x81F3;&#x5C11;&#x5728; 50ms &#x4EE5;&#x4E0A;&#x3002;PC &#x7AEF;&#x4E5F;&#x4F1A;&#x589E;&#x52A0;&#x81F3;&#x5C11; 10ms &#x4EE5;&#x4E0A;&#x7684;&#x8BA1;&#x7B97;&#x5EF6;&#x8FDF;&#x3002;<br>&#x670D;&#x52A1;&#x5668;&#x7684;&#x6027;&#x80FD;&#x4E00;&#x822C;&#x6BD4;&#x8F83;&#x5F3A;&#xFF0C;&#x4F46;&#x7531;&#x4E8E; RSA &#x8BC1;&#x4E66;&#x79C1;&#x94A5;&#x957F;&#x5EA6;&#x8FDC;&#x5927;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x6240;&#x4EE5;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x8BA1;&#x7B97;&#x5EF6;&#x8FDF;&#x4E5F;&#x4F1A;&#x5728; 5ms &#x4EE5;&#x4E0A;&#x3002;       </p>
+<h2 id="&#x7ED3;&#x675F;&#x8BED;">&#x7ED3;&#x675F;&#x8BED;</h2>
+<p>&#x672C;&#x7CFB;&#x5217;&#x7684;&#x540E;&#x7EED;&#x6587;&#x7AE0;&#x5C06;&#x8FDB;&#x4E00;&#x6B65;&#x89E3;&#x91CA;&#x9488;&#x5BF9;&#x6027;&#x7684;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="https-pratice-1.html" class="navigation navigation-prev " aria-label="Previous page: 大型网站的HTTPS实践（一）-- HTTPS协议和原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="https-pratice-3.html" class="navigation navigation-next " aria-label="Next page: 大型网站的HTTPS实践（三）-- 基于协议和配置的优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"大型网站的HTTPS实践（二）-- HTTPS对性能的影响","level":"3.1.2","depth":2,"next":{"title":"大型网站的HTTPS实践（三）-- 基于协议和配置的优化","level":"3.1.3","depth":2,"path":"security/https-pratice-3.md","ref":"security/https-pratice-3.md","articles":[]},"previous":{"title":"大型网站的HTTPS实践（一）-- HTTPS协议和原理","level":"3.1.1","depth":2,"path":"security/https-pratice-1.md","ref":"security/https-pratice-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","atoc","-sharing","-lunr","-search","search-pro","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"c7d52dcc025ace5582c34ce31e4b4552"},"splitter":{},"atoc":{},"search-pro":{},"livereload":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 开发手册","language":"zh-hans","gitbook":"*","description":"学习使用最新的 Web 技术，创建极速打开、信息安全、交互流畅的网页。"},"file":{"path":"security/https-pratice-2.md","mtime":"2017-07-31T08:12:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-31T07:23:02.604Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

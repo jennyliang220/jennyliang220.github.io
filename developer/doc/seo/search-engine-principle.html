@@ -1,0 +1,590 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>百度搜索引擎工作原理 · Web 开发手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mobile-friendly-standard.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    前端技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../web-tech/fis.html">
+            
+                <a href="../web-tech/fis.html">
+            
+                    
+                    使用 FIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../web-tech/use-mip-to-create-mobile-web-pages.html">
+            
+                <a href="../web-tech/use-mip-to-create-mobile-web-pages.html">
+            
+                    
+                    MIP-移动页面加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../web-tech/lavas-pwa.html">
+            
+                <a href="../web-tech/lavas-pwa.html">
+            
+                    
+                    Lavas PWA-渐进式应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    建站安全
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../security/https-pratice-1.html">
+            
+                <a href="../security/https-pratice-1.html">
+            
+                    
+                    大型网站的HTTPS实践（一）-- HTTPS协议和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../security/https-pratice-2.html">
+            
+                <a href="../security/https-pratice-2.html">
+            
+                    
+                    大型网站的HTTPS实践（二）-- HTTPS对性能的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../security/https-pratice-3.html">
+            
+                <a href="../security/https-pratice-3.html">
+            
+                    
+                    大型网站的HTTPS实践（三）-- 基于协议和配置的优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../security/https-pratice-4.html">
+            
+                <a href="../security/https-pratice-4.html">
+            
+                    
+                    大型网站的HTTPS实践（四）-- 协议层以外的实践[1]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../security/https-faq.html">
+            
+                <a href="../security/https-faq.html">
+            
+                    
+                    HTTPS常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    SEO
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1.1" data-path="search-engine-principle.html">
+            
+                <a href="search-engine-principle.html">
+            
+                    
+                    百度搜索引擎工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="mobile-friendly-standard.html">
+            
+                <a href="mobile-friendly-standard.html">
+            
+                    
+                    百度搜索Mobile Friendly（移动友好度）标准V1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="website-optimization.html">
+            
+                <a href="website-optimization.html">
+            
+                    
+                    网站优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="website-development.html">
+            
+                <a href="website-development.html">
+            
+                    
+                    网站建设
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >百度搜索引擎工作原理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5DE5;&#x4F5C;&#x539F;&#x7406;">&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5DE5;&#x4F5C;&#x539F;&#x7406;</h1>
+<h2 id="spider-&#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x7684;&#x57FA;&#x672C;&#x6846;&#x67B6;">Spider &#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x7684;&#x57FA;&#x672C;&#x6846;&#x67B6;</h2>
+<p>&#x4E92;&#x8054;&#x7F51;&#x4FE1;&#x606F;&#x7206;&#x53D1;&#x5F0F;&#x589E;&#x957F;&#xFF0C;&#x5982;&#x4F55;&#x6709;&#x6548;&#x7684;&#x83B7;&#x53D6;&#x5E76;&#x5229;&#x7528;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x662F;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5DE5;&#x4F5C;&#x4E2D;&#x7684;&#x9996;&#x8981;&#x73AF;&#x8282;&#x3002;&#x6570;&#x636E;&#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x4F5C;&#x4E3A;&#x6574;&#x4E2A;&#x641C;&#x7D22;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4E0A;&#x6E38;&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x4E92;&#x8054;&#x7F51;&#x4FE1;&#x606F;&#x7684;&#x641C;&#x96C6;&#x3001;&#x4FDD;&#x5B58;&#x3001;&#x66F4;&#x65B0;&#x73AF;&#x8282;&#xFF0C;&#x5B83;&#x50CF;&#x8718;&#x86DB;&#x4E00;&#x6837;&#x5728;&#x7F51;&#x7EDC;&#x95F4;&#x722C;&#x6765;&#x722C;&#x53BB;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x5E38;&#x4F1A;&#x88AB;&#x53EB;&#x505A; &#x201C;spider&#x201D;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x5E38;&#x7528;&#x7684;&#x51E0;&#x5BB6;&#x901A;&#x7528;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x8718;&#x86DB;&#x88AB;&#x79F0;&#x4E3A;&#xFF1A;Baiduspdier&#x3001;Googlebot&#x3001;Sogou Web Spider &#x7B49;&#x3002;   </p>
+<p>Spider &#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x662F;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6570;&#x636E;&#x6765;&#x6E90;&#x7684;&#x91CD;&#x8981;&#x4FDD;&#x8BC1;&#xFF0C;&#x5982;&#x679C;&#x628A; web &#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x5411;&#x56FE;&#xFF0C;&#x90A3;&#x4E48; spider &#x7684;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x5BF9;&#x8FD9;&#x4E2A;&#x6709;&#x5411;&#x56FE;&#x7684;&#x904D;&#x5386;&#x3002;&#x4ECE;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x79CD;&#x5B50; URL &#x5F00;&#x59CB;&#xFF0C;&#x901A;&#x8FC7;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x5173;&#x7CFB;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x53D1;&#x73B0;&#x65B0; URL &#x5E76;&#x6293;&#x53D6;&#xFF0C;&#x5C3D;&#x6700;&#x5927;&#x53EF;&#x80FD;&#x6293;&#x53D6;&#x5230;&#x66F4;&#x591A;&#x7684;&#x6709;&#x4EF7;&#x503C;&#x7F51;&#x9875;&#x3002;&#x5BF9;&#x4E8E;&#x7C7B;&#x4F3C;&#x767E;&#x5EA6;&#x8FD9;&#x6837;&#x7684;&#x5927;&#x578B; spider &#x7CFB;&#x7EDF;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x65F6; &#x6BCF;&#x523B;&#x90FD;&#x5B58;&#x5728;&#x7F51;&#x9875;&#x88AB;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x6216;&#x51FA;&#x73B0;&#x65B0;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x7684;&#x53EF;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8FD8;&#x8981;&#x5BF9; spider &#x8FC7;&#x53BB;&#x6293;&#x53D6;&#x8FC7;&#x7684;&#x9875;&#x9762;&#x4FDD;&#x6301;&#x66F4;&#x65B0;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A; URL &#x5E93;&#x548C;&#x9875;&#x9762;&#x5E93;&#x3002;  </p>
+<p>&#x4E0B;&#x56FE;&#x4E3A; spider &#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x7684;&#x57FA;&#x672C;&#x6846;&#x67B6;&#x56FE;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x94FE;&#x63A5;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x3001;&#x94FE;&#x63A5;&#x9009;&#x53D6;&#x7CFB;&#x7EDF;&#x3001;dns &#x89E3;&#x6790;&#x670D;&#x52A1;&#x7CFB;&#x7EDF;&#x3001;&#x6293;&#x53D6;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;&#x3001;&#x7F51;&#x9875;&#x5206;&#x6790;&#x7CFB;&#x7EDF;&#x3001;&#x94FE;&#x63A5;&#x63D0;&#x53D6;&#x7CFB;&#x7EDF;&#x3001;&#x94FE;&#x63A5;&#x5206;&#x6790;&#x7CFB;&#x7EDF;&#x3001;&#x7F51;&#x9875;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x3002;Baiduspider &#x5373;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x7CFB;&#x7EDF;&#x7684;&#x901A;&#x529B;&#x5408;&#x4F5C;&#x5B8C;&#x6210;&#x5BF9;&#x4E92;&#x8054;&#x7F51;&#x9875;&#x9762;&#x7684;&#x6293;&#x53D6;&#x5DE5;&#x4F5C;&#x3002;      </p>
+<p><img src="img/1.JPG" alt=""></p>
+<h2 id="baiduspider-&#x4E3B;&#x8981;&#x6293;&#x53D6;&#x7B56;&#x7565;&#x7C7B;&#x578B;">Baiduspider &#x4E3B;&#x8981;&#x6293;&#x53D6;&#x7B56;&#x7565;&#x7C7B;&#x578B;</h2>
+<p>&#x4E0A;&#x56FE;&#x770B;&#x4F3C;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x5176;&#x5B9E; Baiduspider &#x5728;&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x9762;&#x5BF9;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x8D85;&#x7EA7;&#x590D;&#x6742;&#x7684;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x6293;&#x53D6;&#x5230;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x6709;&#x4EF7;&#x503C;&#x8D44;&#x6E90;&#x5E76;&#x4FDD;&#x6301;&#x7CFB;&#x7EDF;&#x53CA;&#x5B9E;&#x9645;&#x73AF;&#x5883;&#x4E2D;&#x9875;&#x9762;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x540C;&#x65F6;&#x4E0D;&#x7ED9;&#x7F51;&#x7AD9;&#x4F53;&#x9A8C;&#x9020;&#x6210;&#x538B;&#x529B;&#xFF0C;&#x4F1A;&#x8BBE;&#x8BA1;&#x591A;&#x79CD;&#x590D;&#x6742;&#x7684;&#x6293;&#x53D6;&#x7B56;&#x7565;&#x3002;&#x4EE5;&#x4E0B;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#xFF1A;    </p>
+<h3 id="1-&#x6293;&#x53D6;&#x53CB;&#x597D;&#x6027;">1. &#x6293;&#x53D6;&#x53CB;&#x597D;&#x6027;</h3>
+<p>&#x4E92;&#x8054;&#x7F51;&#x8D44;&#x6E90;&#x5E9E;&#x5927;&#x7684;&#x6570;&#x91CF;&#x7EA7;&#xFF0C;&#x8FD9;&#x5C31;&#x8981;&#x6C42;&#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x9AD8;&#x6548;&#x5229;&#x7528;&#x5E26;&#x5BBD;&#xFF0C;&#x5728;&#x6709;&#x9650;&#x7684;&#x786C;&#x4EF6;&#x548C;&#x5E26;&#x5BBD;&#x8D44;&#x6E90;&#x4E0B;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x6293;&#x53D6;&#x5230;&#x6709;&#x4EF7;&#x503C;&#x8D44;&#x6E90;&#x3002;&#x8FD9;&#x5C31;&#x9020;&#x6210;&#x4E86;&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8017;&#x8D39;&#x88AB;&#x6293;&#x7F51;&#x7AD9;&#x7684;&#x5E26;&#x5BBD;&#x9020;&#x6210;&#x8BBF;&#x95EE;&#x538B;&#x529B;&#xFF0C;&#x5982;&#x679C;&#x7A0B;&#x5EA6;&#x8FC7;&#x5927;&#x5C06;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x88AB;&#x6293;&#x7F51;&#x7AD9;&#x7684;&#x6B63;&#x5E38;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x884C;&#x4E3A;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C31;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x7684;&#x6293;&#x53D6;&#x538B;&#x529B;&#x63A7;&#x5236;&#xFF0C;&#x8FBE;&#x5230;&#x65E2;&#x4E0D;&#x5F71;&#x54CD;&#x7F51;&#x7AD9;&#x7684;&#x6B63;&#x5E38;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x53C8;&#x80FD;&#x5C3D;&#x91CF;&#x591A;&#x7684;&#x6293;&#x53D6;&#x5230;&#x6709;&#x4EF7;&#x503C;&#x8D44;&#x6E90;&#x7684;&#x76EE;&#x7684;&#x3002;   </p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x662F;&#x57FA;&#x4E8E; ip &#x7684;&#x538B;&#x529B;&#x63A7;&#x5236;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x57FA;&#x4E8E;&#x57DF;&#x540D;&#xFF0C;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x591A;&#x4E2A; ip&#xFF08;&#x5F88;&#x591A;&#x5927;&#x7F51;&#x7AD9;&#xFF09;&#x6216;&#x591A;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x540C;&#x4E00;&#x4E2A; ip&#xFF08;&#x5C0F;&#x7F51;&#x7AD9;&#x5171;&#x4EAB; ip&#xFF09;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5B9E;&#x9645;&#x4E2D;&#xFF0C;&#x5F80;&#x5F80;&#x6839;&#x636E; ip &#x53CA;&#x57DF;&#x540D;&#x7684;&#x591A;&#x79CD;&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x529B;&#x8C03;&#x914D;&#x63A7;&#x5236;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x7AD9;&#x957F;&#x5E73;&#x53F0;&#x4E5F;&#x63A8;&#x51FA;&#x4E86;&#x538B;&#x529B;&#x53CD;&#x9988;&#x5DE5;&#x5177;&#xFF0C;&#x7AD9;&#x957F;&#x53EF;&#x4EE5;&#x4EBA;&#x5DE5;&#x8C03;&#x914D;&#x5BF9;&#x81EA;&#x5DF1;&#x7F51;&#x7AD9;&#x7684;&#x6293;&#x53D6;&#x538B;&#x529B;&#xFF0C;&#x8FD9;&#x65F6;&#x767E;&#x5EA6; spider &#x5C06;&#x4F18;&#x5148;&#x6309;&#x7167;&#x7AD9;&#x957F;&#x7684;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x6293;&#x53D6;&#x538B;&#x529B;&#x63A7;&#x5236;&#x3002;     </p>
+<p>&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x7684;&#x6293;&#x53D6;&#x901F;&#x5EA6;&#x63A7;&#x5236;&#x4E00;&#x822C;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;&#x5176;&#x4E00;&#xFF0C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x6293;&#x53D6;&#x9891;&#x7387;&#xFF1B;&#x5176;&#x4E8C;&#xFF0C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x6293;&#x53D6;&#x6D41;&#x91CF;&#x3002;&#x540C;&#x4E00;&#x7AD9;&#x70B9;&#x4E0D;&#x540C;&#x7684;&#x65F6;&#x95F4;&#x6293;&#x53D6;&#x901F;&#x5EA6;&#x4E5F;&#x4F1A;&#x4E0D;&#x540C;&#xFF0C;&#x4F8B;&#x5982;&#x591C;&#x6DF1;&#x4EBA;&#x9759;&#x6708;&#x9ED1;&#x98CE;&#x9AD8;&#x65F6;&#x5019;&#x6293;&#x53D6;&#x7684;&#x53EF;&#x80FD;&#x5C31;&#x4F1A;&#x5FEB;&#x4E00;&#x4E9B;&#xFF0C;&#x4E5F;&#x89C6;&#x5177;&#x4F53;&#x7AD9;&#x70B9;&#x7C7B;&#x578B;&#x800C;&#x5B9A;&#xFF0C;&#x4E3B;&#x8981;&#x601D;&#x60F3;&#x662F;&#x9519;&#x5F00;&#x6B63;&#x5E38;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x9AD8;&#x5CF0;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x8C03;&#x6574;&#x3002;&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7AD9;&#x70B9;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x6293;&#x53D6;&#x901F;&#x5EA6;&#x3002;    </p>
+<h3 id="2-&#x5E38;&#x7528;&#x6293;&#x53D6;&#x8FD4;&#x56DE;&#x7801;&#x793A;&#x610F;">2. &#x5E38;&#x7528;&#x6293;&#x53D6;&#x8FD4;&#x56DE;&#x7801;&#x793A;&#x610F;</h3>
+<p>&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x51E0;&#x79CD;&#x767E;&#x5EA6;&#x652F;&#x6301;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#xFF1A; </p>
+<ul>
+<li>&#x6700;&#x5E38;&#x89C1;&#x7684; 404 &#x4EE3;&#x8868; &#x201C;NOT FOUND&#x201D;&#xFF0C;&#x8BA4;&#x4E3A;&#x7F51;&#x9875;&#x5DF2;&#x7ECF;&#x5931;&#x6548;&#xFF0C;&#x901A;&#x5E38;&#x5C06;&#x5728;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#xFF0C;&#x540C;&#x65F6;&#x77ED;&#x671F;&#x5185;&#x5982;&#x679C; spider &#x518D;&#x6B21;&#x53D1;&#x73B0;&#x8FD9;&#x6761; url &#x4E5F;&#x4E0D;&#x4F1A;&#x6293;&#x53D6;&#xFF1B;</li>
+<li>503 &#x4EE3;&#x8868; &#x201C;Service Unavailable&#x201D;&#xFF0C;&#x8BA4;&#x4E3A;&#x7F51;&#x9875;&#x4E34;&#x65F6;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x901A;&#x5E38;&#x7F51;&#x7AD9;&#x4E34;&#x65F6;&#x5173;&#x95ED;&#xFF0C;&#x5E26;&#x5BBD;&#x6709;&#x9650;&#x7B49;&#x4F1A;&#x4EA7;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x5BF9;&#x4E8E;&#x7F51;&#x9875;&#x8FD4;&#x56DE; 503 &#x72B6;&#x6001;&#x7801;&#xFF0C;&#x767E;&#x5EA6; spider &#x4E0D;&#x4F1A;&#x628A;&#x8FD9;&#x6761; url &#x76F4;&#x63A5;&#x5220;&#x9664;&#xFF0C;&#x540C;&#x65F6;&#x77ED;&#x671F;&#x5185;&#x5C06;&#x4F1A;&#x53CD;&#x590D;&#x8BBF;&#x95EE;&#x51E0;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x9875;&#x5DF2;&#x6062;&#x590D;&#xFF0C;&#x5219;&#x6B63;&#x5E38;&#x6293;&#x53D6;&#xFF1B;&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x8FD4;&#x56DE; 503&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x6761; url &#x4ECD;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5931;&#x6548;&#x94FE;&#x63A5;&#xFF0C;&#x4ECE;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#x3002;</li>
+<li>403 &#x4EE3;&#x8868; &#x201C;Forbidden&#x201D;&#xFF0C;&#x8BA4;&#x4E3A;&#x7F51;&#x9875;&#x76EE;&#x524D;&#x7981;&#x6B62;&#x8BBF;&#x95EE;&#x3002;&#x5982;&#x679C;&#x662F;&#x65B0; url&#xFF0C;spider &#x6682;&#x65F6;&#x4E0D;&#x6293;&#x53D6;&#xFF0C;&#x77ED;&#x671F;&#x5185;&#x540C;&#x6837;&#x4F1A;&#x53CD;&#x590D;&#x8BBF;&#x95EE;&#x51E0;&#x6B21;&#xFF1B;&#x5982;&#x679C;&#x662F;&#x5DF2;&#x6536;&#x5F55; url&#xFF0C;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x5220;&#x9664;&#xFF0C;&#x77ED;&#x671F;&#x5185;&#x540C;&#x6837;&#x53CD;&#x590D;&#x8BBF;&#x95EE;&#x51E0;&#x6B21;&#x3002;&#x5982;&#x679C;&#x7F51;&#x9875;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#xFF0C;&#x5219;&#x6B63;&#x5E38;&#x6293;&#x53D6;&#xFF1B;&#x5982;&#x679C;&#x4ECD;&#x7136;&#x7981;&#x6B62;&#x8BBF;&#x95EE;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x6761; url &#x4E5F;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5931;&#x6548;&#x94FE;&#x63A5;&#xFF0C;&#x4ECE;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#x3002;</li>
+<li>301 &#x4EE3;&#x8868;&#x662F; &#x201C;Moved Permanently&#x201D;&#xFF0C;&#x8BA4;&#x4E3A;&#x7F51;&#x9875;&#x91CD;&#x5B9A;&#x5411;&#x81F3;&#x65B0; url&#x3002;&#x5F53;&#x9047;&#x5230;&#x7AD9;&#x70B9;&#x8FC1;&#x79FB;&#x3001;&#x57DF;&#x540D;&#x66F4;&#x6362;&#x3001;&#x7AD9;&#x70B9;&#x6539;&#x7248;&#x7684;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F7F;&#x7528; 301 &#x8FD4;&#x56DE;&#x7801;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x7AD9;&#x957F;&#x5E73;&#x53F0;&#x7F51;&#x7AD9;&#x6539;&#x7248;&#x5DE5;&#x5177;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x6539;&#x7248;&#x5BF9;&#x7F51;&#x7AD9;&#x6D41;&#x91CF;&#x9020;&#x6210;&#x7684;&#x635F;&#x5931;&#x3002;</li>
+</ul>
+<h3 id="3-&#x591A;&#x79CD;-url-&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x8BC6;&#x522B;">3. &#x591A;&#x79CD; url &#x91CD;&#x5B9A;&#x5411;&#x7684;&#x8BC6;&#x522B;</h3>
+<p>&#x4E92;&#x8054;&#x7F51;&#x4E2D;&#x4E00;&#x90E8;&#x5206;&#x7F51;&#x9875;&#x56E0;&#x4E3A;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x539F;&#x56E0;&#x5B58;&#x5728; url &#x91CD;&#x5B9A;&#x5411;&#x72B6;&#x6001;&#xFF0C;&#x4E3A;&#x4E86;&#x5BF9;&#x8FD9;&#x90E8;&#x5206;&#x8D44;&#x6E90;&#x6B63;&#x5E38;&#x6293;&#x53D6;&#xFF0C;&#x5C31;&#x8981;&#x6C42; spider &#x5BF9; url &#x91CD;&#x5B9A;&#x5411;&#x8FDB;&#x884C;&#x8BC6;&#x522B;&#x5224;&#x65AD;&#xFF0C;&#x540C;&#x65F6;&#x9632;&#x6B62;&#x4F5C;&#x5F0A;&#x884C;&#x4E3A;&#x3002;&#x91CD;&#x5B9A;&#x5411;&#x53EF;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;&#xFF1A;http 30x &#x91CD;&#x5B9A;&#x5411;&#x3001;meta refresh &#x91CD;&#x5B9A;&#x5411;&#x548C; js &#x91CD;&#x5B9A;&#x5411;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x767E;&#x5EA6;&#x4E5F;&#x652F;&#x6301; Canonical &#x6807;&#x7B7E;&#xFF0C;&#x5728;&#x6548;&#x679C;&#x4E0A;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x95F4;&#x63A5;&#x7684;&#x91CD;&#x5B9A;&#x5411;&#x3002;  </p>
+<h3 id="4-&#x6293;&#x53D6;&#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x914D;">4. &#x6293;&#x53D6;&#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x914D;</h3>
+<p>&#x7531;&#x4E8E;&#x4E92;&#x8054;&#x7F51;&#x8D44;&#x6E90;&#x89C4;&#x6A21;&#x7684;&#x5DE8;&#x5927;&#x4EE5;&#x53CA;&#x8FC5;&#x901F;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5BF9;&#x4E8E;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6765;&#x8BF4;&#x5168;&#x90E8;&#x6293;&#x53D6;&#x5230;&#x5E76;&#x5408;&#x7406;&#x7684;&#x66F4;&#x65B0;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x6027;&#x51E0;&#x4E4E;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x5C31;&#x8981;&#x6C42;&#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x4E00;&#x5957;&#x5408;&#x7406;&#x7684;&#x6293;&#x53D6;&#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x914D;&#x7B56;&#x7565;&#x3002;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x7B56;&#x7565;&#x3001;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x7B56;&#x7565;&#x3001;pr &#x4F18;&#x5148;&#x7B56;&#x7565;&#x3001;&#x53CD;&#x94FE;&#x7B56;&#x7565;&#x3001;&#x793E;&#x4F1A;&#x5316;&#x5206;&#x4EAB;&#x6307;&#x5BFC;&#x7B56;&#x7565;&#x7B49;&#x7B49;&#x3002;&#x6BCF;&#x4E2A;&#x7B56;&#x7565;&#x5404;&#x6709;&#x4F18;&#x52A3;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#x5F80;&#x5F80;&#x662F;&#x591A;&#x79CD;&#x7B56;&#x7565;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x4EE5;&#x8FBE;&#x5230;&#x6700;&#x4F18;&#x7684;&#x6293;&#x53D6;&#x6548;&#x679C;&#x3002;</p>
+<h3 id="5-&#x91CD;&#x590D;-url-&#x7684;&#x8FC7;&#x6EE4;">5. &#x91CD;&#x590D; url &#x7684;&#x8FC7;&#x6EE4;</h3>
+<p>spider &#x5728;&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x6293;&#x53D6;&#x8FC7;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x6293;&#x53D6;&#x518D;&#x8FDB;&#x884C;&#x6293;&#x53D6;&#x7F51;&#x9875;&#x7684;&#x884C;&#x4E3A;&#x5E76;&#x653E;&#x5728;&#x5DF2;&#x6293;&#x53D6;&#x7F51;&#x5740;&#x96C6;&#x5408;&#x4E2D;&#x3002;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x6293;&#x53D6;&#x5176;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x662F;&#x5FEB;&#x901F;&#x67E5;&#x627E;&#x5E76;&#x5BF9;&#x6BD4;&#xFF0C;&#x540C;&#x65F6;&#x6D89;&#x53CA;&#x5230; url &#x5F52;&#x4E00;&#x5316;&#x8BC6;&#x522B;&#xFF0C;&#x4F8B;&#x5982;&#x4E00;&#x4E2A; url &#x4E2D;&#x5305;&#x542B;&#x5927;&#x91CF;&#x65E0;&#x6548;&#x53C2;&#x6570;&#x800C;&#x5B9E;&#x9645;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x8FD9;&#x5C06;&#x89C6;&#x4E3A;&#x540C;&#x4E00;&#x4E2A; url &#x6765;&#x5BF9;&#x5F85;&#x3002;</p>
+<h3 id="6-&#x6697;&#x7F51;&#x6570;&#x636E;&#x7684;&#x83B7;&#x53D6;">6. &#x6697;&#x7F51;&#x6570;&#x636E;&#x7684;&#x83B7;&#x53D6;</h3>
+<p>&#x4E92;&#x8054;&#x7F51;&#x4E2D;&#x5B58;&#x5728;&#x7740;&#x5927;&#x91CF;&#x7684;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x6293;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;&#x6697;&#x7F51;&#x6570;&#x636E;&#x3002;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5F88;&#x591A;&#x7F51;&#x7AD9;&#x7684;&#x5927;&#x91CF;&#x6570;&#x636E;&#x662F;&#x5B58;&#x5728;&#x4E8E;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;spider &#x96BE;&#x4EE5;&#x91C7;&#x7528;&#x6293;&#x53D6;&#x7F51;&#x9875;&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x5F97;&#x5B8C;&#x6574;&#x5185;&#x5BB9;&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x3001;&#x7F51;&#x7AD9;&#x672C;&#x8EAB;&#x4E0D;&#x7B26;&#x5408;&#x89C4;&#x8303;&#x3001;&#x5B64;&#x5C9B;&#x7B49;&#x7B49;&#x95EE;&#x9898;&#xFF0C;&#x4E5F;&#x4F1A;&#x9020;&#x6210;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x65E0;&#x6CD5;&#x6293;&#x53D6;&#x3002;&#x76EE;&#x524D;&#x6765;&#x8BF4;&#xFF0C;&#x5BF9;&#x4E8E;&#x6697;&#x7F51;&#x6570;&#x636E;&#x7684;&#x83B7;&#x53D6;&#x4E3B;&#x8981;&#x601D;&#x8DEF;&#x4ECD;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x91C7;&#x7528;&#x6570;&#x636E;&#x63D0;&#x4EA4;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;&#xFF0C;&#x4F8B;&#x5982; &#x201C;&#x767E;&#x5EA6;&#x7AD9;&#x957F;&#x5E73;&#x53F0;&#x201D;&#x201C;&#x767E;&#x5EA6;&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x201D; &#x7B49;&#x7B49;&#x3002;</p>
+<h3 id="7-&#x6293;&#x53D6;&#x53CD;&#x4F5C;&#x5F0A;">7. &#x6293;&#x53D6;&#x53CD;&#x4F5C;&#x5F0A;</h3>
+<p>spider &#x5728;&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x5F80;&#x5F80;&#x4F1A;&#x9047;&#x5230;&#x6240;&#x8C13;&#x6293;&#x53D6;&#x9ED1;&#x6D1E;&#x6216;&#x8005;&#x9762;&#x4E34;&#x5927;&#x91CF;&#x4F4E;&#x8D28;&#x91CF;&#x9875;&#x9762;&#x7684;&#x56F0;&#x6270;&#xFF0C;&#x8FD9;&#x5C31;&#x8981;&#x6C42;&#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x4E2D;&#x540C;&#x6837;&#x9700;&#x8981;&#x8BBE;&#x8BA1;&#x4E00;&#x5957;&#x5B8C;&#x5584;&#x7684;&#x6293;&#x53D6;&#x53CD;&#x4F5C;&#x5F0A;&#x7CFB;&#x7EDF;&#x3002;&#x4F8B;&#x5982;&#x5206;&#x6790; url &#x7279;&#x5F81;&#x3001;&#x5206;&#x6790;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53CA;&#x5185;&#x5BB9;&#x3001;&#x5206;&#x6790;&#x7AD9;&#x70B9;&#x89C4;&#x6A21;&#x5BF9;&#x5E94;&#x6293;&#x53D6;&#x89C4;&#x6A21;&#x7B49;&#x7B49;&#x3002;</p>
+<h2 id="baiduspider-&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x6D89;&#x53CA;&#x7684;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;">Baiduspider &#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x6D89;&#x53CA;&#x7684;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;</h2>
+<p>&#x521A;&#x624D;&#x63D0;&#x5230;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4F1A;&#x8BBE;&#x8BA1;&#x590D;&#x6742;&#x7684;&#x6293;&#x53D6;&#x7B56;&#x7565;&#xFF0C;&#x5176;&#x5B9E;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4E0E;&#x8D44;&#x6E90;&#x63D0;&#x4F9B;&#x8005;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5176;&#x4E2D;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x9700;&#x8981;&#x7AD9;&#x957F;&#x4E3A;&#x5176;&#x63D0;&#x4F9B;&#x8D44;&#x6E90;&#xFF0C;&#x5426;&#x5219;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5C31;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x7528;&#x6237;&#x68C0;&#x7D22;&#x9700;&#x6C42;&#xFF1B;&#x800C;&#x7AD9;&#x957F;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5C06;&#x81EA;&#x5DF1;&#x7684; &#x5185;&#x5BB9;&#x63A8;&#x5E7F;&#x51FA;&#x53BB;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x53D7;&#x4F17;&#x3002;spider &#x6293;&#x53D6;&#x7CFB;&#x7EDF;&#x76F4;&#x63A5;&#x6D89;&#x53CA;&#x4E92;&#x8054;&#x7F51;&#x8D44;&#x6E90;&#x63D0;&#x4F9B;&#x8005;&#x7684;&#x5229;&#x76CA;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x641C;&#x7D20;&#x5F15;&#x64CE;&#x4E0E;&#x7AD9;&#x957F;&#x80FD;&#x591F;&#x8FBE;&#x5230;&#x53CC;&#x8D62;&#xFF0C;&#x5728;&#x6293;&#x53D6;&#x8FC7;&#x7A0B;&#x4E2D;&#x53CC;&#x65B9;&#x5FC5;&#x987B;&#x9075;&#x5B88;&#x4E00;&#x5B9A;&#x7684; &#x89C4;&#x8303;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x53CC;&#x65B9;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x53CA;&#x5BF9;&#x63A5;&#x3002;&#x8FD9;&#x79CD;&#x8FC7;&#x7A0B;&#x4E2D;&#x9075;&#x5B88;&#x7684;&#x89C4;&#x8303;&#x4E5F;&#x5C31;&#x662F;&#x65E5;&#x5E38;&#x4E2D;&#x6211;&#x4EEC;&#x6240;&#x8BF4;&#x7684;&#x4E00;&#x4E9B;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;   </p>
+<p>&#x4EE5;&#x4E0B;&#x7B80;&#x5355;&#x5217;&#x4E3E;&#xFF1A;   </p>
+<ul>
+<li><p>http &#x534F;&#x8BAE;&#xFF1A;&#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x662F;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x5E94;&#x7528;&#x6700;&#x4E3A;&#x5E7F;&#x6CDB;&#x7684;&#x4E00;&#x79CD;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BF7;&#x6C42;&#x548C;&#x5E94;&#x7B54;&#x7684;&#x6807;&#x51C6;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x662F;&#x6307;&#x7EC8;&#x7AEF;&#x7528;&#x6237;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5373;&#x6307;&#x7F51; &#x7AD9;&#x3002;&#x7EC8;&#x7AEF;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x3001;&#x8718;&#x86DB;&#x7B49;&#x5411;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x53D1;&#x9001; http &#x8BF7;&#x6C42;&#x3002;&#x53D1;&#x9001; http &#x8BF7;&#x6C42;&#x4F1A;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684; httpheader &#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5305;&#x62EC;&#x662F;&#x5426;&#x6210;&#x529F;&#x3001;&#x670D;&#x52A1; &#x5668;&#x7C7B;&#x578B;&#x3001;&#x7F51;&#x9875;&#x6700;&#x8FD1;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#x7B49;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+<li><p>https &#x534F;&#x8BAE;&#xFF1A;&#x5B9E;&#x9645;&#x662F;&#x52A0;&#x5BC6;&#x7248; http&#xFF0C;&#x4E00;&#x79CD;&#x66F4;&#x52A0;&#x5B89;&#x5168;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x3002;</p>
+</li>
+<li><p>UA &#x5C5E;&#x6027;&#xFF1A;UA &#x5373; user-agent&#xFF0C;&#x662F; http &#x534F;&#x8BAE;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4EE3;&#x8868;&#x4E86;&#x7EC8;&#x7AEF;&#x7684;&#x8EAB;&#x4EFD;&#xFF0C;&#x5411;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8868;&#x660E;&#x6211;&#x662F;&#x8C01;&#x6765;&#x5E72;&#x561B;&#xFF0C;&#x8FDB;&#x800C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8EAB;&#x4EFD;&#x6765;&#x505A;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x53CD;&#x9988;&#x7ED3;&#x679C;&#x3002;</p>
+</li>
+<li><p>robots &#x534F;&#x8BAE;&#xFF1A;robots.txt &#x662F;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x65F6;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4EE5;&#x6765;&#x786E;&#x5B9A;&#x54EA;&#x4E9B;&#x662F;&#x88AB;&#x5141;&#x8BB8;&#x6293;&#x53D6;&#x7684;&#x54EA;&#x4E9B;&#x662F;&#x88AB;&#x7981;&#x6B62;&#x6293;&#x53D6;&#x7684;&#x3002; robots.txt &#x5FC5;&#x987B;&#x653E;&#x5728;&#x7F51;&#x7AD9;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4E14;&#x6587;&#x4EF6;&#x540D;&#x8981;&#x5C0F;&#x5199;&#x3002;&#x8BE6;&#x7EC6;&#x7684; robots.txt &#x5199;&#x6CD5;&#x53EF;&#x53C2;&#x8003; <a href="http://www.robotstxt.org" target="_blank">http://www.robotstxt.org</a> &#x3002;&#x767E;&#x5EA6;&#x4E25;&#x683C;&#x6309;&#x7167; robots &#x534F;&#x8BAE;&#x6267;&#x884C;&#xFF0C;&#x53E6;&#x5916;&#xFF0C;&#x540C;&#x6837;&#x652F;&#x6301;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x540D;&#x4E3A; robots &#x7684; meta &#x6807; &#x7B7E;&#xFF0C;index&#x3001;follow&#x3001;nofollow &#x7B49;&#x6307;&#x4EE4;&#x3002;    </p>
+</li>
+</ul>
+<h2 id="baiduspider-&#x6293;&#x53D6;&#x9891;&#x6B21;&#x539F;&#x5219;&#x53CA;&#x8C03;&#x6574;&#x65B9;&#x6CD5;">Baiduspider &#x6293;&#x53D6;&#x9891;&#x6B21;&#x539F;&#x5219;&#x53CA;&#x8C03;&#x6574;&#x65B9;&#x6CD5;</h2>
+<p>Baiduspider &#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7F51;&#x7AD9;&#x8BBE;&#x7F6E;&#x7684;&#x534F;&#x8BAE;&#x5BF9;&#x7AD9;&#x70B9;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x6293;&#x53D6;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x505A;&#x5230;&#x5BF9;&#x6240;&#x6709;&#x7AD9;&#x70B9;&#x4E00;&#x89C6;&#x540C;&#x4EC1;&#xFF0C;&#x4F1A;&#x7EFC;&#x5408;&#x8003;&#x8651;&#x7AD9;&#x70B9;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x6293;&#x53D6;&#x914D;&#x989D;&#xFF0C;&#x6BCF;&#x5929;&#x5B9A;&#x91CF;&#x6293;&#x53D6;&#x7AD9;&#x70B9;&#x5185;&#x5BB9;&#xFF0C;&#x5373;&#x6211;&#x4EEC;&#x5E38;&#x8BF4;&#x7684;&#x6293;&#x53D6;&#x9891;&#x6B21;&#x3002;&#x90A3;&#x4E48;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x662F;&#x6839;&#x636E;&#x4EC0;&#x4E48;&#x6307;&#x6807;&#x6765;&#x786E;&#x5B9A;&#x5BF9;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7684;&#x6293;&#x53D6;&#x9891;&#x6B21;&#x7684;&#x5462;&#xFF0C;&#x4E3B;&#x8981;&#x6307;&#x6807;&#x6709;&#x56DB;&#x4E2A;&#xFF1A;  </p>
+<ol>
+<li>&#x7F51;&#x7AD9;&#x66F4;&#x65B0;&#x9891;&#x7387;&#xFF1A;&#x66F4;&#x65B0;&#x5FEB;&#x591A;&#x6765;&#xFF0C;&#x66F4;&#x65B0;&#x6162;&#x5C11;&#x6765;&#xFF0C;&#x76F4;&#x63A5;&#x5F71;&#x54CD; Baiduspider &#x7684;&#x6765;&#x8BBF;&#x9891;&#x7387;</li>
+<li>&#x7F51;&#x7AD9;&#x66F4;&#x65B0;&#x8D28;&#x91CF;&#xFF1A;&#x66F4;&#x65B0;&#x9891;&#x7387;&#x63D0;&#x9AD8;&#x4E86;&#xFF0C;&#x4EC5;&#x4EC5;&#x662F;&#x5438;&#x5F15;&#x4E86; Baiduspier &#x7684;&#x6CE8;&#x610F;&#xFF0C;Baiduspider &#x5BF9;&#x8D28;&#x91CF;&#x662F;&#x6709;&#x4E25;&#x683C;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x7AD9;&#x6BCF;&#x5929;&#x66F4;&#x65B0;&#x51FA;&#x7684;&#x5927;&#x91CF;&#x5185;&#x5BB9;&#x90FD;&#x88AB; Baiduspider &#x5224;&#x5B9A;&#x4E3A;&#x4F4E;&#x8D28;&#x9875;&#x9762;&#xFF0C;&#x4F9D;&#x7136;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</li>
+<li>&#x8FDE;&#x901A;&#x5EA6;&#xFF1A;&#x7F51;&#x7AD9;&#x5E94;&#x8BE5;&#x5B89;&#x5168;&#x7A33;&#x5B9A;&#x3001;&#x5BF9; Baiduspider &#x4FDD;&#x6301;&#x7545;&#x901A;&#xFF0C;&#x7ECF;&#x5E38;&#x7ED9; Baiduspider &#x5403;&#x95ED;&#x95E8;&#x7FB9;&#x53EF;&#x4E0D;&#x662F;&#x597D;&#x4E8B;&#x60C5;</li>
+<li>&#x7AD9;&#x70B9;&#x8BC4;&#x4EF7;&#xFF1A;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5BF9;&#x6BCF;&#x4E2A;&#x7AD9;&#x70B9;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8BC4;&#x4EF7;&#xFF0C;&#x4E14;&#x8FD9;&#x4E2A;&#x8BC4;&#x4EF7;&#x4F1A;&#x6839;&#x636E;&#x7AD9;&#x70B9;&#x60C5;&#x51B5;&#x4E0D;&#x65AD;&#x53D8;&#x5316;&#xFF0C;&#x662F;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5BF9;&#x7AD9;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x6253;&#x5206;&#xFF08;&#x7EDD;&#x975E;&#x5916;&#x754C;&#x6240;&#x8BF4;&#x7684;&#x767E;&#x5EA6;&#x6743;&#x91CD;&#xFF09;&#xFF0C;&#x662F;&#x767E;&#x5EA6;&#x5185;&#x90E8;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x673A;&#x5BC6;&#x7684;&#x6570;&#x636E;&#x3002;&#x7AD9;&#x70B9;&#x8BC4;&#x7EA7;&#x4ECE;&#x4E0D;&#x72EC;&#x7ACB;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x914D;&#x5408;&#x5176;&#x5B83;&#x56E0;&#x5B50;&#x548C;&#x9608;&#x503C;&#x4E00;&#x8D77;&#x5171;&#x540C;&#x5F71;&#x54CD;&#x5BF9;&#x7F51;&#x7AD9;&#x7684;&#x6293;&#x53D6;&#x548C;&#x6392;&#x5E8F;&#x3002;    </li>
+</ol>
+<p>&#x6293;&#x53D6;&#x9891;&#x6B21;&#x95F4;&#x63A5;&#x51B3;&#x5B9A;&#x7740;&#x7F51;&#x7AD9;&#x6709;&#x591A;&#x5C11;&#x9875;&#x9762;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x5EFA;&#x5E93;&#x6536;&#x5F55;&#xFF0C;&#x5982;&#x6B64;&#x91CD;&#x8981;&#x7684;&#x6570;&#x503C;&#x5982;&#x679C;&#x4E0D;&#x7B26;&#x5408;&#x7AD9;&#x957F;&#x9884;&#x671F;&#x8BE5;&#x5982;&#x4F55;&#x8C03;&#x6574;&#x5462;&#xFF1F;&#x767E;&#x5EA6;&#x7AD9;&#x957F;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x4E86;&#x6293;&#x53D6;&#x9891;&#x6B21;&#x5DE5;&#x5177;&#xFF08;<code>http://zhanzhang.baidu.com/pressure/index</code>&#xFF09;&#xFF0C;&#x5E76;&#x5DF2;&#x5B8C;&#x6210;&#x591A;&#x6B21;&#x5347;&#x7EA7;&#x3002;&#x8BE5;&#x5DE5;&#x5177;&#x9664;&#x4E86;&#x63D0;&#x4F9B;&#x6293;&#x53D6;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5916;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B; &#x201C;&#x9891;&#x6B21;&#x8C03;&#x6574;&#x201D; &#x529F;&#x80FD;&#xFF0C;&#x7AD9;&#x957F;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x5411;&#x767E;&#x5EA6;&#x7AD9;&#x957F;&#x5E73;&#x53F0;&#x63D0;&#x51FA;&#x5E0C;&#x671B; Baiduspider &#x589E;&#x52A0;&#x6765;&#x8BBF;&#x6216;&#x51CF;&#x5C11;&#x6765;&#x8BBF;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5DE5;&#x5177;&#x4F1A;&#x6839;&#x636E;&#x7AD9;&#x957F;&#x7684;&#x610F;&#x613F;&#x548C;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;   </p>
+<h2 id="&#x9020;&#x6210;-baiduspider-&#x6293;&#x53D6;&#x5F02;&#x5E38;&#x7684;&#x539F;&#x56E0;">&#x9020;&#x6210; Baiduspider &#x6293;&#x53D6;&#x5F02;&#x5E38;&#x7684;&#x539F;&#x56E0;</h2>
+<p>&#x6709;&#x4E00;&#x4E9B;&#x7F51;&#x9875;&#xFF0C;&#x5185;&#x5BB9;&#x4F18;&#x8D28;&#xFF0C;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x662F; Baiduspider &#x5374;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#x5E76;&#x6293;&#x53D6;&#xFF0C;&#x9020;&#x6210;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x8986;&#x76D6;&#x7387;&#x7F3A;&#x5931;&#xFF0C;&#x5BF9;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5BF9;&#x7AD9;&#x70B9;&#x90FD;&#x662F;&#x4E00;&#x79CD;&#x635F;&#x5931;&#xFF0C;&#x767E;&#x5EA6;&#x628A;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EB; &#x201C;&#x6293;&#x53D6;&#x5F02;&#x5E38;&#x201D;&#x3002;&#x5BF9;&#x4E8E;&#x5927;&#x91CF;&#x5185;&#x5BB9;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x6293;&#x53D6;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4F1A;&#x8BA4;&#x4E3A;&#x7F51;&#x7AD9;&#x5B58;&#x5728;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x4E0A;&#x7684;&#x7F3A;&#x9677;&#xFF0C;&#x5E76;&#x964D;&#x4F4E;&#x5BF9;&#x7F51;&#x7AD9;&#x7684;&#x8BC4;&#x4EF7;&#xFF0C;&#x5728;&#x6293;&#x53D6;&#x3001;&#x7D22;&#x5F15;&#x3001;&#x6392;&#x5E8F;&#x4E0A;&#x90FD;&#x4F1A;&#x53D7;&#x5230;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#xFF0C;&#x6700;&#x7EC8;&#x5F71;&#x54CD;&#x5230;&#x7F51;&#x7AD9;&#x4ECE;&#x767E;&#x5EA6;&#x83B7;&#x53D6;&#x7684;&#x6D41;&#x91CF;&#x3002;   </p>
+<p>&#x4E0B;&#x9762;&#x5411;&#x7AD9;&#x957F;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x6293;&#x53D6;&#x5F02;&#x5E38;&#x539F;&#x56E0;:   </p>
+<h3 id="1-&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;">1. &#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;</h3>
+<p>&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;&#x4F1A;&#x6709;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x7AD9;&#x70B9;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;Baiduspider &#x5C1D;&#x8BD5;&#x8FDE;&#x63A5;&#x60A8;&#x7F51;&#x7AD9;&#x7684;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x51FA;&#x73B0;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#xFF1B;&#x4E00;&#x79CD;&#x662F; Baiduspider &#x4E00;&#x76F4;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x4E0A;&#x60A8;&#x7F51;&#x7AD9;&#x7684;&#x670D;&#x52A1;&#x5668;&#x3002;<br>&#x9020;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;&#x7684;&#x539F;&#x56E0;&#x901A;&#x5E38;&#x662F;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x670D;&#x52A1;&#x5668;&#x8FC7;&#x5927;&#xFF0C;&#x8D85;&#x8D1F;&#x8377;&#x8FD0;&#x8F6C;&#x3002;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x8FD0;&#x884C;&#x4E0D;&#x6B63;&#x5E38;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x7F51;&#x7AD9;&#x7684; web &#x670D;&#x52A1;&#x5668;&#xFF08;&#x5982; apache&#x3001;iis&#xFF09;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x4E14;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x68C0;&#x67E5;&#x4E3B;&#x8981;&#x9875;&#x9762;&#x80FD;&#x5426;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#x3002;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x548C;&#x4E3B;&#x673A;&#x8FD8;&#x53EF;&#x80FD;&#x963B;&#x6B62;&#x4E86; Baiduspider &#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x7F51;&#x7AD9;&#x548C;&#x4E3B;&#x673A;&#x7684;&#x9632;&#x706B;&#x5899;&#x3002;   </p>
+<h3 id="2-&#x7F51;&#x7EDC;&#x8FD0;&#x8425;&#x5546;&#x5F02;&#x5E38;">2. &#x7F51;&#x7EDC;&#x8FD0;&#x8425;&#x5546;&#x5F02;&#x5E38;</h3>
+<p>&#x7F51;&#x7EDC;&#x8FD0;&#x8425;&#x5546;&#x5206;&#x7535;&#x4FE1;&#x548C;&#x8054;&#x901A;&#x4E24;&#x79CD;&#xFF0C;Baiduspider &#x901A;&#x8FC7;&#x7535;&#x4FE1;&#x6216;&#x7F51;&#x901A;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x3002;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x4E0E;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x8FD0;&#x8425;&#x5546;&#x8FDB;&#x884C;&#x8054;&#x7CFB;&#xFF0C;&#x6216;&#x8005;&#x8D2D;&#x4E70;&#x62E5;&#x6709;&#x53CC;&#x7EBF;&#x670D;&#x52A1;&#x7684;&#x7A7A;&#x95F4;&#x6216;&#x8005;&#x8D2D;&#x4E70; cdn &#x670D;&#x52A1;&#x3002;</p>
+<h3 id="3-dns-&#x5F02;&#x5E38;">3. DNS &#x5F02;&#x5E38;</h3>
+<p>&#x5F53; Baiduspider &#x65E0;&#x6CD5;&#x89E3;&#x6790;&#x60A8;&#x7F51;&#x7AD9;&#x7684; IP &#x65F6;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0; DNS &#x5F02;&#x5E38;&#x3002;&#x53EF;&#x80FD;&#x662F;&#x60A8;&#x7684;&#x7F51;&#x7AD9; IP &#x5730;&#x5740;&#x9519;&#x8BEF;&#xFF0C;&#x6216;&#x8005;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5546;&#x628A; Baiduspider &#x5C01;&#x7981;&#x3002;&#x8BF7;&#x4F7F;&#x7528; WHOIS &#x6216;&#x8005; host &#x67E5;&#x8BE2;&#x81EA;&#x5DF1;&#x7F51;&#x7AD9; IP &#x5730;&#x5740;&#x662F;&#x5426;&#x6B63;&#x786E;&#x4E14;&#x53EF;&#x89E3;&#x6790;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6B63;&#x786E;&#x6216;&#x65E0;&#x6CD5;&#x89E3;&#x6790;&#xFF0C;&#x8BF7;&#x4E0E;&#x57DF;&#x540D;&#x6CE8;&#x518C;&#x5546;&#x8054;&#x7CFB;&#xFF0C;&#x66F4;&#x65B0;&#x60A8;&#x7684; IP &#x5730;&#x5740;&#x3002;    </p>
+<h3 id="4-ip-&#x5C01;&#x7981;">4. IP &#x5C01;&#x7981;</h3>
+<p>IP &#x5C01;&#x7981;&#x4E3A;&#xFF1A;&#x9650;&#x5236;&#x7F51;&#x7EDC;&#x7684;&#x51FA;&#x53E3; IP &#x5730;&#x5740;&#xFF0C;&#x7981;&#x6B62;&#x8BE5; IP &#x6BB5;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x8FDB;&#x884C;&#x5185;&#x5BB9;&#x8BBF;&#x95EE;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x7279;&#x6307;&#x5C01;&#x7981;&#x4E86; BaiduspiderIP&#x3002;&#x5F53;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x5E0C;&#x671B; Baiduspider &#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x8BE5;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B; Baiduspider &#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;&#x4E2D;&#x662F;&#x5426;&#x8BEF;&#x6DFB;&#x52A0;&#x4E86; BaiduspiderIP&#x3002;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x60A8;&#x7F51;&#x7AD9;&#x6240;&#x5728;&#x7684;&#x7A7A;&#x95F4;&#x670D;&#x52A1;&#x5546;&#x628A;&#x767E;&#x5EA6; IP &#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x7981;&#xFF0C;&#x8FD9;&#x65F6;&#x60A8;&#x9700;&#x8981;&#x8054;&#x7CFB;&#x670D;&#x52A1;&#x5546;&#x66F4;&#x6539;&#x8BBE;&#x7F6E;&#x3002;   </p>
+<h3 id="5-ua-&#x5C01;&#x7981;">5. UA &#x5C01;&#x7981;</h3>
+<p>UA &#x5373;&#x4E3A;&#x7528;&#x6237;&#x4EE3;&#x7406;&#xFF08;User-Agent&#xFF09;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x901A;&#x8FC7; UA &#x8BC6;&#x522B;&#x8BBF;&#x95EE;&#x8005;&#x7684;&#x8EAB;&#x4EFD;&#x3002;&#x5F53;&#x7F51;&#x7AD9;&#x9488;&#x5BF9;&#x6307;&#x5B9A; UA &#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD4;&#x56DE;&#x5F02;&#x5E38;&#x9875;&#x9762;&#xFF08;&#x5982; 403&#xFF0C;500&#xFF09;&#x6216;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5373;&#x4E3A; UA &#x5C01;&#x7981;&#x3002;&#x5F53;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x5E0C;&#x671B; Baiduspider &#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x8BE5;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B; Baiduspider &#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;useragent &#x76F8;&#x5173;&#x7684;&#x8BBE;&#x7F6E;&#x4E2D;&#x662F;&#x5426;&#x6709; Baiduspider UA&#xFF0C;&#x5E76;&#x53CA;&#x65F6;&#x4FEE;&#x6539;&#x3002;   </p>
+<h3 id="6-&#x6B7B;&#x94FE;">6. &#x6B7B;&#x94FE;</h3>
+<p>&#x9875;&#x9762;&#x5DF2;&#x7ECF;&#x65E0;&#x6548;&#xFF0C;&#x65E0;&#x6CD5;&#x5BF9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x6709;&#x4EF7;&#x503C;&#x4FE1;&#x606F;&#x7684;&#x9875;&#x9762;&#x5C31;&#x662F;&#x6B7B;&#x94FE;&#x63A5;&#xFF0C;&#x5305;&#x62EC;&#x534F;&#x8BAE;&#x6B7B;&#x94FE;&#x548C;&#x5185;&#x5BB9;&#x6B7B;&#x94FE;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;:</p>
+<ul>
+<li>&#x534F;&#x8BAE;&#x6B7B;&#x94FE;&#xFF1A;&#x9875;&#x9762;&#x7684; TCP &#x534F;&#x8BAE;&#x72B6;&#x6001; /HTTP &#x534F;&#x8BAE;&#x72B6;&#x6001;&#x660E;&#x786E;&#x8868;&#x793A;&#x7684;&#x6B7B;&#x94FE;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x5982; 404&#x3001;403&#x3001;503 &#x72B6;&#x6001;&#x7B49;&#x3002;</li>
+<li>&#x5185;&#x5BB9;&#x6B7B;&#x94FE;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x4F46;&#x5185;&#x5BB9;&#x5DF2;&#x7ECF;&#x53D8;&#x66F4;&#x4E3A;&#x4E0D;&#x5B58;&#x5728;&#x3001;&#x5DF2;&#x5220;&#x9664;&#x6216;&#x9700;&#x8981;&#x6743;&#x9650;&#x7B49;&#x4E0E;&#x539F;&#x5185;&#x5BB9;&#x65E0;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x9875;&#x9762;&#x3002;<br>&#x5BF9;&#x4E8E;&#x6B7B;&#x94FE;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x7AD9;&#x70B9;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x6B7B;&#x94FE;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x767E;&#x5EA6;&#x7AD9;&#x957F;&#x5E73;&#x53F0;--&#x6B7B;&#x94FE;&#x5DE5;&#x5177;&#x5411;&#x767E;&#x5EA6;&#x63D0;&#x4EA4;&#xFF0C;&#x4EE5;&#x4FBF;&#x767E;&#x5EA6;&#x66F4;&#x5FEB;&#x5730;&#x53D1;&#x73B0;&#x6B7B;&#x94FE;&#xFF0C;&#x51CF;&#x5C11;&#x6B7B;&#x94FE;&#x5BF9;&#x7528;&#x6237;&#x4EE5;&#x53CA;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x9020;&#x6210;&#x7684;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#x3002;    </li>
+</ul>
+<h3 id="7-&#x5F02;&#x5E38;&#x8DF3;&#x8F6C;">7. &#x5F02;&#x5E38;&#x8DF3;&#x8F6C;</h3>
+<p>&#x5C06;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x91CD;&#x65B0;&#x6307;&#x5411;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x5373;&#x4E3A;&#x8DF3;&#x8F6C;&#x3002;&#x5F02;&#x5E38;&#x8DF3;&#x8F6C;&#x6307;&#x7684;&#x662F;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF1A; </p>
+<ul>
+<li>&#x5F53;&#x524D;&#x8BE5;&#x9875;&#x9762;&#x4E3A;&#x65E0;&#x6548;&#x9875;&#x9762;&#xFF08;&#x5185;&#x5BB9;&#x5DF2;&#x5220;&#x9664;&#x3001;&#x6B7B;&#x94FE;&#x7B49;&#xFF09;&#xFF0C;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x524D;&#x4E00;&#x76EE;&#x5F55;&#x6216;&#x8005;&#x9996;&#x9875;&#xFF0C;&#x767E;&#x5EA6;&#x5EFA;&#x8BAE;&#x7AD9;&#x957F;&#x5C06;&#x8BE5;&#x65E0;&#x6548;&#x9875;&#x9762;&#x7684;&#x5165;&#x53E3;&#x8D85;&#x94FE;&#x63A5;&#x5220;&#x9664;&#x6389;</li>
+<li><p>&#x8DF3;&#x8F6C;&#x5230;&#x51FA;&#x9519;&#x6216;&#x8005;&#x65E0;&#x6548;&#x9875;&#x9762;
+&#x6CE8;&#x610F;&#xFF1A;&#x5BF9;&#x4E8E;&#x957F;&#x65F6;&#x95F4;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x57DF;&#x540D;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x7F51;&#x7AD9;&#x66F4;&#x6362;&#x57DF;&#x540D;&#xFF0C;&#x767E;&#x5EA6;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; 301 &#x8DF3;&#x8F6C;&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+</li>
+<li><p>&#x5176;&#x4ED6;&#x5F02;&#x5E38;&#xFF1A;</p>
+</li>
+<li><p>&#x9488;&#x5BF9;&#x767E;&#x5EA6; refer &#x7684;&#x5F02;&#x5E38;&#xFF1A;&#x7F51;&#x9875;&#x9488;&#x5BF9;&#x6765;&#x81EA;&#x767E;&#x5EA6;&#x7684; refer &#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x4E8E;&#x6B63;&#x5E38;&#x5185;&#x5BB9;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+</li>
+<li>&#x9488;&#x5BF9;&#x767E;&#x5EA6; ua &#x7684;&#x5F02;&#x5E38;&#xFF1A;&#x7F51;&#x9875;&#x5BF9;&#x767E;&#x5EA6; UA &#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x4E8E;&#x9875;&#x9762;&#x539F;&#x5185;&#x5BB9;&#x7684;&#x884C;&#x4E3A;&#x3002;</li>
+<li>JS &#x8DF3;&#x8F6C;&#x5F02;&#x5E38;&#xFF1A;&#x7F51;&#x9875;&#x52A0;&#x8F7D;&#x4E86;&#x767E;&#x5EA6;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x7684; JS &#x8DF3;&#x8F6C;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x5F97;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x8FDB;&#x5165;&#x9875;&#x9762;&#x540E;&#x53D1;&#x751F;&#x4E86;&#x8DF3;&#x8F6C;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+<li>&#x538B;&#x529B;&#x8FC7;&#x5927;&#x5F15;&#x8D77;&#x7684;&#x5076;&#x7136;&#x5C01;&#x7981;&#xFF1A;&#x767E;&#x5EA6;&#x4F1A;&#x6839;&#x636E;&#x7AD9;&#x70B9;&#x7684;&#x89C4;&#x6A21;&#x3001;&#x8BBF;&#x95EE;&#x91CF;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x81EA;&#x52A8;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x5408;&#x7406;&#x7684;&#x6293;&#x53D6;&#x538B;&#x529B;&#x3002;&#x4F46;&#x662F;&#x5728;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x538B;&#x529B;&#x63A7;&#x5236;&#x5931;&#x5E38;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x8D1F;&#x8377;&#x8FDB;&#x884C;&#x4FDD;&#x62A4;&#x6027;&#x7684;&#x5076;&#x7136;&#x5C01;&#x7981;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BF7;&#x5728;&#x8FD4;&#x56DE;&#x7801;&#x4E2D;&#x8FD4;&#x56DE; 503(&#x5176;&#x542B;&#x4E49;&#x662F; &#x201C;Service Unavailable&#x201D;)&#xFF0C;&#x8FD9;&#x6837; Baiduspider &#x4F1A;&#x8FC7;&#x6BB5;&#x65F6;&#x95F4;&#x518D;&#x6765;&#x5C1D;&#x8BD5;&#x6293;&#x53D6;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x7AD9;&#x5DF2;&#x7A7A;&#x95F2;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x6210;&#x529F;&#x6293;&#x53D6;&#x3002;   </li>
+</ul>
+<h2 id="&#x65B0;&#x94FE;&#x63A5;&#x91CD;&#x8981;&#x7A0B;&#x5EA6;&#x5224;&#x65AD;">&#x65B0;&#x94FE;&#x63A5;&#x91CD;&#x8981;&#x7A0B;&#x5EA6;&#x5224;&#x65AD;</h2>
+<p>&#x597D;&#x5566;&#xFF0C;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x4E86;&#x5F71;&#x54CD; Baiduspider &#x6B63;&#x5E38;&#x6293;&#x53D6;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x8981;&#x8BF4;&#x8BF4; Baiduspider &#x7684;&#x4E00;&#x4E9B;&#x5224;&#x65AD;&#x539F;&#x5219;&#x4E86;&#x3002;&#x5728;&#x5EFA;&#x5E93;&#x73AF;&#x8282;&#x524D;&#xFF0C;Baiduspider &#x4F1A;&#x5BF9;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x521D;&#x6B65;&#x5185;&#x5BB9;&#x5206;&#x6790;&#x548C;&#x94FE;&#x63A5;&#x5206;&#x6790;&#xFF0C;&#x901A;&#x8FC7;&#x5185;&#x5BB9;&#x5206;&#x6790;&#x51B3;&#x5B9A;&#x8BE5;&#x7F51;&#x9875;&#x662F;&#x5426;&#x9700;&#x8981;&#x5EFA;&#x7D22;&#x5F15;&#x5E93;&#xFF0C;&#x901A;&#x8FC7;&#x94FE;&#x63A5;&#x5206;&#x6790;&#x53D1;&#x73B0;&#x66F4;&#x591A;&#x7F51;&#x9875;&#xFF0C;&#x518D;&#x5BF9;&#x66F4;&#x591A;&#x7F51;&#x9875;&#x8FDB;&#x884C;&#x6293;&#x53D6;&#x2014;&#x2014;&#x5206;&#x6790;&#x2014;&#x2014;&#x662F;&#x5426;&#x5EFA;&#x5E93; &amp; &#x53D1;&#x73B0;&#x65B0;&#x94FE;&#x63A5;&#x7684;&#x6D41;&#x7A0B;&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#xFF0C;Baiduspider &#x4F1A;&#x5C06;&#x65B0;&#x9875;&#x9762;&#x4E0A;&#x6240;&#x6709;&#x80FD; &#x201C;&#x770B;&#x5230;&#x201D; &#x7684;&#x94FE;&#x63A5;&#x90FD;&#x6293;&#x53D6;&#x56DE;&#x6765;&#xFF0C;&#x90A3;&#x4E48;&#x9762;&#x5BF9;&#x4F17;&#x591A;&#x65B0;&#x94FE;&#x63A5;&#xFF0C;Baiduspider &#x6839;&#x636E;&#x4EC0;&#x4E48;&#x5224;&#x65AD;&#x54EA;&#x4E2A;&#x66F4;&#x91CD;&#x8981;&#x5462;&#xFF1F;&#x4E24;&#x65B9;&#x9762;&#xFF1A;    </p>
+<h3 id="&#x7B2C;&#x4E00;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x4EF7;&#x503C;">&#x7B2C;&#x4E00;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x4EF7;&#x503C;</h3>
+<ol>
+<li>&#x5185;&#x5BB9;&#x72EC;&#x7279;&#xFF0C;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x559C;&#x6B22; unique &#x7684;&#x5185;&#x5BB9;</li>
+<li>&#x4E3B;&#x4F53;&#x7A81;&#x51FA;&#xFF0C;&#x5207;&#x4E0D;&#x8981;&#x51FA;&#x73B0;&#x7F51;&#x9875;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x4E0D;&#x7A81;&#x51FA;&#x800C;&#x88AB;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x8BEF;&#x5224;&#x4E3A;&#x7A7A;&#x77ED;&#x9875;&#x9762;&#x4E0D;&#x6293;&#x53D6;</li>
+<li>&#x5185;&#x5BB9;&#x4E30;&#x5BCC;</li>
+<li>&#x5E7F;&#x544A;&#x9002;&#x5F53;</li>
+</ol>
+<h3 id="&#x7B2C;&#x4E8C;&#xFF0C;&#x94FE;&#x63A5;&#x91CD;&#x8981;&#x7A0B;&#x5EA6;">&#x7B2C;&#x4E8C;&#xFF0C;&#x94FE;&#x63A5;&#x91CD;&#x8981;&#x7A0B;&#x5EA6;</h3>
+<ol>
+<li>&#x76EE;&#x5F55;&#x5C42;&#x7EA7;&#x2014;&#x2014;&#x6D45;&#x5C42;&#x4F18;&#x5148;</li>
+<li>&#x94FE;&#x63A5;&#x5728;&#x7AD9;&#x5185;&#x7684;&#x53D7;&#x6B22;&#x8FCE;&#x7A0B;&#x5EA6;</li>
+</ol>
+<h2 id="&#x767E;&#x5EA6;&#x4F18;&#x5148;&#x5EFA;&#x91CD;&#x8981;&#x5E93;&#x7684;&#x539F;&#x5219;">&#x767E;&#x5EA6;&#x4F18;&#x5148;&#x5EFA;&#x91CD;&#x8981;&#x5E93;&#x7684;&#x539F;&#x5219;</h2>
+<p>Baiduspider &#x6293;&#x4E86;&#x591A;&#x5C11;&#x9875;&#x9762;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x6709;&#x591A;&#x5C11;&#x9875;&#x9762;&#x88AB;&#x5EFA;&#x7D22;&#x5F15;&#x5E93;&#xFF0C;&#x5373;&#x6211;&#x4EEC;&#x5E38;&#x8BF4;&#x7684; &#x201C;&#x5EFA;&#x5E93;&#x201D;&#x3002;&#x4F17;&#x6240;&#x5468;&#x77E5;&#xFF0C;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7684;&#x7D22;&#x5F15;&#x5E93;&#x662F;&#x5206;&#x5C42;&#x7EA7;&#x7684;&#xFF0C;&#x4F18;&#x8D28;&#x7684;&#x7F51;&#x9875;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5230;&#x91CD;&#x8981;&#x7D22;&#x5F15;&#x5E93;&#xFF0C;&#x666E;&#x901A;&#x7F51;&#x9875;&#x4F1A;&#x5F85;&#x5728;&#x666E;&#x901A;&#x5E93;&#xFF0C;&#x518D;&#x5DEE;&#x4E00;&#x4E9B;&#x7684;&#x7F51;&#x9875;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5230;&#x4F4E;&#x7EA7;&#x5E93;&#x53BB;&#x5F53;&#x8865;&#x5145;&#x6750;&#x6599;&#x3002;&#x76EE;&#x524D; 60% &#x7684;&#x68C0;&#x7D22;&#x9700;&#x6C42;&#x53EA;&#x8C03;&#x7528;&#x91CD;&#x8981;&#x7D22;&#x5F15;&#x5E93;&#x5373;&#x53EF;&#x6EE1;&#x8DB3;&#xFF0C;&#x8FD9;&#x4E5F;&#x5C31;&#x89E3;&#x91CA;&#x4E86;&#x4E3A;&#x4EC0;&#x4E48;&#x6709;&#x4E9B;&#x7F51;&#x7AD9;&#x7684;&#x6536;&#x5F55;&#x91CF;&#x8D85;&#x9AD8;&#x6D41;&#x91CF;&#x5374;&#x4E00;&#x76F4;&#x4E0D;&#x7406;&#x60F3;&#x3002;   </p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x54EA;&#x4E9B;&#x7F51;&#x9875;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x4F18;&#x8D28;&#x7D22;&#x5F15;&#x5E93;&#x5462;&#x3002;&#x5176;&#x5B9E;&#x603B;&#x7684;&#x539F;&#x5219;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#xFF1A;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x4EF7;&#x503C;&#x3002;&#x5305;&#x62EC;&#x5374;&#x4E0D;&#x4EC5;&#x4E8E;&#xFF1A;  </p>
+<ol>
+<li>&#x6709;&#x65F6;&#x6548;&#x6027;&#x4E14;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x9875;&#x9762;&#xFF1A;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x65F6;&#x6548;&#x6027;&#x548C;&#x4EF7;&#x503C;&#x662F;&#x5E76;&#x5217;&#x5173;&#x7CFB;&#xFF0C;&#x7F3A;&#x4E00;&#x4E0D;&#x53EF;&#x3002;&#x6709;&#x4E9B;&#x7AD9;&#x70B9;&#x4E3A;&#x4E86;&#x4EA7;&#x751F;&#x65F6;&#x6548;&#x6027;&#x5185;&#x5BB9;&#x9875;&#x9762;&#x505A;&#x4E86;&#x5927;&#x91CF;&#x91C7;&#x96C6;&#x5DE5;&#x4F5C;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x5806;&#x65E0;&#x4EF7;&#x503C;&#x9762;&#x9875;&#xFF0C;&#x4E5F;&#x662F;&#x767E;&#x5EA6;&#x4E0D;&#x613F;&#x770B;&#x5230;&#x7684; .    </li>
+<li>&#x5185;&#x5BB9;&#x4F18;&#x8D28;&#x7684;&#x4E13;&#x9898;&#x9875;&#x9762;&#xFF1A;&#x4E13;&#x9898;&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E0D;&#x4E00;&#x5B9A;&#x5B8C;&#x5168;&#x662F;&#x539F;&#x521B;&#x7684;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x628A;&#x5404;&#x65B9;&#x5185;&#x5BB9;&#x6574;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x6216;&#x8005;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x65B0;&#x9C9C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6BD4;&#x5982;&#x89C2;&#x70B9;&#x548C;&#x8BC4;&#x8BBA;&#xFF0C;&#x7ED9;&#x7528;&#x6237;&#x66F4;&#x4E30;&#x5BCC;&#x5168;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x3002;   </li>
+<li>&#x9AD8;&#x4EF7;&#x503C;&#x539F;&#x521B;&#x5185;&#x5BB9;&#x9875;&#x9762;&#xFF1A;&#x767E;&#x5EA6;&#x628A;&#x539F;&#x521B;&#x5B9A;&#x4E49;&#x4E3A;&#x82B1;&#x8D39;&#x4E00;&#x5B9A;&#x6210;&#x672C;&#x3001;&#x5927;&#x91CF;&#x7ECF;&#x9A8C;&#x79EF;&#x7D2F;&#x63D0;&#x53D6;&#x540E;&#x5F62;&#x6210;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x518D;&#x95EE;&#x6211;&#x4EEC;&#x4F2A;&#x539F;&#x521B;&#x662F;&#x4E0D;&#x662F;&#x539F;&#x521B;&#x3002;   </li>
+<li>&#x91CD;&#x8981;&#x4E2A;&#x4EBA;&#x9875;&#x9762;&#xFF1A;&#x8FD9;&#x91CC;&#x4EC5;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x79D1;&#x6BD4;&#x5728;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x5F00;&#x6237;&#x4E86;&#xFF0C;&#x5373;&#x4F7F;&#x4ED6;&#x4E0D;&#x7ECF;&#x5E38;&#x66F4;&#x65B0;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x767E;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x6781;&#x91CD;&#x8981;&#x7684;&#x9875;&#x9762;&#x3002;   </li>
+</ol>
+<h2 id="&#x54EA;&#x4E9B;&#x7F51;&#x9875;&#x65E0;&#x6CD5;&#x5EFA;&#x5165;&#x7D22;&#x5F15;&#x5E93;">&#x54EA;&#x4E9B;&#x7F51;&#x9875;&#x65E0;&#x6CD5;&#x5EFA;&#x5165;&#x7D22;&#x5F15;&#x5E93;</h2>
+<p>&#x4E0A;&#x8FF0;&#x4F18;&#x8D28;&#x7F51;&#x9875;&#x8FDB;&#x4E86;&#x7D22;&#x5F15;&#x5E93;&#xFF0C;&#x90A3;&#x5176;&#x5B9E;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x5927;&#x90E8;&#x5206;&#x7F51;&#x7AD9;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x88AB;&#x767E;&#x5EA6;&#x6536;&#x5F55;&#x3002;&#x5E76;&#x975E;&#x662F;&#x767E;&#x5EA6;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x4ED6;&#x4EEC;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x5EFA;&#x5E93;&#x524D;&#x7684;&#x7B5B;&#x9009;&#x73AF;&#x8282;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#x4E86;&#x3002;&#x90A3;&#x600E;&#x6837;&#x7684;&#x7F51;&#x9875;&#x5728;&#x6700;&#x521D;&#x73AF;&#x8282;&#x5C31;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#x4E86;&#x5462;&#xFF1A;  </p>
+<ol>
+<li>&#x91CD;&#x590D;&#x5185;&#x5BB9;&#x7684;&#x7F51;&#x9875;&#xFF1A;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x5DF2;&#x6709;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x767E;&#x5EA6;&#x5FC5;&#x7136;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x518D;&#x6536;&#x5F55;&#x3002;   </li>
+<li>&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x7A7A;&#x77ED;&#x7684;&#x7F51;&#x9875;   <ul>
+<li>&#x6709;&#x4E9B;&#x5185;&#x5BB9;&#x4F7F;&#x7528;&#x4E86;&#x767E;&#x5EA6; spider &#x65E0;&#x6CD5;&#x89E3;&#x6790;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x5982; JS&#x3001;AJAX &#x7B49;&#xFF0C;&#x867D;&#x7136;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x80FD;&#x770B;&#x5230;&#x4E30;&#x5BCC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F9D;&#x7136;&#x4F1A;&#x88AB;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x629B;&#x5F03;   </li>
+<li>&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x8FC7;&#x6162;&#x7684;&#x7F51;&#x9875;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x5F53;&#x4F5C;&#x7A7A;&#x77ED;&#x9875;&#x9762;&#x5904;&#x7406;&#xFF0C;&#x6CE8;&#x610F;&#x5E7F;&#x544A;&#x52A0;&#x8F7D;&#x65F6;&#x95F4;&#x7B97;&#x5728;&#x7F51;&#x9875;&#x6574;&#x4F53;&#x52A0;&#x8F7D;&#x65F6;&#x95F4;&#x5185;&#x3002;</li>
+<li>&#x5F88;&#x591A;&#x4E3B;&#x4F53;&#x4E0D;&#x7A81;&#x51FA;&#x7684;&#x7F51;&#x9875;&#x5373;&#x4F7F;&#x88AB;&#x6293;&#x53D6;&#x56DE;&#x6765;&#x4E5F;&#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x73AF;&#x8282;&#x88AB;&#x629B;&#x5F03;&#x3002;   </li>
+</ul>
+</li>
+<li>&#x90E8;&#x5206;&#x4F5C;&#x5F0A;&#x7F51;&#x9875;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="mobile-friendly-standard.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 百度搜索Mobile Friendly（移动友好度）标准V1.0">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"百度搜索引擎工作原理","level":"4.1.1","depth":2,"next":{"title":"百度搜索Mobile Friendly（移动友好度）标准V1.0","level":"4.1.2","depth":2,"path":"seo/mobile-friendly-standard.md","ref":"seo/mobile-friendly-standard.md","articles":[]},"previous":{"title":"SEO","level":"4.1","depth":1,"ref":"","articles":[{"title":"百度搜索引擎工作原理","level":"4.1.1","depth":2,"path":"seo/search-engine-principle.md","ref":"seo/search-engine-principle.md","articles":[]},{"title":"百度搜索Mobile Friendly（移动友好度）标准V1.0","level":"4.1.2","depth":2,"path":"seo/mobile-friendly-standard.md","ref":"seo/mobile-friendly-standard.md","articles":[]},{"title":"网站优化","level":"4.1.3","depth":2,"path":"seo/website-optimization.md","ref":"seo/website-optimization.md","articles":[]},{"title":"网站建设","level":"4.1.4","depth":2,"path":"seo/website-development.md","ref":"seo/website-development.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","atoc","-sharing","-lunr","-search","search-pro","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"c7d52dcc025ace5582c34ce31e4b4552"},"splitter":{},"atoc":{},"search-pro":{},"livereload":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 开发手册","language":"zh-hans","gitbook":"*","description":"学习使用最新的 Web 技术，创建极速打开、信息安全、交互流畅的网页。"},"file":{"path":"seo/search-engine-principle.md","mtime":"2017-07-31T08:07:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-31T07:23:02.604Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
