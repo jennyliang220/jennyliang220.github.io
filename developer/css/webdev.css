@@ -83,27 +83,27 @@ p {
 }
 
 .container-fundamentals .main-btn {
-    color: #666;
-    font-weight: 300;
-    background: #ccc;
-    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+    background: #d04494;
+    font-size: 1.8rem;
     padding: 1rem;
     border-radius: .5rem;
-    transition: opacity .2s;
+    transition: background .2s;
     cursor: pointer;
-    border: 1px solid #999;
     display: inline-block;
     width: 190px;
     text-align: center;
 }
 
 .container-fundamentals .main-btn:hover {
-    /*cursor: pointer;*/
-    cursor: default;
-    /*background-color: #ddd;*/
-    /*color: black;*/
+    cursor: pointer;
+    background: #c14781;
 }
-
+.container-fundamentals .main-btn:active {
+    background: #ad3e72;
+}
+/*
 .main-btn.absolute {
     position: absolute;
     text-decoration: line-through;
@@ -111,7 +111,7 @@ p {
 
 .main-btn.absolute:hover {
     opacity: 0;
-}
+}*/
 
 .fundamentals-subtitle {
     font-size: 16px;
