@@ -1,0 +1,17 @@
+{
+  "name": "gitbook-plugin-colorful-top-navigation",
+  "version": "1.0.0",
+  "description": "add a colorful top navigation to your gitbook pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "colorful",
+    "navigation"
+  ],
+  "author": "Jenny_L",
+  "license": "ISC"
+}

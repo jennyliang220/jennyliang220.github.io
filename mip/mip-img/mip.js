@@ -8525,7 +8525,6 @@ define('components/mip-img', [
         }, false);
     };
     function firstInviewCallback() {
-        console.log('firstInviewCallback');
         // if image has been initialized, stop doing it again.
         var imgEle = this.element.querySelector('img');
         if (imgEle && imgEle.length > 0) {
@@ -8569,7 +8568,6 @@ define('components/mip-img', [
         this.targetEle = element;
     };
     Placeholder.prototype.init = function () {
-        // alert('Placeholder init');
         this.imgType = this._getImgType(this.targetEle);
         this._add(this.imgType);
     };
@@ -8599,7 +8597,6 @@ define('components/mip-img', [
         return imgType || 'other';
     };
     customElem.prototype.createdCallback = function () {
-        // alert('createdCallback');
         var element = this.element;
         var layoutAttr = element.getAttribute('layout');
         var heightAttr = element.getAttribute('height');
