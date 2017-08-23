@@ -8578,7 +8578,8 @@ define('components/mip-img', [
         this.targetEle.appendChild(placeholder);
     };
     Placeholder.prototype.remove = function () {
-        this.placeholder.parentElement.removeChild(this.placeholder);
+        var parent = this.placeholder.parentElement;
+        parent && parent.removeChild(this.placeholder);
     };
     /**
      * read img src/srcset and get img type
