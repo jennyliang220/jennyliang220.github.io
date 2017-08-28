@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function get_jsonp() {
+        $.ajax({
+            type: 'GET',
+            url: '/mip-list',
+            // data to be added to query string:
+            data: { name: 'Zepto.js' },
+            // type of data we are expecting in return:
+            dataType: 'jsonp',
+            jsonpCallback:'liangjiaying',
+            timeout: 300,
+            success: function(data) {
+                // Supposing this JSON payload was received:
+                //   {"project": {"id": 42, "html": "<div>..." }}
+                // append the HTML to context object.
+                $('body').append(data)
+            },
+            error: function(xhr, type) {
+                $('body').append(type)
+            }
+        })
+
+
+        // $.getJSON("http://127.0.0.1:3000/jsonp?callback=?",
+        //     function(data) {
+        //         $('#rjsonp').val('Jsonp info : ' + data.status);
+        //     });
+    }
+
+    function get_json() {
+        $.getJSON("json",
+            function(data) {
+                $('#rjson').val('Json info : ' + data.status);
+            });
+    }
+    </script>
+    <a href="javascript:get_jsonp();">Click me for jsonp</a>
+    <br />
+    <textarea id="rjsonp" cols="50" rows="3"></textarea>
+    <a href="javascript:get_json();">Click me for jsonp</a>
+    <br />
+    <textarea id="rjson" cols="50" rows="3"></textarea>
+</body>
+
+</html>
