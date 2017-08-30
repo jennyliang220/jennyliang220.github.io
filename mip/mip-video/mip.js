@@ -9272,7 +9272,7 @@ define('components/mip-video', [
         videoEl.addEventListener('click', sendVideoMessage, false);
         // make sourceList, send to outer iframe
         var sourceList = {};
-        for (i in this.sourceDoms) {
+        for (var i in this.sourceDoms) {
             var sourceDom = this.sourceDoms[i];
             var src = sourceDom.src || '';
             var type = sourceDom.type || '';
