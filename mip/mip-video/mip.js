@@ -9265,6 +9265,7 @@ define('components/mip-video', [
     // Render the `<a>` element with poster and play btn, and append to `this.element`
     customElem.prototype.renderPlayElsewhere = function () {
         var videoEl = document.createElement('div');
+        var urlSrc;
         videoEl.setAttribute('class', 'mip-video-poster');
         if (this.attributes.poster) {
             videoEl.style.backgroundImage = 'url(' + this.attributes.poster + ')';
@@ -9280,19 +9281,24 @@ define('components/mip-video', [
         var sourceList = [];
         Array.prototype.slice.apply(this.sourceDoms).forEach(function (node) {
             var obj = {};
-            obj.src = node.src || '';
-            obj.type = node.type || '';
+            obj.type = src;
             sourceList.push(obj);
         });
+        // 如果代码
+        if (!sourceList.length) {
+            urlSrc = videoEl.dataset.videoSrc;
+        } else {
+            urlSrc = JSON.stringify([
+                videoEl.dataset.videoSrc,
+                sourceList
+            ]);
+        }
         function sendVideoMessage() {
             if (windowInIframe) {
                 // mip_video_jump 为写在外层的承接方法
                 viewer.sendMessage('mip_video_jump', {
                     poster: videoEl.dataset.videoPoster,
-                    src: JSON.stringify([
-                        videoEl.dataset.videoSrc,
-                        sourceList
-                    ])
+                    src: urlSrc
                 });
             }
         }
