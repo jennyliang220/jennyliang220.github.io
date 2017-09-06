@@ -9223,6 +9223,9 @@ define('components/mip-video', [
         var windowProHttps = !!window.location.protocol.match(/^https:/);
         // 判断video源文件是否https
         var sourceIsHttps = true;
+        if (!this.sourceDoms.length) {
+            var sourceIsHttps = false;
+        }
         Array.prototype.slice.apply(this.sourceDoms).forEach(function (node) {
             if (!node.src.match(/^https:|^\/\//)) {
                 sourceIsHttps = false;
