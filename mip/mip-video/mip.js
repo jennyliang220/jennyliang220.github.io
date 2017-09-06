@@ -9281,7 +9281,7 @@ define('components/mip-video', [
         var sourceList = [];
         Array.prototype.slice.apply(this.sourceDoms).forEach(function (node) {
             var obj = {};
-            obj.type = src;
+            obj[node.type] = node.src;
             sourceList.push(obj);
         });
         // 如果代码
