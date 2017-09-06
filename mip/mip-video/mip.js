@@ -9228,7 +9228,6 @@ define('components/mip-video', [
                 sourceIsHttps = false;
             }
         });
-        console.log('sourceIsHttps: ' + sourceIsHttps);
         var videoProHttps = this.src && this.src.match(/^https:|^\/\//) || this.sourceDoms && sourceIsHttps;
         // 页面https         + 视频https  = 当前页播放
         // 页面https(在iframe里) + 视频http    = 跳出播放
@@ -9245,7 +9244,6 @@ define('components/mip-video', [
     };
     // Render the `<video>` element, and append to `this.element`
     customElem.prototype.renderInView = function () {
-        console.log('renderInView');
         var videoEl = document.createElement('video');
         for (var k in this.attributes) {
             if (this.attributes.hasOwnProperty(k) && videoAttributes.indexOf(k) > -1) {
@@ -9266,7 +9264,6 @@ define('components/mip-video', [
     };
     // Render the `<a>` element with poster and play btn, and append to `this.element`
     customElem.prototype.renderPlayElsewhere = function () {
-        console.log('renderPlayElsewhere');
         var videoEl = document.createElement('div');
         videoEl.setAttribute('class', 'mip-video-poster');
         if (this.attributes.poster) {
@@ -9280,20 +9277,16 @@ define('components/mip-video', [
         videoEl.dataset.videoPoster = this.attributes.poster;
         videoEl.addEventListener('click', sendVideoMessage, false);
         // make sourceList, send to outer iframe
-        var sourceList = {};
+        var sourceList = [];
         for (var i in this.sourceDoms) {
             var sourceDom = this.sourceDoms[i];
-            var src = sourceDom.src || '';
-            var type = sourceDom.type || '';
-            sourceList[src] = type;
+            var obj = {};
+            obj.src = sourceDom.src || '';
+            obj.type = sourceDom.type || '';
+            sourceList.push(obj);
         }
         function sendVideoMessage() {
             if (windowInIframe) {
-                console.log(JSON.stringify({
-                    poster: videoEl.dataset.videoPoster,
-                    src: videoEl.dataset.videoSrc,
-                    sourceList: sourceList
-                }));
                 // mip_video_jump 为写在外层的承接方法
                 viewer.sendMessage('mip_video_jump', {
                     poster: videoEl.dataset.videoPoster,
