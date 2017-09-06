@@ -9289,8 +9289,10 @@ define('components/mip-video', [
                 // mip_video_jump 为写在外层的承接方法
                 viewer.sendMessage('mip_video_jump', {
                     poster: videoEl.dataset.videoPoster,
-                    src: videoEl.dataset.videoSrc,
-                    sourceList: JSON.stringify(sourceList)
+                    src: JSON.stringify([
+                        videoEl.dataset.videoSrc,
+                        sourceList
+                    ])
                 });
             }
         }
