@@ -9235,7 +9235,8 @@ define('components/mip-video', [
         // 页面http          + 视频任意    = 当前页播放
         // 如果非iframe嵌套时，应该与协议无关 || 如果src为https ||  窗口内 + video http + 窗口http
         if (!windowInIframe || videoProHttps || windowInIframe && !videoProHttps && !windowProHttps) {
-            this.videoElement = this.renderInView();
+            // this.videoElement = this.renderInView();
+            this.videoElement = this.renderPlayElsewhere();
         } else {
             // 处理在窗口内，视频或者窗口非https的情况
             this.videoElement = this.renderPlayElsewhere();
@@ -9278,13 +9279,12 @@ define('components/mip-video', [
         videoEl.addEventListener('click', sendVideoMessage, false);
         // make sourceList, send to outer iframe
         var sourceList = [];
-        for (var i in this.sourceDoms) {
-            var sourceDom = this.sourceDoms[i];
+        Array.prototype.slice.apply(this.sourceDoms).forEach(function (node) {
             var obj = {};
-            obj.src = sourceDom.src || '';
-            obj.type = sourceDom.type || '';
+            obj.src = node.src || '';
+            obj.type = node.type || '';
             sourceList.push(obj);
-        }
+        });
         function sendVideoMessage() {
             if (windowInIframe) {
                 // mip_video_jump 为写在外层的承接方法
