@@ -9290,7 +9290,7 @@ define('components/mip-video', [
                 viewer.sendMessage('mip_video_jump', {
                     poster: videoEl.dataset.videoPoster,
                     src: videoEl.dataset.videoSrc,
-                    sourceList: sourceList
+                    sourceList: JSON.stringify(sourceList)
                 });
             }
         }
