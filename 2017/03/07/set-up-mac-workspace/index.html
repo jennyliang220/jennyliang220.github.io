@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword"  content="node">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          MAC前端工具安装和环境搭建-写在某前端工程师格式化电脑后 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/03/07/set-up-mac-workspace/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/./image/bg.jpg');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#tools" title="tools">tools</a>
+                            
+                        </div>
+                        <h1>MAC前端工具安装和环境搭建-写在某前端工程师格式化电脑后</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by JennyL on
+                            2017-03-07
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JennyL的前端技术博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>为了使用sketch，升级了mac系统版本os 10.12.1，然后各种应用大崩溃：QQ, safari, 邮件，印象笔记都打不开了。于是重新格式化电脑安装了10.11……一切正常之后，开始配置常用的前端工具。</p>
+</blockquote>
+<h2 id="1-node-amp-npm"><a href="#1-node-amp-npm" class="headerlink" title="1. node &amp;npm"></a>1. node &amp;npm</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1488879821982&amp;di=1ee06168a0dd60a2e31741d5d8ef29e7&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.zingdesign.com%2Fwp-content%2Fuploads%2Fnodejs-green.png" alt=""><br>node和npm几乎是一切的基础。有了npm包管理工具，就能安装接下来的工具了。<br>下载安装包：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+<h2 id="2-sublime"><a href="#2-sublime" class="headerlink" title="2. sublime"></a>2. sublime</h2><p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1488869710&amp;di=65358e26433ba92550813e3e3d4fef03&amp;src=http://wap.hbjsfx.com/static/kindeditor/attached/image/20161122/20161122084322_85783.jpg" alt=""><br>每天写代码的地方。如果不喜欢vim，sublime绝对是零基础入手的神器。<br>下载安装包：<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">http://www.sublimetext.com/</a><br>需要配合<a href="http://www.jianshu.com/p/101d4d3ca637" target="_blank" rel="noopener">package control</a>使用，大大增强功能。</p>
+<h2 id="3-iterm2"><a href="#3-iterm2" class="headerlink" title="3. iterm2"></a>3. iterm2</h2><p><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3188667583,1548886302&amp;fm=23&amp;gp=0.jpg" alt=""><br>好用的控制台, 代替mac自带终端。<br>下载安装包：<a href="http://www.iterm2.com/" target="_blank" rel="noopener">http://www.iterm2.com/</a></p>
+<h2 id="4-git-amp-github"><a href="#4-git-amp-github" class="headerlink" title="4. git &amp; github"></a>4. git &amp; github</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1488879941949&amp;di=9ea54b34420ff9d53c05ceff64580829&amp;imgtype=0&amp;src=http%3A%2F%2Fupload.chinaz.com%2F2016%2F0308%2F1457405654234.gif" alt=""><br>文件版本管理，连接github<br>下载安装包：<a href="https://git-scm.com/download/mac" target="_blank" rel="noopener">https://git-scm.com/download/mac</a><br>配置ssh key: <a href="https://github.com/settings/keys" target="_blank" rel="noopener">https://github.com/settings/keys</a></p>
+<h2 id="5-brew-amp-make"><a href="#5-brew-amp-make" class="headerlink" title="5. brew &amp; make"></a>5. brew &amp; make</h2><p>brew: 包管理工具，可继续安装nginx，make,  wget<br>复制命令安装：<a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a><br>新建Makefile, 使用make快捷执行命令</p>
+<h2 id="6-Xcode"><a href="#6-Xcode" class="headerlink" title="6. Xcode"></a>6. Xcode</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1488879995513&amp;di=39cf240cbbdb9300295197c28dfbb05f&amp;imgtype=0&amp;src=http%3A%2F%2Fwap.yesky.com%2FuploadImages%2F20151104144911811.png" alt=""><br>安装brew的时候要求安装xcode，那就安吧。4.55GB也太大了吧</p>
+<blockquote>
+<p>到这里，前端工具基本已经安装完毕。另外贴几个设计+交互软件的地址备份</p>
+</blockquote>
+<h2 id="7-Sketch"><a href="#7-Sketch" class="headerlink" title="7. Sketch"></a>7. Sketch</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1488880033977&amp;di=0c9a9f71196bc6c5d3a9012ae519972d&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.yang16.com%2F2017%2F01%2Fsketchicon.jpg" alt=""><br>现在已经不用ps和ai了，sketch实在是好用。<br>下载安装包：<a href="https://www.sketchapp.com/" target="_blank" rel="noopener">https://www.sketchapp.com/</a><br>常用插件：sketch measure; style inventory</p>
+<h2 id="8-Tumult-Hype"><a href="#8-Tumult-Hype" class="headerlink" title="8. Tumult Hype"></a>8. Tumult Hype</h2><p>交互设计工具<br>下载安装包：<a href="http://tumult.com/hype/download/" target="_blank" rel="noopener">http://tumult.com/hype/download/</a> （需要翻墙）</p>
+<h2 id="Adobe-XD"><a href="#Adobe-XD" class="headerlink" title="Adobe XD"></a>Adobe XD</h2><p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3490968667,2167488388&amp;fm=23&amp;gp=0.jpg" alt=""><br>看在adobe家族如此力挺这个设计+交互工具，还是值得一试的。<br>网盘下载：<a href="http://pan.baidu.com/s/1jHqMWYi" target="_blank" rel="noopener">http://pan.baidu.com/s/1jHqMWYi</a></p>
+<p>写在最后：@梁小米原创文章，文章版权为作者所有，转载请提前联系。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/03/20/javascript-nodelist-and-arguments/" data-toggle="tooltip" data-placement="top" title="对Javascript 类数组对象的理解与应用 | Arguments与Nodelist">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/12/27/set-labels-for-github-project/" data-toggle="tooltip" data-placement="top" title="github项目创建label方法与最佳实践（中文/英文）">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; JennyL 2017 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1d1711d14898ea695f12ebe35a7c6f7e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

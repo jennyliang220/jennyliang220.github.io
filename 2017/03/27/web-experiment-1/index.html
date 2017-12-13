@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword"  content="node">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Web实验(一)AB实验设计思路及实验落地 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/03/27/web-experiment-1/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/./image/bg.jpg');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript web" title="javascript web">javascript web</a>
+                            
+                        </div>
+                        <h1>Web实验(一)AB实验设计思路及实验落地</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by JennyL on
+                            2017-03-27
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JennyL的前端技术博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>这篇文章会讨论：</p>
+<ol>
+<li>在什么情况下需要做 AB 实验</li>
+<li>从产品/交互角度，如何设计一个实验</li>
+<li>前端工程师如何打点</li>
+<li>如何统计数据，并保证数据准确可信</li>
+<li>如何分析实验数据，有哪些数据需要重点关注</li>
+<li>附：如何搭建前端实验项目，以 mip-experiment 为例</li>
+</ol>
+</blockquote>
+<h2 id="一-AB-实验的使用场景和正确用法"><a href="#一-AB-实验的使用场景和正确用法" class="headerlink" title="一. AB 实验的使用场景和正确用法"></a>一. AB 实验的使用场景和正确用法</h2><p>我们通常在<strong>页面有样式变化</strong>，但又不确定是修改影响好坏的时候进行 AB 实验，实验数据可以为改版提供有力支持。</p>
+<blockquote>
+<p><strong>某公司日常（1）</strong><br>产品：把页面标题变成之前的两倍。标题就是要醒目，要大大大。<br><img src="http://upload-images.jianshu.io/upload_images/2203733-a987f99d091bef91.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">设计：打死都不同意，太大的标题不精致不优雅。<br>BOSS：下面的按钮点击导流就是收入。收入就是一切！！！你们做下实验，采用收入高的方案。<br>前端：哦。</p>
+</blockquote>
+<p>当不确认按钮颜色，banner 大小，两个宣传语哪个效果好的时候，实验数据可以帮你做决定。</p>
+<h2 id="二-产品经理如何设计实验？"><a href="#二-产品经理如何设计实验？" class="headerlink" title="二. 产品经理如何设计实验？"></a>二. 产品经理如何设计实验？</h2><p>在设计一个实验时，需要考虑以下问题：</p>
+<h4 id="2-1-实验的目的是什么？"><a href="#2-1-实验的目的是什么？" class="headerlink" title="2.1 实验的目的是什么？"></a>2.1 实验的目的是什么？</h4><p>提升点击：提升单个按钮转化能力，提升页面总体点击率，增加广告收入<br>用户留存：增加用户在页面的留存时长，拉升登录，减少多步骤页面的用户流失<br>强化功能：增加用户搜索次数，增加用户点赞频率，增加用户购买次数</p>
+<p><strong>重点关注一个目标，并选择其它几个目标作为辅助，以免走偏。</strong>比如：提升广告点击率，但不减少用户的留存时长和购买次数。Jenny_L 多啰嗦一句，用户体验是绝对不能损失的。在页面头部多插入一条广告，虽然可以短时间内提升广告收入，但长期来看会造成用户反感，造成永久的用户流失。</p>
+<h4 id="2-2-实验应设置哪些变量，哪些不变量？"><a href="#2-2-实验应设置哪些变量，哪些不变量？" class="headerlink" title="2.2 实验应设置哪些变量，哪些不变量？"></a>2.2 实验应设置哪些变量，哪些不变量？</h4><p>样式：按钮变大，banner 底色，文章<a href="http://www.uisdc.com/3-typography-tips-for-designer" target="_blank" rel="noopener">行间距和长度</a>，<a href="https://www.zhihu.com/question/19587406" target="_blank" rel="noopener">中英混排</a>样式<br>交互：增加提醒，增加<a href="http://baike.baidu.com/link?url=xNMVY2eLXas9EulIXHxSsryk3nr9Shj-DP7WRjEnJ3Ar1Px7sVvnSU8LSMCmiiKzG4EbK_XWHoYcFQKiud7w2mEuaIdiA3xeujBCzDVsJ6-9V9GT1D_7yBY9DpGoSgb0PvZEQTUXrMcyVUBamt6MgK" target="_blank" rel="noopener">面包屑导航</a>，增加 <a href="http://huaban.com/pins/2255947/" target="_blank" rel="noopener">loading 动画</a><br>文案：文案风格，文字长度</p>
+<p><strong>通常情况下，做实验都是使用控制变量法，仅改变一个影响因素，保持其他因素不变。</strong>控制变量法在物理实验中经常用到，比如自由落体实验：使用相同的物体（保证空气阻力不变），仅改变物体下落的初始高度，计算下落时间与高度的关系。类似地，在 web 样式改版实验中，我们仅改变标题大小，保持其他元素一致，这样就能得出<strong>标题文字大小和下方按钮点击率的关系</strong>了。</p>
+<blockquote>
+<p><strong>某公司日常（2）</strong><br>产品：我们做个实验，验证“标题变大，按钮点击量增加”。<br>设计：title @2x 的设计稿给你。<br><img src="http://upload-images.jianshu.io/upload_images/2203733-e975d5f0983f553b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">前端：好。</p>
+</blockquote>
+<h4 id="2-3-为得出实验结论，需要关注哪些数据？"><a href="#2-3-为得出实验结论，需要关注哪些数据？" class="headerlink" title="2.3. 为得出实验结论，需要关注哪些数据？"></a>2.3. 为得出实验结论，需要关注哪些数据？</h4><h5 id="2-3-1-提升页面的用户体验："><a href="#2-3-1-提升页面的用户体验：" class="headerlink" title="2.3.1 提升页面的用户体验："></a>2.3.1 提升页面的用户体验：</h5><ul>
+<li>用户停留时间</li>
+<li>交互动作次数</li>
+<li>页面展现量(PV)</li>
+<li>用户数(UV)</li>
+<li>单个用户访问页面数 = PV/UV</li>
+</ul>
+<h5 id="2-3-2-提升广告收入："><a href="#2-3-2-提升广告收入：" class="headerlink" title="2.3.2 提升广告收入："></a>2.3.2 提升广告收入：</h5><ul>
+<li>广告点击次数</li>
+<li>页面展现量(PV)</li>
+<li>广告点展比 = 点击次数/PV</li>
+</ul>
+<h5 id="2-3-3-提升-App-导流量-按钮导流能力："><a href="#2-3-3-提升-App-导流量-按钮导流能力：" class="headerlink" title="2.3.3 提升 App 导流量/按钮导流能力："></a>2.3.3 提升 App 导流量/按钮导流能力：</h5><ul>
+<li>按钮展示次数</li>
+<li>按钮点击量</li>
+<li>按钮点展比 = 点击量/展示次数</li>
+</ul>
+<h2 id="三-为了得到实验数据，如何抽样，前端工程师如何打点？"><a href="#三-为了得到实验数据，如何抽样，前端工程师如何打点？" class="headerlink" title="三. 为了得到实验数据，如何抽样，前端工程师如何打点？"></a>三. 为了得到实验数据，如何抽样，前端工程师如何打点？</h2><h4 id="3-1-如何抽样"><a href="#3-1-如何抽样" class="headerlink" title="3.1 如何抽样"></a>3.1 如何抽样</h4><p> <a href="https://github.com/mipengine/mip-extensions/tree/master/mip-experiment" target="_blank" rel="noopener">github/mip-experiment</a> 实验组件采用的方案是<strong>前端随机数抽样</strong>。简单来说，就是预先设置100个实验分组，算一个100以内的随机数，随机数落在哪个区间，用户就进入哪个实验分组。</p>
+<h4 id="3-2-如何打点"><a href="#3-2-如何打点" class="headerlink" title="3.2 如何打点"></a>3.2 如何打点</h4><p>打点请求的统计汇总方式有两种：第三方统计与自行统计。前端工程师只需要了解项目采用的是哪种就可以了。</p>
+<h5 id="3-2-1-PV-amp-UV-打点"><a href="#3-2-1-PV-amp-UV-打点" class="headerlink" title="3.2.1 PV &amp; UV 打点"></a>3.2.1 PV &amp; UV 打点</h5><p><strong>第三方统计</strong>：使用百度统计或类似服务，都不需要前端工程师手动打点，在页面插入统计代码后，在后台可以就看到 PV&amp;UV。<br><strong>自行统计</strong>：每次页面加载时看下有没有标识单一用户的 cookie，如果有，则在<code>document.readyState === &#39;complete&#39;</code>时发送 PV 请求。数据分析时，汇总所有 http request 请求得到 PV, 根据 cookie 去重的到UV。如果没有 cookie，则根据设备特征产出及访问时间计算出一个字符串，用于标识唯一用户。</p>
+<h5 id="3-2-2-交互打点：滑动，点击"><a href="#3-2-2-交互打点：滑动，点击" class="headerlink" title="3.2.2 交互打点：滑动，点击"></a>3.2.2 交互打点：滑动，点击</h5><p>交互日志的打点需要前端工程师手动绑定事件。比如给按钮绑定点击事件，给轮播图绑定滑动事件等等。</p>
+<p><strong>第三方统计</strong>：在事件触发时，调用统计服务的API，将参数传入即可。例如百度统计的<a href="http://tongji.baidu.com/open/api/more?p=guide_trackEvent" target="_blank" rel="noopener">事件 API</a> 是<code>_hmt.push([&#39;_trackEvent&#39;, category, action, opt_label, opt_value]);</code>，那么在事件中就可以写<code>_hmt.push([&#39;_trackEvent&#39;, &#39;按钮01&#39;, &#39;点击&#39;]);</code><br><strong>自行统计</strong>（百度系方法）：在事件触发时，新建一个图片，在图片URL中拼上统计事件的链接。比如<a href="https://m.baidu.com/s?word=123" target="_blank" rel="noopener">百度搜索结果页</a>的滚动请求为 <code>https://sp1.baidu.com/xxx/mwb.gif?type=3&amp;fm=view…</code>，我们也可以拼接类似的 http request，比如<code>https://m.aa.com/a.gif?obj=按钮01&amp;event=点击</code>。</p>
+<h5 id="3-2-3-元素展现打点"><a href="#3-2-3-元素展现打点" class="headerlink" title="3.2.3 元素展现打点"></a>3.2.3 元素展现打点</h5><p>在浏览器自带事件中，没有“元素在浏览器内可见”事件，但是我们可以用js判断，或者引用第三方库来实现。<br><strong>js 判断思路</strong>：根据页面当前滚动距离 scrollY，元素距离顶部距离 top，和屏幕高度 screenHeight 可以计算出元素是否在页面内可见。</p>
+<blockquote>
+<p><strong>某公司日常（3）</strong><br><img src="http://upload-images.jianshu.io/upload_images/2203733-d0bef6fca14a0995.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">前端：监听滚动事件。<br>if( top &gt; scrollY + screenHeight) {<br>-<strong><em> 按钮在屏幕内展现一次，发请求；<br>-</em></strong> 标记为已展现过。<br>}</p>
+</blockquote>
+<p><strong>第三方库</strong>：<a href="https://github.com/customd/jquery-visible" target="_blank" rel="noopener">jquery 插件-github</a>，<a href="https://github.com/vvo/in-viewport" target="_blank" rel="noopener">原生实现- github</a></p>
+<h2 id="四-如何统计数据，并保证数据准确可信"><a href="#四-如何统计数据，并保证数据准确可信" class="headerlink" title="四. 如何统计数据，并保证数据准确可信"></a>四. 如何统计数据，并保证数据准确可信</h2><h4 id="4-1-统计的两种方式：第三方统计与自行统计"><a href="#4-1-统计的两种方式：第三方统计与自行统计" class="headerlink" title="4.1 统计的两种方式：第三方统计与自行统计"></a>4.1 统计的两种方式：第三方统计与自行统计</h4><p>如果选择<strong>第三方统计</strong>，就选择了 Easy 模式。百度统计，Google Analytics 等统计服务会帮你计算很多需要的数据。首推百度统计，除了因为它是自家产品，有问题随时可以找接口人解决之外，还因为它是免费的中文统计，投放简单，数据产出快。<br>如果选择<strong>自行统计</strong>，那么面对的就是浩大的工程了，储存量和计算量惊人。百度系的统计是将统计参数拼接到图片 URL 后面，带给服务端。知乎的统计是发送了 POST 请求。无论哪种方案，每次用户点击，滑动，数据加载都会产生一条 http request，储存和计算这些 request 会耗费不少服务器资源。Jenny_L 没有实践过，如有需要，可以 <a href="https://www.google.com.hk/?gfe_rd=cr&amp;ei=grnUWLClNa6M8QfBrL6ADQ&amp;gws_rd=ssl#safe=strict&amp;q=http+request+analysis&amp;*" target="_blank" rel="noopener">google 一下</a>。</p>
+<h4 id="4-2-为保证数据可信，请空转流量"><a href="#4-2-为保证数据可信，请空转流量" class="headerlink" title="4.2 为保证数据可信，请空转流量"></a>4.2 为保证数据可信，请空转流量</h4><p>解释：<strong>空转是指先抽样，统计关键数据，而不修改页面样式的流程，相当于AA实验。</strong><br>原因：虽然<strong>前端随机数抽样</strong>及类似方法理论上能够保证两份流量 pv 和 uv 相同，关键数据相差不大，但毕竟存在抽样不均的特殊情况。空转可以明显地发现抽样不均，摒弃掉这部分流量，保证实验数据的变化仅仅是实验本身（样式改变）引起的。<br>具体做法：如果要做 AB 实验，需要实验组 A 和对照组 B 两组流量。一次性抽取5-6组流量，空转3天，监控 pv，uv，点击数量等关键数据。选择两组数据最接近的上实验，其他流量可以释放。</p>
+<h4 id="4-3-为验证结论正确，请反转实验"><a href="#4-3-为验证结论正确，请反转实验" class="headerlink" title="4.3 为验证结论正确，请反转实验"></a>4.3 为验证结论正确，请反转实验</h4><p>解释：<strong>当得出实验正向结论后，将实验反转，对照组变成实验组，实验组变成对照组。</strong></p>
+<blockquote>
+<p><strong>某公司日常（4）</strong><br>产品：实验数据正了，标题就是要大大大！<br>设计：这不科学，应该是数据波动。需要反转验证。<br><img src="http://upload-images.jianshu.io/upload_images/2203733-bcd966175a5c2c0d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">前端：嗯，我反转一下。</p>
+</blockquote>
+<p>原因：反转实验能够验证实验数据的差别是由实验（样式改变）引起的。但需要注意的是，建议只在实验为正向收益时反转实验。如果收益为负，反转实验，只会多损伤原对照组的用户体验。<br>具体做法：举个例子，实验目的为“按钮大小对该按钮点击率的影响”。A 组流量按钮变大，B 组为对照组，按钮大小正常，数据显示A组的按钮点击率升高，效果更好。在反转试验中，A 组流量按钮回复正常，B 组变为实验组，按钮变大。如果此时数据显示B组按钮点击率升高，说明按钮大小对点击率有影响。</p>
+<h4 id="4-4-为减少多个实验互相影响，请分流量实验，不要分层实验"><a href="#4-4-为减少多个实验互相影响，请分流量实验，不要分层实验" class="headerlink" title="4.4 为减少多个实验互相影响，请分流量实验，不要分层实验"></a>4.4 为减少多个实验互相影响，请分流量实验，不要分层实验</h4><p>解释：“分流量实验”是指一次抽取流量，分别进行多个实验。“分层实验”是指每个实验都从100%中抽取一次流量。<br>原因：“分流量实验”能够保证实验间没有重合，一份流量不会同时中两个实验。而“分层实验”相当于从总流量中抽取多次，一份流量有概率同时中两个实验，这会对实验结果有一定影响。<br>具体做法：</p>
+<ul>
+<li>分流量实验: 抽取40%的流量，20% 用于 Foo 实验，20% 用于 Bar 实验。</li>
+<li>分层实验: 抽取20%的流量用于 Foo 实验；再抽取 20% 流量用于 Bar 实验。（此时约有 4% 流量即Foo 又 Bar）</li>
+</ul>
+<blockquote>
+<p><strong>某公司日常（5）</strong><br>产品：反转数据也是正的，说明标题应该大大大。<br>设计：不对，不科学，是不是流量之间有干扰？<br><img src="http://upload-images.jianshu.io/upload_images/2203733-f9134130f5d73218.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">前端：采用的分流量实验，确认没有干扰。</p>
+</blockquote>
+<h4 id="4-5-考虑到用户习惯性，请保证实验黏性及持续时间"><a href="#4-5-考虑到用户习惯性，请保证实验黏性及持续时间" class="headerlink" title="4.5 考虑到用户习惯性，请保证实验黏性及持续时间"></a>4.5 考虑到用户习惯性，请保证实验黏性及持续时间</h4><p>解释：<strong>实验黏性 (sticky)指的是实验流量中的 pv 分配固定，单个用户每次都被分入相同分组。实验的持续时间建议至少3天，一周左右为好</strong>。</p>
+<blockquote>
+<p><strong>某公司日常（6）</strong><br><img src="http://upload-images.jianshu.io/upload_images/2203733-f495dbdb99759400.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">前端：正常情况下，应该使用黏性的实验抽样。</p>
+</blockquote>
+<p>原因：在页面改版后，用户可能有一段时间的学习过程和习惯期，显示为数据的下降，以及缓慢回升。<br>具体做法：当某个用户中抽样时，本地记录（localstorage）他的抽样情况，下次他进入同样的页面，读取记录，进入同样的分组。</p>
+<h2 id="五-如何分析实验数据，有哪些数据需要重点关注"><a href="#五-如何分析实验数据，有哪些数据需要重点关注" class="headerlink" title="五. 如何分析实验数据，有哪些数据需要重点关注?"></a>五. 如何分析实验数据，有哪些数据需要重点关注?</h2><p>如文章 2.1 提到的，<strong>重点关注一个目标，并选择其它几个目标作为辅助，以免走偏。</strong><br>常见的目标为：pv, uv, 首屏按钮点展比，广告点展比。</p>
+<h2 id="六-附：如何搭建前端实验项目，以-mip-experiment-为例"><a href="#六-附：如何搭建前端实验项目，以-mip-experiment-为例" class="headerlink" title="六. 附：如何搭建前端实验项目，以 mip-experiment 为例"></a>六. 附：如何搭建前端实验项目，以 mip-experiment 为例</h2><p><a href="https://www.mipengine.org/doc/3-widget/3-customize-widget/experiment-widget.html" target="_blank" rel="noopener">mip-experiment</a> 是 <a href="https://www.mipengine.org/doc/02-what-is-mip.html" target="_blank" rel="noopener">MIP 开源项目</a>中的一个组件，从零搭建了一个前端抽样的实验系统。抽样系统实现了上文提到的抽样功能：</p>
+<ul>
+<li>用户分组</li>
+<li>实验黏性设置</li>
+<li>分流量抽样，分层抽样</li>
+<li>实验空转</li>
+<li>实验AB样式设置</li>
+<li>实验反转</li>
+</ul>
+<p>除此之外，<code>mip-experiment</code> 还与 mip-pix 和百度统计深度整合，实现了统计功能：</p>
+<ul>
+<li><a href="https://www.mipengine.org/doc/3-widget/2-inner-widget/pix-widget.html" target="_blank" rel="noopener">mip-pix</a> 将实验数据拼装在图片 URL 中，将请求发往站长服务器，由站长自行统计。</li>
+<li><a href="https://www.mipengine.org/doc/3-widget/3-customize-widget/experiment-widget.html" target="_blank" rel="noopener">mip-experiment&amp;百度统计</a> 通过配置，可将请求发送到百度统计后台，实验数据可在百度统计-&gt;访问分析-&gt;事件分析中看到。</li>
+</ul>
+<p>mip-experiment 的源码可在 <a href="https://github.com/mipengine/mip-extensions/tree/master/mip-experiment" target="_blank" rel="noopener">github</a> 上找到，有建议可以提 issue 给我。</p>
+<p>（正文完）</p>
+<hr>
+<p>打个广告：MIP 开源项目现在有很多交互组件，直接引用，无需写 js，适合快速建站，来<a href="https://www.mipengine.org/doc/00-mip-101.html" target="_blank" rel="noopener">这里看教程</a>。<br> <a href="https://www.mipengine.org/" target="_blank" rel="noopener">MIP 官网</a>也使用了<a href="https://www.mipengine.org/doc/3-widget/3-customize-widget/experiment-widget.html" target="_blank" rel="noopener">mip-experiment</a> 做实验，现在正处于空转阶段。实验完成后将发出整体实验的流程和结论。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/08/31/css-overflow-hidden-visible/" data-toggle="tooltip" data-placement="top" title="CSS 中的overflow:visible是什么？和overflow:hidden什么关系">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/03/20/javascript-nodelist-and-arguments/" data-toggle="tooltip" data-placement="top" title="对Javascript 类数组对象的理解与应用 | Arguments与Nodelist">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; JennyL 2017 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1d1711d14898ea695f12ebe35a7c6f7e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

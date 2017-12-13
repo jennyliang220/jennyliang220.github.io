@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/">
+    <link rel="canonical" href="http://yoursite.com/page/2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -189,31 +189,24 @@
 
 <div class="post-preview">
 
-    <a href="/2017/12/12/set-up-express-to-return-data/">
+    <a href="/2016/12/21/github-branch/">
         <h2 class="post-title">
-            使用Node Express创建后端，返回假数据，实现开发联调自给自足
+            Git fork项目多分支本地开发方法|创建分支的注意事项
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            这篇文章创建了一个Node Express应用，承接前端请求，分页返回假数据。
-这个方法可在编写无限下拉等依赖后端数据组件时，提供顺畅的假数据；也可Mock数据用于模拟前后端联调。这样在真正数据来的时候，能够顺畅对接，快速将代码推动上线 :)
-
-
-
-创建一个Express假数据应用，需要以下步骤：
-
-安装Express及npm工具
-新建Express应用
-配置JSON文件
-配置Router承......
+            前两天使用github开发遇到一个问题，解决过程中加深了对git的理解，在这里记录一下。
+问题描述项目组有一个开源项目A，大家都fork了一份A’到自己的github。开发测试后提交pull request，合并到master后上线。一切都很正常。
+但由于会同时跟进多个功能点，需要改多个文件M,N，并在开发完分开提交，就选用了分支开发（branch）的方法。
+在A’主干修改的M文件，代码提交......
         </div>
     </a>
     
         <p class="post-meta">
             Posted by JennyL on
-            2017-12-12
+            2016-12-21
         </p>
     
 
@@ -222,25 +215,28 @@
 
 <div class="post-preview">
 
-    <a href="/2017/10/13/change-terminal-ps1/">
+    <a href="/2016/06/17/intro-to-sublime-plugins/">
         <h2 class="post-title">
-            终端可以使用emoji🖖🏻表情作为提示词呢-Coder们，来搞一个花哨的终端吧！
+            sublime mac插件使用
         </h2>
         <h3 class="post-subtitle">
-            这篇文章记录了PS1（shell命令前提示词）的修改方法。
+            
         </h3>
         <div class="post-content-preview">
-            这篇文章记录了PS1（shell命令前提示词）的修改方法。主要是玩儿 了一下贱贱的 emoji 😝 😝 😝
+            sublime的插件实在是神器，这篇文档介绍了安装和使用方法。安装emmec等插件之前，需要先安装Package Control包管理工具
+附：sublime text 下载地址
+###Package Control安装の最优方法
 
-PS1简介PS1被称为prompt（提示符），是终端环境变量的其中之一，主要用于bash命令前的提示词。可以改成各种奇形怪状的内容，自定义空间超大。除了PS1，还有PS2-4，JennyL暂时没有用到。搜索linux ps1能看到相关介绍。
-
-PS1修改语法12# 引号里面可以......
+ctrl + ~ 快捷键，调出 console控制台
+执行安装命令：
+sublime text3复制这个，执行
+import urllib.request,os......
         </div>
     </a>
     
         <p class="post-meta">
             Posted by JennyL on
-            2017-10-13
+            2016-06-17
         </p>
     
 
@@ -249,23 +245,22 @@ PS1修改语法12# 引号里面可以......
 
 <div class="post-preview">
 
-    <a href="/2017/09/19/how-to-set-up-ghost-cms/">
+    <a href="/2016/06/17/jquery-deferred-promise/">
         <h2 class="post-title">
-            使用Node CMS Ghost创建新闻发布网站&三级页面
+            $.Deferred()和promise() 学习实践
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            Ghost是一个轻量级的Node CMS，自带sqlite3数据库, markdown编辑器，支持主题定制，好用得很。以下方法为Jenny_L自己摸索，亲测可用。
-感觉文档写的对于小白十分不友好。我期待的安装教程，是一个npm install 和一个npm start命令，文档就是不说，而是推荐你使用专业付费服务。
-实际安装起来，并没有那么麻烦，在这里记录下最简洁的方法。$ npm inst......
+            这篇文章偏重入门实践，学习请点这里：-jQuery的deferred对象详解——阮一峰-读jQuery之二十（Deferred对象）——Snandy
+###骨感的语法12345678910111213141516171819// ajax请求封装function getData()&#123;  var dtd = $.Deferred();  $.ajax(&#123;url:&apos;......
         </div>
     </a>
     
         <p class="post-meta">
             Posted by JennyL on
-            2017-09-19
+            2016-06-17
         </p>
     
 
@@ -274,26 +269,23 @@ PS1修改语法12# 引号里面可以......
 
 <div class="post-preview">
 
-    <a href="/2017/09/08/how-to-earn-more-star-in-github/">
+    <a href="/2016/06/17/console-log-warn-error/">
         <h2 class="post-title">
-            如何做出一个高star的github项目？
+            浏览器console控制台常用方法 log,warn,error
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            
-回答来自Andrey Sitnik， Postcss和autoprefixer作者。有干货有技巧。
-
-Andrey在2017年9月1日这个学生开学的日子来到度厂，给大家分享了Logux项目。在提问环节，有人问到如何做出一个高star的github项目，Andrey的回答非常诚恳有借鉴意义。Jenny_L记录下来，加上自己的理解，希望能给开源开发者一些参考。
-以下四点是Andrey的原话：
-......
+            浏览器提供了多种console方法，包括console.log, console.warn console.error等。多种方法结合使用，使调试信息更清晰。
+仔细阅读，文中有console黑科技！
+###常用方法|类别|代码示例|真实截图||–|–|–|| 日志（常用） | console.log(&#39;这是一段日志&#39;); | || 信息 | console.info(&#39......
         </div>
     </a>
     
         <p class="post-meta">
             Posted by JennyL on
-            2017-09-08
+            2016-06-17
         </p>
     
 
@@ -302,173 +294,25 @@ Andrey在2017年9月1日这个学生开学的日子来到度厂，给大家分�
 
 <div class="post-preview">
 
-    <a href="/2017/08/31/get-height-of-folded-elements/">
+    <a href="/2016/06/17/what-is-yaml/">
         <h2 class="post-title">
-            获取height固定折叠元素真实高度方法
+            什么是 YAML-专门给人类阅读的标记语言
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            
-假设，DOM 被设置了 height:20px 和 overflow:hidden，如何计算它的真实高度呢？
-
-一、问题背景最近在优化折叠组件，需要在窗口宽度变化的时候重新判断展开收起状态。如果段落高度大于给定高度，则隐藏超高内容，展示【展开】按钮。如果段落高度小于给定高度，则不限制最大高度，隐藏【展开】按钮。
-但如何计算【段落高度小于给定高度】呢？比如，段落被设置了 height=”20......
+            #什么是 YAMLYAML 是一个数据序列化语言，方便人类阅读，可用于所有编程语言。YAML is a human friendly data serialization standard for all programming languages.
+#应用场景可以用于 conf 配置我用 YAML 是配置一个服务器的页面路由。
+#YAML 长什么样子
+# 记录一个人的体检信息 
+# (键值......
         </div>
     </a>
     
         <p class="post-meta">
             Posted by JennyL on
-            2017-08-31
-        </p>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/08/31/css-overflow-hidden-visible/">
-        <h2 class="post-title">
-            CSS 中的overflow:visible是什么？和overflow:hidden什么关系
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-这篇文章会讨论：overflow:visible 在什么情况下使用。overflow 的其他属性值用法。
-
-一、缘起最近在解决一个侧边栏弹出后，背景（即body）仍然可以滚动的问题。
-看了AMP和百度百科类似交互的代码，都是在侧边栏弹出后给body增加overflow: hidden属性。当侧边栏隐藏时，再把属性移除。在移除属性时，不能简单地将overflow设置成auto，而是需要还原到......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by JennyL on
-            2017-08-31
-        </p>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/03/27/web-experiment-1/">
-        <h2 class="post-title">
-            Web实验(一)AB实验设计思路及实验落地
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-这篇文章会讨论：
-
-在什么情况下需要做 AB 实验
-从产品/交互角度，如何设计一个实验
-前端工程师如何打点
-如何统计数据，并保证数据准确可信
-如何分析实验数据，有哪些数据需要重点关注
-附：如何搭建前端实验项目，以 mip-experiment 为例
-
-
-一. AB 实验的使用场景和正确用法我们通常在页面有样式变化，但又不确定是修改影响好坏的时候进行 AB 实验，实验数据可以为改版提供有力支......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by JennyL on
-            2017-03-27
-        </p>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/03/20/javascript-nodelist-and-arguments/">
-        <h2 class="post-title">
-            对Javascript 类数组对象的理解与应用 | Arguments与Nodelist
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-这篇文章将要告诉你：
-
-什么是类数组对象
-类数组对象是如何出现的
-如何避免使用类数组对象的常见问题
-将类数组对象转换为普通对象的方法
-
-
-类数组对象类数组（Array-like Object）对象是 javascript 中比较冷门的内容，如果不了解的话，会被坑到。类数组对象 foo 有以下两个陷阱：
-
-有 foo.length 属性，却没有 foo.push() 方法
-和 for-in ......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by JennyL on
-            2017-03-20
-        </p>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/03/07/set-up-mac-workspace/">
-        <h2 class="post-title">
-            MAC前端工具安装和环境搭建-写在某前端工程师格式化电脑后
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-为了使用sketch，升级了mac系统版本os 10.12.1，然后各种应用大崩溃：QQ, safari, 邮件，印象笔记都打不开了。于是重新格式化电脑安装了10.11……一切正常之后，开始配置常用的前端工具。
-
-1. node &amp;npmnode和npm几乎是一切的基础。有了npm包管理工具，就能安装接下来的工具了。下载安装包：https://nodejs.org/en/
-2. s......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by JennyL on
-            2017-03-07
-        </p>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/12/27/set-labels-for-github-project/">
-        <h2 class="post-title">
-            github项目创建label方法与最佳实践（中文/英文）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            这篇文章包括：在github新建label，以及创建哪些label能够达到最好的管理issue效果，即label系统的思考与最佳实践。
-背景及需求最近工作上使用github比较多，项目组需要一个label系统来管理issue。项目(MIP)是开源的，除了项目组的同事，也需要站长和外部开发者参与。
-创建label点击issues-Labels，然后在Label页面右上角点击New Label ......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by JennyL on
-            2016-12-27
+            2016-06-17
         </p>
     
 
@@ -481,10 +325,10 @@ Andrey在2017年9月1日这个学生开学的日子来到度厂，给大家分�
 
 <ul class="pager">
     
-    
-        <li class="next">
-            <a href="/page/2/">Older Posts &rarr;</a>
+        <li class="previous">
+            <a href="/">&larr; Newer Posts</a>
         </li>
+    
     
 </ul>
 

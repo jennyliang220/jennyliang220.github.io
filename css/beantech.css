@@ -487,7 +487,7 @@ pre code {
 }
 .intro-header .post-heading .meta {
   font-family: 'Lora', 'Times New Roman', serif;
-  font-style: italic;
+  /*font-style: italic;*/
   font-weight: 300;
   font-size: 18px;
 }
@@ -496,10 +496,11 @@ pre code {
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
-    font-size: 55px;
+    font-size: 35px;
+    font-weight: 500;
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
+    font-size: 25px;
   }
   .intro-header .post-heading .meta {
     font-size: 20px;
@@ -530,7 +531,7 @@ pre code {
   font-family: 'Lora', 'Times New Roman', serif;
   color: #808080;
   font-size: 16px;
-  font-style: italic;
+  /*font-style: italic;*/
   margin-top: 0;
 }
 .post-preview > .post-meta > a {
@@ -577,7 +578,7 @@ pre code {
   text-align: center;
   font-size: 14px;
   padding: 10px;
-  font-style: italic;
+  /*font-style: italic;*/
   margin: 0;
   display: block;
   border-bottom-right-radius: 5px;
