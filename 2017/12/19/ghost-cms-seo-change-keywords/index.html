@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ghost博客本身集成了SEO的功能，如robots.txt, sitemap.xml, TDK（Title, Description, Keywords）。这篇文章会介绍如何修改优化，并最终提交给搜索引擎。"
+    <meta name="keyword"  content="node">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>针对Ghost CMS博客进行多方位SEO优化 - JennyL前端经验集 - Javascript, NodeJS, CMS原创小文章</title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/12/19/ghost-cms-seo-change-keywords/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/image/travel.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/./image/bg.jpg');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#tools" title="tools">tools</a>
+                            
+                              <a class="tag" href="/tags/#trick" title="trick">trick</a>
+                            
+                        </div>
+                        <h1>针对Ghost CMS博客进行多方位SEO优化</h1>
+                        <h2 class="subheading">好内容，好网页，还要搜索引擎友好</h2>
+                        <span class="meta">
+                            Posted by JennyL on
+                            2017-12-19
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JennyL前端经验集</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><a href="https://ghost.org" target="_blank" rel="noopener">Ghost博客</a>本身集成了SEO的功能，如robots.txt, sitemap.xml, TDK（Title, Description, Keywords）。这篇文章会介绍如何修改使用，并最终提交给搜索引擎。</p>
+<ol>
+<li>以上几个文件/字段 是做什么用的？</li>
+<li>如何设置Ghost robots.txt？</li>
+<li>如何修改 TDK（Title, Description, Keywords)？</li>
+<li>如何使用sitemap.xml文件？</li>
+</ol>
+<p>JennyL 使用的 Ghost 是0.11.2版本，搭建方法见早些时候的博客<a href="https://jennyliang220.github.io/2017/09/19/how-to-set-up-ghost-cms/" target="_blank" rel="noopener">《使用Node CMS Ghost创建新闻发布网站&amp;三级页面》</a>。</p>
+<h2 id="一、以上几个文件-字段-是做什么用的？"><a href="#一、以上几个文件-字段-是做什么用的？" class="headerlink" title="一、以上几个文件/字段 是做什么用的？"></a>一、以上几个文件/字段 是做什么用的？</h2><ul>
+<li>robots.txt 搜索引擎抓取文件，可以禁止部分目录被抓取。</li>
+<li>sitemap.xml 告诉搜索引擎网站结构，方便Spider按条抓取。</li>
+<li>TDK 页面html代码中<code>&lt;head&gt;</code>标签中的代码，告知搜索引擎页面内容。<ul>
+<li>Title 页面标题</li>
+<li>Description 页面描述，摘要</li>
+<li>Keywords 页面可被匹配的搜索关键词</li>
+<li><img src="/img/ghost-cms-seo-change-keywords/title.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="二、修改Ghost博客的robots-txt文件"><a href="#二、修改Ghost博客的robots-txt文件" class="headerlink" title="二、修改Ghost博客的robots.txt文件"></a>二、修改Ghost博客的robots.txt文件</h2><p>robots.txt 文件用于禁止搜索引擎抓取特定目录或页面，比如有个隐藏的静态页或活动邀请页面不需要被搜索引擎抓取收录，就可以将这个页面写在 robots 的 Disallow 配置中。0.11.2 版本的 Ghost 会在<code>ghost/core/shared/</code>目录自动生成robot.txt文件，只是比较简陋。只声明了/ghost/目录（后台入口）禁止抓取。上线后默认在网站根目录下，如 <a href="http://www.xx.com/robots.txt" target="_blank" rel="noopener">http://www.xx.com/robots.txt</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Sitemap: &#123;&#123;blog-url&#125;&#125;/sitemap.xml</span><br><span class="line">Disallow: /ghost/</span><br></pre></td></tr></table></figure>
+<p>如果双十一，双十二抽奖页地址为/event-11-11/，/event-12-12/，且以/event-/开头，想要禁止所有搜索引擎抓取的话，在robots.txt文件下增加一行内容就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Sitemap: &#123;&#123;blog-url&#125;&#125;/sitemap.xml</span><br><span class="line">Disallow: /ghost/</span><br><span class="line">Disallow: /event-*/</span><br></pre></td></tr></table></figure>
+<p>如果另外做了一套百度MIP页，想要仅允许百度蜘蛛抓取，禁止其他搜索引擎，可以如下这么写。示例参考自<a href="http://www.robotstxt.org/robotstxt.html" target="_blank" rel="noopener">http://www.robotstxt.org/robotstxt.html</a> To allow a single robot.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">User-agent: Baiduspider</span><br><span class="line">Disallow: /ghost/</span><br><span class="line"></span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /ghost/</span><br><span class="line">Disallow: /mip/</span><br><span class="line"></span><br><span class="line">Sitemap: &#123;&#123;blog-url&#125;&#125;/sitemap.xml</span><br></pre></td></tr></table></figure>
+<p>更多细节Robots.txt规范，可以参考Google的<a href="https://developers.google.com/search/reference/robots_txt#-robotstxt-" target="_blank" rel="noopener">Robots.txt规范</a></p>
+<h2 id="三、如何修改-TDK（标题，摘要，关键词）"><a href="#三、如何修改-TDK（标题，摘要，关键词）" class="headerlink" title="三、如何修改 TDK（标题，摘要，关键词）"></a>三、如何修改 TDK（标题，摘要，关键词）</h2><h3 id="1-修改关键词（keywords）"><a href="#1-修改关键词（keywords）" class="headerlink" title="1. 修改关键词（keywords）"></a>1. 修改关键词（keywords）</h3><p>Ghost本身的配置未实现关键词的配置，在后台找不到类似的地方，只能通过模板代码修改，一处修改，所有页面生效。下面以casper默认模板为例，修改所有页面的关键词。</p>
+<ol>
+<li><p>打开ghost/content/themes/casper/default.hbs文件，找到如下位置（第10行附近）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;!-- Page Meta --&#125;&#125;</span><br><span class="line">&lt;title&gt;&#123;&#123;meta_title&#125;&#125;&lt;/title&gt;</span><br><span class="line">&lt;meta name=&quot;description&quot; content=&quot;&#123;&#123;meta_description&#125;&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加一行title标签，多个关键词使用英文逗号分隔</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;!-- Page Meta --&#125;&#125;</span><br><span class="line">&lt;title&gt;&#123;&#123;meta_title&#125;&#125;&lt;/title&gt;</span><br><span class="line">&lt;meta name=&quot;description&quot; content=&quot;&#123;&#123;meta_description&#125;&#125;&quot; /&gt;</span><br><span class="line">&lt;meta name=&quot;keywords&quot; content=&quot;前端开发,Web技术,Javascript&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关键词修改完成<br>由于default.hbs是所有页面的公用父模板，只需要修改者一处。在控制台 <code>ghost serve</code> 启动本地预览，就可以看到效果了。</p>
+</li>
+</ol>
+<h3 id="2-修改标题和摘要（Title-amp-Description）"><a href="#2-修改标题和摘要（Title-amp-Description）" class="headerlink" title="2. 修改标题和摘要（Title &amp; Description）"></a>2. 修改标题和摘要（Title &amp; Description）</h3><p>Ghost生成的页面可以简单概括为三级页面：首页-index，列表页-tag，内容页-post。每类页面的标题摘要需要配置方法类似，但不在同一个地方。接下来的配置不需要写代码，登录到网站后台即可 ( <a href="http://www.xx.com/ghost/" target="_blank" rel="noopener">http://www.xx.com/ghost/</a> )。下面分别截图演示，包教包会。</p>
+<h4 id="首页：标题摘要"><a href="#首页：标题摘要" class="headerlink" title="首页：标题摘要"></a>首页：标题摘要</h4><p>首页是整个网站的门面，也是搜索引擎重点抓取的对象。在General选项中设置</p>
+<ol>
+<li>在左侧选择<code>通用设置</code><br> <img src="/img/ghost-cms-seo-change-keywords/general.png" alt=""></li>
+<li>修改博客标题和摘要<br> <img src="/img/ghost-cms-seo-change-keywords/general2.png" alt=""></li>
+</ol>
+<h4 id="列表页：标题摘要"><a href="#列表页：标题摘要" class="headerlink" title="列表页：标题摘要"></a>列表页：标题摘要</h4><p>列表页即“Tag标签列表页”，可以在Tags选项里设置。</p>
+<ol>
+<li>在左侧选择<code>标签设置</code><br> <img src="/img/ghost-cms-seo-change-keywords/tag.png" alt=""></li>
+<li>新建tag，增加配置。这些配置主要用于页面显示<br> <img src="/img/ghost-cms-seo-change-keywords/tag2.png" alt=""></li>
+<li>配置搜索引擎 meta 信息<br> <img src="/img/ghost-cms-seo-change-keywords/tag3.png" alt=""></li>
+</ol>
+<h4 id="内容页：标题摘要"><a href="#内容页：标题摘要" class="headerlink" title="内容页：标题摘要"></a>内容页：标题摘要</h4><ol>
+<li>在文章编辑页面右上角选择 <code>设置</code><br> <img src="/img/ghost-cms-seo-change-keywords/post.png" alt=""></li>
+<li>点击侧边栏的 <code>Meta Data</code><br> <img src="/img/ghost-cms-seo-change-keywords/post2.png" alt=""></li>
+<li>配置搜索引擎 meta 信息<br> <img src="/img/ghost-cms-seo-change-keywords/post3.png" alt=""></li>
+</ol>
+<h2 id="四、如何使用sitemap-xml文件提交给搜索引擎？"><a href="#四、如何使用sitemap-xml文件提交给搜索引擎？" class="headerlink" title="四、如何使用sitemap.xml文件提交给搜索引擎？"></a>四、如何使用sitemap.xml文件提交给搜索引擎？</h2><p>JennyL 对搜索引擎抓取和更新周期不是特别了解，但有一些感性的认识与大家分享：</p>
+<blockquote>
+<p>互联网上的URL数以亿记，靠搜索引擎蜘蛛根据链接关系自动发现，是漫无目的且无穷无尽的。</p>
+</blockquote>
+<p>但如果给Spider一个待字典，与亿万其它链接相比，抓取字典里的链接会更加准确高效。这也是为什么百度提供了<a href="ziyuan.baidu.com">站长平台</a>让站长们提交链接。</p>
+<blockquote>
+<p>所以，提吧~ 新建页面提，修改页面提，反正总比不提好。（描述如有不对，请指正）</p>
+</blockquote>
+<p>百度站长平台<a href="http://ziyuan.baidu.com/linksubmit/index" target="_blank" rel="noopener">链接提交</a>专栏，可以提交sitemap。这也是Ghost sitemap的用武之地。<br><img src="/img/ghost-cms-seo-change-keywords/sitemap.png" alt=""></p>
+<p>Ghost sitemap 跟robots.txt文件一样，位于页面的根目录，地址为：<a href="http://www.xx.com/sitemap.xml。复制地址，粘贴在文本框里，就可以把页面批量提交给百度了。" target="_blank" rel="noopener">http://www.xx.com/sitemap.xml。复制地址，粘贴在文本框里，就可以把页面批量提交给百度了。</a><br><img src="/img/ghost-cms-seo-change-keywords/sitemap2.png" alt=""></p>
+<h2 id="后记的啰嗦"><a href="#后记的啰嗦" class="headerlink" title="后记的啰嗦"></a>后记的啰嗦</h2><p>JennyL之前一直是前端工程师的角色，最近才做了小站站长，对SEO相关内容也在学习中。这个博客还没加评论，如果需要交流，可以移步 <a href="https://github.com/jennyliang220/jennyliang220.github.io/issues" target="_blank" rel="noopener">github.io/issue</a> 讨论。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/12/12/set-up-express-to-return-data/" data-toggle="tooltip" data-placement="top" title="使用Node Express创建后端，返回假数据，实现开发联调自给自足">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- 百度站长平台自动推送页面 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; JennyL 2017 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1d1711d14898ea695f12ebe35a7c6f7e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
