@@ -7,16 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="null">
+    <meta name="description" content="浏览器提供了多种console方法，包括console.log, console.warn console.error等。多种方法结合使用，使调试信息更清晰。仔细阅读，文中有console黑科技！"
     <meta name="keyword"  content="node">
     <link rel="shortcut icon" href="/img/ironman-draw.png">
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>
-        
-          浏览器console控制台常用方法 log,warn,error - undefined
-        
-    </title>
+    <title>浏览器console控制台常用方法 log,warn,error - JennyL前端经验集 - Javascript, NodeJS, CMS原创小文章</title>
 
     <link rel="canonical" href="http://yoursite.com/2016/06/17/console-log-warn-error/">
 
@@ -121,7 +117,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">JennyL</a>
+            <a class="navbar-brand" href="/">JennyL前端经验集</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -192,8 +188,68 @@
 
                 <p>浏览器提供了多种console方法，包括console.log, console.warn console.error等。多种方法结合使用，使调试信息更清晰。</p>
 <p>仔细阅读，文中有console黑科技！</p>
-<p>###常用方法<br>|类别|代码示例|真实截图|<br>|–|–|–|<br>| 日志（常用） | <code>console.log(&#39;这是一段日志&#39;);</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-3c8c01083e406e6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">|<br>| 信息 | <code>console.info(&#39;这是一条信息&#39;);</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-0a5384ef1702add6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |<br>| 警告 | <code>console.warn(&#39;这是一个警告&#39;);</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-d58113411d05d2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |<br>| 错误 | <code>console.error(&#39;这是一条错误&#39;);</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-4da976cd5a588e53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |<br>| 错误 | <code>throw new Error(&#39;这是一个错误提示&#39;);</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-167a643fd621e0c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |<br>| 错误对象 | <code>throw { name: &#39;参数错误&#39;, message: &#39;data[0]不存在&#39;}</code> | <img src="http://upload-images.jianshu.io/upload_images/2203733-1c530f93a267399b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |</p>
-<p>###罕见的黑科技<br>|类别|代码示例|真实截图|<br>|–|–|–|<br>| 打印调用链 | <code>console.trace();</code> <br><br>.<br>可以看到 <em>c被b调用，b被a调用</em> 的关系| <img src="http://upload-images.jianshu.io/upload_images/2203733-5f791a2853c1b85b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">|<br>|成组打印| <code>console.group()</code> <code>console.groupEnd()</code> <br>.<br>函数被执行多次时，分组打印更清晰| <img src="http://upload-images.jianshu.io/upload_images/2203733-eb61c2f82118059a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> |</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>代码示例</th>
+<th>真实截图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日志（常用）</td>
+<td><code>console.log(&#39;这是一段日志&#39;);</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-3c8c01083e406e6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>信息</td>
+<td><code>console.info(&#39;这是一条信息&#39;);</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-0a5384ef1702add6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>警告</td>
+<td><code>console.warn(&#39;这是一个警告&#39;);</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-d58113411d05d2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>错误</td>
+<td><code>console.error(&#39;这是一条错误&#39;);</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-4da976cd5a588e53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>错误</td>
+<td><code>throw new Error(&#39;这是一个错误提示&#39;);</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-167a643fd621e0c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>错误对象</td>
+<td><code>throw { name: &#39;参数错误&#39;, message: &#39;data[0]不存在&#39;}</code></td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-1c530f93a267399b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="罕见的黑科技"><a href="#罕见的黑科技" class="headerlink" title="罕见的黑科技"></a>罕见的黑科技</h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>代码示例</th>
+<th>真实截图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打印调用链</td>
+<td><code>console.trace();</code> <br><br>.<br>可以看到 <em>c被b调用，b被a调用</em> 的关系</td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-5f791a2853c1b85b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+<tr>
+<td>成组打印</td>
+<td><code>console.group()</code> <code>console.groupEnd()</code> <br>.<br>函数被执行多次时，分组打印更清晰</td>
+<td><img src="http://upload-images.jianshu.io/upload_images/2203733-eb61c2f82118059a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+</tr>
+</tbody>
+</table>
 <p><em>文中图片为chrome控制台信息，其它控制台效果类似。</em></p>
 
                 
