@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="JennyL前端经验集包括前端工具使用，JS使用，CMS建站经验等小文章。GitHub：https://github.com/jennyliang220/"
+    <meta name="description" content="CSS 才是前端学习中最难的部分。 —— 我的Boss"
     <meta name="keyword"  content="node">
     <link rel="shortcut icon" href="/img/ironman-draw.png">
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>javascript-nodelist-and-arguments - JennyL前端经验集 - Javascript, NodeJS, CMS原创小文章</title>
+    <title>CSS 实现 YYYY-MM-DD 日期的两端对齐-比例字体也可使用 - JennyL前端经验集 - Javascript, NodeJS, CMS原创小文章</title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/12/19/json-parse-infinity-error/">
+    <link rel="canonical" href="https://jennyliang220.github.io/2018/01/04/justify-align-YYYY-MM-DD/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -65,7 +65,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('undefined')
+            background-image: url('/img/header/dogs.jpeg')
             /*post*/
         
     }
@@ -86,12 +86,16 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#css" title="css">css</a>
+                            
+                              <a class="tag" href="/tags/#tricks" title="tricks">tricks</a>
+                            
                         </div>
-                        <h1>javascript-nodelist-and-arguments</h1>
+                        <h1>CSS 实现 YYYY-MM-DD 日期的两端对齐-比例字体也可使用</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by JennyL on
-                            2017-12-19
+                            2018-01-04
                         </span>
                     </div>
                 
@@ -184,20 +188,34 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <blockquote>
+<p>CSS 才是前端学习中最难的部分。 —— 我的Boss</p>
+</blockquote>
+<h2 id="实际场景"><a href="#实际场景" class="headerlink" title="实际场景"></a>实际场景</h2><p>在做网页样式改版，得到了这样一个充满理想化的飞机设计稿：<br><img src="/img/justify-align-YYYY-MM-DD/ue.png" alt=""></p>
+<p>实现页面的时候，遇到了一个问题，普通字体（非等宽字体）”1”占地面积比较小，”2”占地面积比较大，效果是这样的：<br><img src="/img/justify-align-YYYY-MM-DD/before.png" alt=""></p>
+<p>经过一番调整，成功地找到了两种方案：<br><img src="/img/justify-align-YYYY-MM-DD/after.png" alt=""></p>
+<h2 id="问题出现的原因"><a href="#问题出现的原因" class="headerlink" title="问题出现的原因"></a>问题出现的原因</h2><blockquote>
+<p>接下来的描述跟设计排版相关，追求解决方案的程序员朋友请到文末看demo。  </p>
+</blockquote>
+<p>两个原因：比例字体（proportional font）<strong>字符宽度不同</strong>，<strong>字间距不同</strong>。</p>
+<h3 id="原因1：字符宽度不同"><a href="#原因1：字符宽度不同" class="headerlink" title="原因1：字符宽度不同"></a>原因1：字符宽度不同</h3><p>小时候练习英文字母，同样一个本子，一行写<code>W</code>，一行写<code>i</code>，每行能塞下的字数是不一样的。<br><img src="/img/justify-align-YYYY-MM-DD/i&amp;w.jpeg" alt=""></p>
+<p>数字同理，英文字母更好举例子。找了个图，能看出 i-j-l-r-t 只占了1-2个格子，w-m 占了五个格子。<br><img src="/img/justify-align-YYYY-MM-DD/font-self-space.png" alt=""></p>
+<h3 id="原因2：字间距不同"><a href="#原因2：字间距不同" class="headerlink" title="原因2：字间距不同"></a>原因2：字间距不同</h3><p>字体设计师们出于可读性考虑，在不同字符排列的时候，会调整左右间距，达到视觉上的一致性（JennyL在做设计的时候没考虑过……直接上图吧）。<br><img src="/img/justify-align-YYYY-MM-DD/fonts-space.png" alt=""></p>
+<h2 id="解决方案（1，2，3，4）"><a href="#解决方案（1，2，3，4）" class="headerlink" title="解决方案（1，2，3，4）"></a>解决方案（1，2，3，4）</h2><h3 id="1-改用等宽字体"><a href="#1-改用等宽字体" class="headerlink" title="1. 改用等宽字体"></a>1. 改用等宽字体</h3><p>上文中说到，由于比例字体（proportional font）本身特性，导致排列不一，有没有不这么深井冰的字体呢？有哒！</p>
+<p><strong>等宽字体</strong>（monospaced font）是指字符宽度相同的电脑字体，程序员代码编辑器的默认字体大都为等宽字体，有一种奇妙的秩序感：<br><img src="/img/justify-align-YYYY-MM-DD/mono.png" alt=""></p>
+<p>改用等宽字体后，对齐问题解决啦！但字明显变粗壮了，失去了原来的纤细感，也没有了原来“活动标题很突出，日期只是补充说明”的对比感。<br><img src="/img/justify-align-YYYY-MM-DD/1-1.png" alt=""></p>
+<p>还能怎么办呢……调小一号字体吧。这样，有了完美解决方案1：<br><img src="/img/justify-align-YYYY-MM-DD/1-2.png" alt=""></p>
+<p>代码奉上：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*调整1：使用等宽字体*/</span></span><br><span class="line"><span class="selector-class">.font</span> <span class="selector-class">.time</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: consolas;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/12/19/ghost-cms-seo-change-keywords/" data-toggle="tooltip" data-placement="top" title="针对Ghost CMS博客进行多方位SEO优化">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/12/12/set-up-express-to-return-data/" data-toggle="tooltip" data-placement="top" title="使用Node Express创建后端，返回假数据，实现开发联调自给自足">Next Post &rarr;</a>
+                            <a href="/2017/12/19/ghost-cms-seo-change-keywords/" data-toggle="tooltip" data-placement="top" title="针对Ghost CMS博客进行多方位SEO优化">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -280,7 +298,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; JennyL 2017 
+                    Copyright &copy; JennyL 2019 
                 </p>
             </div>
         </div>
@@ -332,7 +350,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+        async("https://jennyliang220.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -381,7 +399,7 @@
 	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
     <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
 <!-- Image to hack wechat -->
-<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<img src="https://jennyliang220.github.io/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
